@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="java,ssm,背景," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Java web开发中SSM框架搭建背景从web开发技术历史看javaweb从静态到动态追溯到最早的web开发，那个时候还没有动态页面，当时只有HTML技术，主要是文本和图片（包括gif动态图片）。这种页面显示内容简单，而且重点是它只能做信息的展示，无法同用户进行交互。在这种情况下，一旦有需要同服务器通信的需求，静态页面就无能为力了，此时产生了早期的动态网页技术CGI。 CGI定义了Web服务器与">
+<meta name="keywords" content="java,ssm,背景">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SSM框架搭建背景">
+<meta property="og:url" content="http://yoursite.com/2017/08/09/SMM框架搭建背景/index.html">
+<meta property="og:site_name" content="隋堤倦客">
+<meta property="og:description" content="Java web开发中SSM框架搭建背景从web开发技术历史看javaweb从静态到动态追溯到最早的web开发，那个时候还没有动态页面，当时只有HTML技术，主要是文本和图片（包括gif动态图片）。这种页面显示内容简单，而且重点是它只能做信息的展示，无法同用户进行交互。在这种情况下，一旦有需要同服务器通信的需求，静态页面就无能为力了，此时产生了早期的动态网页技术CGI。 CGI定义了Web服务器与">
+<meta property="og:updated_time" content="2017-08-09T06:34:38.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SSM框架搭建背景">
+<meta name="twitter:description" content="Java web开发中SSM框架搭建背景从web开发技术历史看javaweb从静态到动态追溯到最早的web开发，那个时候还没有动态页面，当时只有HTML技术，主要是文本和图片（包括gif动态图片）。这种页面显示内容简单，而且重点是它只能做信息的展示，无法同用户进行交互。在这种情况下，一旦有需要同服务器通信的需求，静态页面就无能为力了，此时产生了早期的动态网页技术CGI。 CGI定义了Web服务器与">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/08/09/SMM框架搭建背景/"/>
+
+
+
+
+
+  <title>SSM框架搭建背景 | 隋堤倦客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">隋堤倦客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/09/SMM框架搭建背景/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="隋堤倦客">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/upload/image/fx.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="隋堤倦客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">SSM框架搭建背景</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-09T12:56:14+08:00">
+                2017-08-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Java-web开发中SSM框架搭建背景"><a href="#Java-web开发中SSM框架搭建背景" class="headerlink" title="Java web开发中SSM框架搭建背景"></a>Java web开发中SSM框架搭建背景</h1><h2 id="从web开发技术历史看javaweb"><a href="#从web开发技术历史看javaweb" class="headerlink" title="从web开发技术历史看javaweb"></a>从web开发技术历史看javaweb</h2><h3 id="从静态到动态"><a href="#从静态到动态" class="headerlink" title="从静态到动态"></a>从静态到动态</h3><p>追溯到最早的web开发，那个时候还没有动态页面，当时只有HTML技术，主要是文本和图片（包括gif动态图片）。这种页面显示内容简单，而且重点是它只能做信息的展示，无法同用户进行交互。在这种情况下，一旦有需要同服务器通信的需求，静态页面就无能为力了，此时产生了早期的动态网页技术CGI。</p>
+<p>CGI定义了Web服务器与外部应用程序之间的通信接口标准，因此Web服务器可以通过CGI执行外部程序，让外部程序根据Web请求内容生成动态的内容。Perl因为跨操作系统和易于修改的特性成为CGI的主要编写语言。当然，CGI可以用任何支持标准输入输出和环境变量的语言编写，比如Shell脚本,C/C++语言，只要符合接口标准即可。</p>
+<h3 id="Web编程脚本语言产生"><a href="#Web编程脚本语言产生" class="headerlink" title="Web编程脚本语言产生"></a>Web编程脚本语言产生</h3><p>CGI技术固然可以实现简单的交互，但是也有很多性能和维护的问题。CGI对每个请求都会启动一个进程来处理，因此性能上的扩展性不高。另外，用在Perl和c语言中的程序中去输出一大堆复杂的HTML字符串，可读性和维护性是个大问题。在这种情况下，PHP/ASP/JSP这些web页面脚本语言就产生了。</p>
+<p>web编程脚本语言可以把程序（动态内容）嵌入到HTML（模版）中去执行，不仅能更好的组织Web应用的内容，而且执行效率比CGI还更高，这类脚本语言得到了广泛的应用。于此同时，客户端的css技术产生也很大程度上降低了html的维护成本。</p>
+<h3 id="大型web项目构建"><a href="#大型web项目构建" class="headerlink" title="大型web项目构建"></a>大型web项目构建</h3><p>应对与越来越复杂的企业级web工程，Java EE核心规范被提出。其中，Servlet和JSP是运行在服务器端的Web组件，EJB运行在服务器端的业务组件，是一种分布式组件技术。2000年随之而来的.net平台，其ASP.NET构件化的Web开发方式以及Visual Stidio.net开发环境的强大支持，大大降低了开发企业应用的复杂度，Java平台后来出现的JSF也承袭了这一思想。两大平台在相互竞争和模仿中不断向前发展。</p>
+<h3 id="轻量级框架开发"><a href="#轻量级框架开发" class="headerlink" title="轻量级框架开发"></a>轻量级框架开发</h3><p>随着业务不断复杂，我们需要在架构层面上解决维护性和扩展性等问题，这个时候，MVC的概念被引入到了Web开发中，模型Model用于封装与业务逻辑相关的数据和数据处理方法，视图View是数据的HTML展现，控制器Controller负责响应请求，协调Model和View。Model，View和Controller的分开，是一种典型的关注点分离的思想。此外，数据访问也逐渐通过面向对象的方式来替代直接的SQL访问，出现了ORM（Object Relation Mapping）的概念。此时框架化开发非常流行。而基于IoC和AOP思想的Spring框架的出现，使得各层次间解耦变得非常容易，摒弃了早期EJB的笨重，SSH（Struts2+spring+hibernate）一度成为Java web开发中最流行的框架组合，至今仍有很多基于SSH开发的java web工程。</p>
+<h2 id="为什么选择SSM"><a href="#为什么选择SSM" class="headerlink" title="为什么选择SSM"></a>为什么选择SSM</h2><p>上面说了这么多，那么，现阶段java web开发要采用什么技术，我们今天的主角SSM究竟是一种怎样的存在，还要看看它们都是什么。</p>
+<h3 id="Mybatis–更轻量灵活的ORM"><a href="#Mybatis–更轻量灵活的ORM" class="headerlink" title="Mybatis–更轻量灵活的ORM"></a>Mybatis–更轻量灵活的ORM</h3><p>在建立对象关系映射时候，早期都使用hibernate，这是一个提供了完整ORM的框架，它屏蔽了SQL操作，使得我们可以通过面向对象的方式操作数据库。然而有两个问题，首先hibernate为了适配所有的不同类型数据库的SQl方言，所以它很重量级。另一个问题就是一旦不能直接操作SQL，就无法针对数据库访问性能作优化。而mybatis最大的好处就是sql完全手写，框架只提供映射，不但没有了上面的问题，还降低了学习成本。它也很容易和spring整合。</p>
+<h3 id="Spring–java开发的春天"><a href="#Spring–java开发的春天" class="headerlink" title="Spring–java开发的春天"></a>Spring–java开发的春天</h3><p>spring的产生本来就是一种颠覆性的存在，在那个众多继承接口限制的ejb开发的时代，spring提供了一种完全不同的思路，依赖注入和控制反转，轻松实现了各层次之间的解耦，面向切面编程扩展了面向对象编程。在ssm中，spring发挥了和ssh中相同的作用，能够很方便地整合其它功能。</p>
+<h3 id="SpringMVC–非侵入式的MVC"><a href="#SpringMVC–非侵入式的MVC" class="headerlink" title="SpringMVC–非侵入式的MVC"></a>SpringMVC–非侵入式的MVC</h3><p>Struts2曾经是非常火爆的web MVC框架，不过它是侵入式的框架，使用的时候要继承它提供的类，加上它确实很笨重也不太方便，所以springMVC一出现，就迅速占领了市场，加上Struts2一度被曝出重大漏洞，所以现在使用的不多了。springMVC本来就是spring项目的一部分，所以可以与spring无缝整合，成为目前使用人数最多的java web MVC框架。</p>
+<hr>
+<p>其实框架只是工具，不变的是思想，随着spring boot的发展，其实现在有跟多人开始喜欢选择这种简化的快速开发方案，而且也确实好用，将来某一天可能会有新的技术再出现那么情况又会不一样。今天选择SSM是因为它能提供一套成熟且完备的开发方案。</p>
+<p>后面我会发文章整理SSM搭建流程。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag"># java</a>
+          
+            <a href="/tags/ssm/" rel="tag"># ssm</a>
+          
+            <a href="/tags/背景/" rel="tag"># 背景</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/08/08/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/upload/image/fx.jpeg"
+               alt="隋堤倦客" />
+          <p class="site-author-name" itemprop="name">隋堤倦客</p>
+           
+              <p class="site-description motion-element" itemprop="description">我挥舞着键盘和本子，发誓要把这世界写个明明白白！！！</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">Artikel</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">Tags</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/fx109138" target="_blank" title="github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      github
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/sui-di-juan-ke" target="_blank" title="zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      zhihu
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java-web开发中SSM框架搭建背景"><span class="nav-number">1.</span> <span class="nav-text">Java web开发中SSM框架搭建背景</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#从web开发技术历史看javaweb"><span class="nav-number">1.1.</span> <span class="nav-text">从web开发技术历史看javaweb</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#从静态到动态"><span class="nav-number">1.1.1.</span> <span class="nav-text">从静态到动态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Web编程脚本语言产生"><span class="nav-number">1.1.2.</span> <span class="nav-text">Web编程脚本语言产生</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#大型web项目构建"><span class="nav-number">1.1.3.</span> <span class="nav-text">大型web项目构建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#轻量级框架开发"><span class="nav-number">1.1.4.</span> <span class="nav-text">轻量级框架开发</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么选择SSM"><span class="nav-number">1.2.</span> <span class="nav-text">为什么选择SSM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Mybatis–更轻量灵活的ORM"><span class="nav-number">1.2.1.</span> <span class="nav-text">Mybatis–更轻量灵活的ORM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring–java开发的春天"><span class="nav-number">1.2.2.</span> <span class="nav-text">Spring–java开发的春天</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SpringMVC–非侵入式的MVC"><span class="nav-number">1.2.3.</span> <span class="nav-text">SpringMVC–非侵入式的MVC</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">隋堤倦客</span>
+</div>
+
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
