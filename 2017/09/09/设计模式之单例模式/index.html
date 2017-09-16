@@ -103,7 +103,7 @@
 <meta property="og:description" content="设计模式分类23种设计模式一共分为三种类型：  创建型模式：单例模式、工厂方法模式、抽象工厂模式、建造者模式、原型模式 结构型模式：代理模式、装饰模式、适配器模式、组合模式、门面模式、享元模式、桥梁模式 行为型模式：模版方法模式、中介者模式、命令模式、责任链模式、策略模式、迭代器模式、观察者模式、备忘录模式、访问者模式、状态模式、解释器模式  这一篇首先来介绍单例模式。 单例模式的概念 保证一个类">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://oux9g0njr.bkt.clouddn.com/17-9-10/11592691.jpg">
-<meta property="og:updated_time" content="2017-09-10T08:03:35.000Z">
+<meta property="og:updated_time" content="2017-09-16T12:26:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="设计模式之单例模式">
 <meta name="twitter:description" content="设计模式分类23种设计模式一共分为三种类型：  创建型模式：单例模式、工厂方法模式、抽象工厂模式、建造者模式、原型模式 结构型模式：代理模式、装饰模式、适配器模式、组合模式、门面模式、享元模式、桥梁模式 行为型模式：模版方法模式、中介者模式、命令模式、责任链模式、策略模式、迭代器模式、观察者模式、备忘录模式、访问者模式、状态模式、解释器模式  这一篇首先来介绍单例模式。 单例模式的概念 保证一个类">
@@ -362,6 +362,22 @@
 <h3 id="优点缺点"><a href="#优点缺点" class="headerlink" title="优点缺点"></a>优点缺点</h3><p>单例模式的优点在于全局只生成一个实例，减少了系统的开销，可以避免重复占用资源，方便进行全局的管理。</p>
 <p>单例模式的缺点在于一旦被声明为单例，它的扩展性就会受到影响，所以单例模式只能在需要的时候使用。</p>
 <h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><p>单例模式需要注意的最主要的问题就是多线程下面的同步问题，还有就是记住，只有需要使用单例的特定环境才能使用单例设计模式。</p>
+<h3 id="补充内容"><a href="#补充内容" class="headerlink" title="补充内容"></a>补充内容</h3><p>上面我说的内容其实只是最基本的单例设计模式，实际应用中还有很多复杂的情况，也衍生了很多新的单例模式，所以在这里增加了一些补充的内容。</p>
+<p>首先上面的单例即使同步了难道就真的做到单例了吗，其实不然，创建对象的可以不用new，创建对象有很多种方式：</p>
+<ul>
+<li>通过new关键词 【也只最常用的一种实现方式】</li>
+<li>通过反射机制实现 【这里通过反射有两种实现方式：a、Class类的newInstance方法创建对象 b、java.lang.relect.Constructor类里也有一个newInstance方法可以创建对象】</li>
+<li>通过clone方法实现 【该方法需要让当前类实现Cloneable接口 重写clone方法】</li>
+<li>通过序列化以及反序列化实现 【该方法需要当前类实现】</li>
+</ul>
+<p>而一旦不使用new，上面的方式就不一定生效了，克隆的问题后面原型模式会详细分析，这里只看反序列化和反射，不幸的是，上面的方式都保证不了单例，于是有了一种新的方式</p>
+<ul>
+<li>枚举式</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">enum</span> Singleton&#123;</div><div class="line">	INSTANCE;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>在这种单例模式中，INSTANCE可以被看做是Singleton的一个实例，我们也可以定义它的属性和方法，用Singleton.INSTANCE可以获取到这个唯一的实例，这种方式避免了反射和反序列化的漏洞。调用的效率比较高，线程安全，实现简单。唯一的缺点是没有实现延时加载。</p>
+<p>此外还有一种比较好的结合懒汉式和饿汉式的一种方式，利用静态内部类实现单例<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span></span>&#123;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">SingletonHolder</span></span>&#123;</div><div class="line">		<span class="keyword">private</span> <span class="keyword">static</span> singletonInstance=<span class="keyword">new</span> Singleton();</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">private</span> Singleton&#123;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">static</span> getSingleton&#123;</div><div class="line">		<span class="keyword">return</span> SingletonHolder. singletonInstance;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>还有一种登记式的单例模式，由于不常见，在这里不说明了，单例模式到此全部结束。</p>
 
       
     </div>
@@ -549,7 +565,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#设计模式分类"><span class="nav-number">1.</span> <span class="nav-text">设计模式分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单例模式的概念"><span class="nav-number">2.</span> <span class="nav-text">单例模式的概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#举个栗子"><span class="nav-number">2.1.</span> <span class="nav-text">举个栗子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#适用范围"><span class="nav-number">2.2.</span> <span class="nav-text">适用范围</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优点缺点"><span class="nav-number">2.3.</span> <span class="nav-text">优点缺点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意事项"><span class="nav-number">2.4.</span> <span class="nav-text">注意事项</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#设计模式分类"><span class="nav-number">1.</span> <span class="nav-text">设计模式分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单例模式的概念"><span class="nav-number">2.</span> <span class="nav-text">单例模式的概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#举个栗子"><span class="nav-number">2.1.</span> <span class="nav-text">举个栗子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#适用范围"><span class="nav-number">2.2.</span> <span class="nav-text">适用范围</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优点缺点"><span class="nav-number">2.3.</span> <span class="nav-text">优点缺点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意事项"><span class="nav-number">2.4.</span> <span class="nav-text">注意事项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#补充内容"><span class="nav-number">2.5.</span> <span class="nav-text">补充内容</span></a></li></ol></li></ol></div>
             
 
           </div>
