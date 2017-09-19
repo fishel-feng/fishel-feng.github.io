@@ -103,7 +103,8 @@
 <meta property="og:description" content="什么是适配器模式 将一个类的接口适配成客户端所期待的另一种接口，从而使原本因接口不匹配而无法在一起工作的两个类能够在一起工作。  适配器的概念其实非常容易理解，生活中有很多适配器的例子，各种各样的转接设备，很常见也很实用。而程序中的适配器也是这样，同样也是起到一个转接的作用。 举个栗子 适配器模式中一共有三种角色：目标角色、源角色和适配器角色，下面编码来感受一下  目标角色及实现  1234567">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://oux9g0njr.bkt.clouddn.com/17-9-18/23995627.jpg">
-<meta property="og:updated_time" content="2017-09-18T14:31:29.000Z">
+<meta property="og:image" content="http://oux9g0njr.bkt.clouddn.com/17-9-19/77191014.jpg">
+<meta property="og:updated_time" content="2017-09-19T04:43:27.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="设计模式之适配器模式">
 <meta name="twitter:description" content="什么是适配器模式 将一个类的接口适配成客户端所期待的另一种接口，从而使原本因接口不匹配而无法在一起工作的两个类能够在一起工作。  适配器的概念其实非常容易理解，生活中有很多适配器的例子，各种各样的转接设备，很常见也很实用。而程序中的适配器也是这样，同样也是起到一个转接的作用。 举个栗子 适配器模式中一共有三种角色：目标角色、源角色和适配器角色，下面编码来感受一下  目标角色及实现  1234567">
@@ -360,7 +361,24 @@
 <h2 id="适用范围"><a href="#适用范围" class="headerlink" title="适用范围"></a>适用范围</h2><p>适用范围也很容易理解，和现实中的场景也一样，新功能旧功能之间，或者两个不兼容的系统之间无法共存，就可以通过适配器模式来实现。</p>
 <h2 id="优点缺点"><a href="#优点缺点" class="headerlink" title="优点缺点"></a>优点缺点</h2><p>适配器模式优点很多，首先是它可以使不相关的类之间建立联系，并且能够运行在一起，增加了类的复用度和透明度，而且它作为独立的一部分增加和删除都不会对原系统产生影响，扩展很安全。</p>
 <h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>到此，适配器模式其实还没有结束。考虑到实际场景中，通常需要适配的源角色往往不是只有一个，由于java语言不支持多继承，此时采用上面的模式就力不从心了，难道这样就没办法适配了吗？当然不是，上限介绍的其实只是适配器模式的一种，叫做类适配器，是通过继承的方式实现的。而还有一种通过组合来实现的适配器，叫做对象适配器。</p>
-<h2 id="对象适配器"><a href="#对象适配器" class="headerlink" title="对象适配器"></a>对象适配器</h2>
+<h2 id="对象适配器"><a href="#对象适配器" class="headerlink" title="对象适配器"></a>对象适配器</h2><p>先画一个模型图<br><img src="http://oux9g0njr.bkt.clouddn.com/17-9-19/77191014.jpg" alt=""></p>
+<p>其中目标角色的编码和上面相同，下面是其他部分编码</p>
+<ul>
+<li>源角色</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Adaptee1</span> </span>&#123;</div><div class="line">    <span class="comment">//源角色方法</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">specificRequest</span><span class="params">()</span></span>&#123;</div><div class="line">        System.out.println(<span class="string">"Adaptee1"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Adaptee2</span> </span>&#123;</div><div class="line">    <span class="comment">//源角色方法</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">specificRequest</span><span class="params">()</span></span>&#123;</div><div class="line">        System.out.println(<span class="string">"Adaptee2"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>适配器</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Adapter</span> <span class="keyword">implements</span> <span class="title">Target</span> </span>&#123;</div><div class="line">    <span class="comment">//源角色对象</span></div><div class="line">    <span class="keyword">private</span> Adaptee1 adaptee1;</div><div class="line">    <span class="keyword">private</span> Adaptee2 adaptee2;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Adapter</span><span class="params">(Adaptee1 adaptee1, Adaptee2 adaptee2)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.adaptee1 = adaptee1;</div><div class="line">        <span class="keyword">this</span>.adaptee2 = adaptee2;</div><div class="line">    &#125;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">request</span><span class="params">()</span> </span>&#123;</div><div class="line">        adaptee1.specificRequest();</div><div class="line">        adaptee2.specificRequest();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>应用场景</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        Target target;</div><div class="line">        target = <span class="keyword">new</span> ConcreteTarget();</div><div class="line">        target.request();</div><div class="line">        target = <span class="keyword">new</span> Adapter(<span class="keyword">new</span> Adaptee1(), <span class="keyword">new</span> Adaptee2());</div><div class="line">        target.request();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>输出结果</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Target</div><div class="line">Adaptee1</div><div class="line">Adaptee2</div></pre></td></tr></table></figure>
+<p>这样就可以实现针对多个适配源的适配，对象适配器没有那么多的局限性，但是不容易扩展。不过要记住，适配器模式本身就是一种补救的设计模式，在实际应用中往往是为了解决一些不可避免的特定需求而存在的，正确使用才能用好这种设计模式。</p>
+
       
     </div>
     
