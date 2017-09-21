@@ -96,18 +96,20 @@
 
 
 
-<meta name="description" content="什么是中介者模式">
+<meta name="description" content="什么是中介者模式 定义一个中介对象来封装系列对象之间的交互。中介者使各个对象不需要显示地相互引用，从而使其耦合性松散，而且可以独立地改变他们之间的交互。  看完定义其实大概就能知道中介者模式是什么样子了，中介者模式可以把复杂的网状交互模式转化成清晰的星形交互模式，从而降低程序间耦合。 举个栗子中介者模式模型如下 中介者模式有三种角色组成，分别为抽象中介者、具体中介者、同事，下面是编码实现  抽象中">
 <meta name="keywords" content="设计模式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="设计模式之中介者模式">
-<meta property="og:url" content="http://yoursite.com/2017/09/20/设计模式之中介者模式/index.html">
+<meta property="og:url" content="http://fx109138.github.io/2017/09/20/设计模式之中介者模式/index.html">
 <meta property="og:site_name" content="隋堤倦客">
-<meta property="og:description" content="什么是中介者模式">
+<meta property="og:description" content="什么是中介者模式 定义一个中介对象来封装系列对象之间的交互。中介者使各个对象不需要显示地相互引用，从而使其耦合性松散，而且可以独立地改变他们之间的交互。  看完定义其实大概就能知道中介者模式是什么样子了，中介者模式可以把复杂的网状交互模式转化成清晰的星形交互模式，从而降低程序间耦合。 举个栗子中介者模式模型如下 中介者模式有三种角色组成，分别为抽象中介者、具体中介者、同事，下面是编码实现  抽象中">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-20T11:38:08.000Z">
+<meta property="og:image" content="http://oux9g0njr.bkt.clouddn.com/17-9-21/34911819.jpg">
+<meta property="og:updated_time" content="2017-09-21T09:28:47.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="设计模式之中介者模式">
-<meta name="twitter:description" content="什么是中介者模式">
+<meta name="twitter:description" content="什么是中介者模式 定义一个中介对象来封装系列对象之间的交互。中介者使各个对象不需要显示地相互引用，从而使其耦合性松散，而且可以独立地改变他们之间的交互。  看完定义其实大概就能知道中介者模式是什么样子了，中介者模式可以把复杂的网状交互模式转化成清晰的星形交互模式，从而降低程序间耦合。 举个栗子中介者模式模型如下 中介者模式有三种角色组成，分别为抽象中介者、具体中介者、同事，下面是编码实现  抽象中">
+<meta name="twitter:image" content="http://oux9g0njr.bkt.clouddn.com/17-9-21/34911819.jpg">
 
 
 
@@ -136,7 +138,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/09/20/设计模式之中介者模式/"/>
+  <link rel="canonical" href="http://fx109138.github.io/2017/09/20/设计模式之中介者模式/"/>
 
 
 
@@ -265,7 +267,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/20/设计模式之中介者模式/">
+    <link itemprop="mainEntityOfPage" href="http://fx109138.github.io/2017/09/20/设计模式之中介者模式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="隋堤倦客">
@@ -326,7 +328,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  8
+                  760
                 </span>
               
 
@@ -342,7 +344,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  1
+                  3
                 </span>
               
             </div>
@@ -363,7 +365,35 @@
       
 
       
-        <h2 id="什么是中介者模式"><a href="#什么是中介者模式" class="headerlink" title="什么是中介者模式"></a>什么是中介者模式</h2>
+        <h2 id="什么是中介者模式"><a href="#什么是中介者模式" class="headerlink" title="什么是中介者模式"></a>什么是中介者模式</h2><blockquote>
+<p>定义一个中介对象来封装系列对象之间的交互。中介者使各个对象不需要显示地相互引用，从而使其耦合性松散，而且可以独立地改变他们之间的交互。</p>
+</blockquote>
+<p>看完定义其实大概就能知道中介者模式是什么样子了，中介者模式可以把复杂的网状交互模式转化成清晰的星形交互模式，从而降低程序间耦合。</p>
+<h2 id="举个栗子"><a href="#举个栗子" class="headerlink" title="举个栗子"></a>举个栗子</h2><p>中介者模式模型如下<br><img src="http://oux9g0njr.bkt.clouddn.com/17-9-21/34911819.jpg" alt=""></p>
+<p>中介者模式有三种角色组成，分别为抽象中介者、具体中介者、同事，下面是编码实现</p>
+<ul>
+<li>抽象中介者</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Mediator</span> </span>&#123;</div><div class="line">    <span class="comment">//通过set方法传入同事类</span></div><div class="line">    <span class="keyword">protected</span> ConcreteColleague1 concreteColleague1;</div><div class="line">    <span class="keyword">protected</span> ConcreteColleague2 concreteColleague2;</div><div class="line">    <span class="function"><span class="keyword">public</span> ConcreteColleague1 <span class="title">getConcreteColleague1</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> concreteColleague1;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setConcreteColleague1</span><span class="params">(ConcreteColleague1 concreteColleague1)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.concreteColleague1 = concreteColleague1;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> ConcreteColleague2 <span class="title">getConcreteColleague2</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> concreteColleague2;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setConcreteColleague2</span><span class="params">(ConcreteColleague2 concreteColleague2)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.concreteColleague2 = concreteColleague2;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//中介者自身实现</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">method1</span><span class="params">()</span></span>;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">method2</span><span class="params">()</span></span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>具体中介者</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConcreteMediator</span> <span class="keyword">extends</span> <span class="title">Mediator</span> </span>&#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method1</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="comment">//可以在中介者中调用同事方法</span></div><div class="line">        <span class="keyword">super</span>.concreteColleague1.c1Method();</div><div class="line">        <span class="keyword">super</span>.concreteColleague2.c2Method();</div><div class="line">    &#125;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method2</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.concreteColleague1.c1Method();</div><div class="line">        <span class="keyword">super</span>.concreteColleague2.c2Method();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>抽象同事</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Colleague</span> </span>&#123;</div><div class="line">    <span class="keyword">protected</span> Mediator mediator;</div><div class="line">    <span class="comment">//通过构造方法传入中介者</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Colleague</span><span class="params">(Mediator mediator)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.mediator = mediator;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>具体同事</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConcreteColleague1</span> <span class="keyword">extends</span> <span class="title">Colleague</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ConcreteColleague1</span><span class="params">(Mediator mediator)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>(mediator);</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">c1Method</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="comment">//自身方法</span></div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">mMethod1</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="comment">//可以调用中介者的方法</span></div><div class="line">        <span class="keyword">super</span>.mediator.method1();</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConcreteColleague2</span> <span class="keyword">extends</span> <span class="title">Colleague</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ConcreteColleague2</span><span class="params">(Mediator mediator)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>(mediator);</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">c2Method</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="comment">//自身方法</span></div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">mMethod2</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="comment">//可以调用中介者的方法</span></div><div class="line">        <span class="keyword">super</span>.mediator.method2();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>以上就是中介者模式，我们可以看到，同事是通过set传入的，中介者是通过构造方法传入的，这是因为中介者不依赖同事，而同事必须要依赖中介者。通过这种方式就可以把一对多的关系转化成一对一的关系。</p>
+<h2 id="适用范围"><a href="#适用范围" class="headerlink" title="适用范围"></a>适用范围</h2><p>中介者模式适用于处理复杂的依赖关系，当类间结构非常复杂难以理清时候，适当使用中介者模式有利于开发。</p>
+<h2 id="优点缺点"><a href="#优点缺点" class="headerlink" title="优点缺点"></a>优点缺点</h2><p>中介者模式的优点是减少了依赖关系，降低了类之间的耦合，使程序更加清晰。</p>
+<p>中介者模式的缺点是中介者类本身会变得很复杂，类中逻辑可能不易处理。</p>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>在面向对象中，独立存在的类是没有意义的，只要有类就一定有依赖，那么是每次都要用中介者模式吗？答案是否定的。中介者模式可以解决依赖关于复杂的问题，但是如果依赖本来不多，强行使用中介者模式可能会给开发带来不必要的麻烦，所以不要滥用。</p>
+<p>一个典型的应用者模式就是MVC中的controller，它把模型层和视图层分离，通过内部调度解除了二者之间的耦合，可以提升框架的扩展性，值得借鉴。</p>
+
       
     </div>
     
@@ -599,7 +629,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是中介者模式"><span class="nav-number">1.</span> <span class="nav-text">什么是中介者模式</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是中介者模式"><span class="nav-number">1.</span> <span class="nav-text">什么是中介者模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#举个栗子"><span class="nav-number">2.</span> <span class="nav-text">举个栗子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#适用范围"><span class="nav-number">3.</span> <span class="nav-text">适用范围</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优点缺点"><span class="nav-number">4.</span> <span class="nav-text">优点缺点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意事项"><span class="nav-number">5.</span> <span class="nav-text">注意事项</span></a></li></ol></div>
             
 
           </div>
@@ -651,7 +681,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共20.3k字</span>
+  <span class="post-count">博客全站共21.0k字</span>
 </div>
 
         
