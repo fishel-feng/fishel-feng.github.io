@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fx109138.github.io/"/>
-  <updated>2017-09-21T14:36:26.000Z</updated>
+  <updated>2017-09-21T15:24:45.000Z</updated>
   <id>http://fx109138.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>设计模式之策略模式</title>
+    <link href="http://fx109138.github.io/2017/09/21/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://fx109138.github.io/2017/09/21/设计模式之策略模式/</id>
+    <published>2017-09-21T14:41:55.000Z</published>
+    <updated>2017-09-21T15:24:45.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="什么是策略模式"><a href="#什么是策略模式" class="headerlink" title="什么是策略模式"></a>什么是策略模式</h2><blockquote><p>定义一组算法，将每个算法都封装起来，并且使它们之间可以互换。</p></blockquote><p>策略模式也叫政策模式，它很好的应用了面向对象思想，下面来感受一下。</p><h2 id="举个栗子"><a href="#举个栗子" class="headerlink" title="举个栗子"></a>举个栗子</h2><p>策略模式的模型图<br><img src="http://oux9g0njr.bkt.clouddn.com/17-9-21/51504515.jpg" alt=""></p><p>策略模式有三种角色：上下文、抽象策略、具体策略，下面来看实例编码</p><ul><li>抽象策略</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Strategy</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">method</span><span class="params">()</span></span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure><ul><li>具体策略</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConcreteStrategy1</span> <span class="keyword">implements</span> <span class="title">Strategy</span> </span>&#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span> </span>&#123;</div><div class="line">        System.out.println(<span class="string">"策略1"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConcreteStrategy2</span> <span class="keyword">implements</span> <span class="title">Strategy</span> </span>&#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span> </span>&#123;</div><div class="line">        System.out.println(<span class="string">"策略2"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><ul><li>上下文</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Context</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> Strategy strategy;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Context</span><span class="params">(Strategy strategy)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.strategy = strategy;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">contextMethod</span><span class="params">()</span></span>&#123;</div><div class="line">        strategy.method();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><ul><li>调用场景</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        Strategy strategy1 = <span class="keyword">new</span> ConcreteStrategy1();</div><div class="line">        Strategy strategy2 = <span class="keyword">new</span> ConcreteStrategy2();</div><div class="line">        Context context;</div><div class="line">        context = <span class="keyword">new</span> Context(strategy1);</div><div class="line">        context.contextMethod();</div><div class="line">        context = <span class="keyword">new</span> Context(strategy2);</div><div class="line">        context.contextMethod();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><p>输出结果</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">策略1</div><div class="line">策略2</div></pre></td></tr></table></figure><p>这就是策略模式，特别简单，你甚至会觉得这就是很普通的代码，然而就是这样，只要有面向对象的思想，就能看懂策略模式。</p><h2 id="适用范围"><a href="#适用范围" class="headerlink" title="适用范围"></a>适用范围</h2><p>策略模式适用于在算法策略上不同但是需要相互切换的场景，我们无需关注算法内部细节，而且他们之间可以随意切换使用，非常自由。</p><h2 id="优点缺点"><a href="#优点缺点" class="headerlink" title="优点缺点"></a>优点缺点</h2><p>策略模式优点就是只要实现接口，就可以扩展，切换十分自由，并且通过一个上下文环境来避免了逻辑条件判断语句，简化了操作。</p><p>策略模式的缺点是类的数量会变多，而且所有的类都要对调用者暴露，违背迪米特法则，实际应用中需要结合其他设计模式来修正这些缺点。</p><h2 id="策略枚举"><a href="#策略枚举" class="headerlink" title="策略枚举"></a>策略枚举</h2><p>策略模式还有一种很好的用法就是策略枚举，这里用一个非常典型的加减法计算器为例</p><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">enum</span> Calculator &#123;  </div><div class="line">    ADD(<span class="string">"+"</span>) &#123;  </div><div class="line">        <span class="meta">@Override</span>  </div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">exec</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;   </div><div class="line">            <span class="keyword">return</span> a+b;  </div><div class="line">        &#125;  </div><div class="line">    &#125;,   </div><div class="line">    SUB(<span class="string">"-"</span>) &#123;  </div><div class="line">        <span class="meta">@Override</span>  </div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">exec</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;   </div><div class="line">            <span class="keyword">return</span> a-b;  </div><div class="line">        &#125;  </div><div class="line">    &#125;;    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">int</span> <span class="title">exec</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span>;  </div><div class="line">    <span class="comment">//运算符  </span></div><div class="line">    <span class="keyword">private</span> String value = <span class="string">""</span>;  </div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Calculator</span><span class="params">(String value)</span> </span>&#123;  </div><div class="line">        <span class="keyword">this</span>.value = value;  </div><div class="line">    &#125; </div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getValue</span><span class="params">()</span> </span>&#123;  </div><div class="line">        <span class="keyword">return</span> value;  </div><div class="line">    &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure><ul><li>调用场景</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;  </div><div class="line"><span class="keyword">int</span> add = Calculator.ADD.exec(<span class="number">10</span>, <span class="number">30</span>);  </div><div class="line">    <span class="keyword">int</span> sub = Calculator.SUB.exec(<span class="number">10</span>, <span class="number">30</span>); </div><div class="line">&#125;</div></pre></td></tr></table></figure><p>非常简单，就是应用了一下枚举类，不过里面有着很明显的策略模式，这是一种很好的用法，用于处理不变的角色。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;什么是策略模式&quot;&gt;&lt;a href=&quot;#什么是策略模式&quot; class=&quot;headerlink&quot; title=&quot;什么是策略模式&quot;&gt;&lt;/a&gt;什么是策略模式&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;定义一组算法，将每个算法都封装起来，并且使它们之间可以互换。&lt;/p&gt;
+&lt;/
+      
+    
+    </summary>
+    
+    
+      <category term="设计模式" scheme="http://fx109138.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>设计模式之责任链模式</title>
@@ -475,33 +500,6 @@
       <category term="java" scheme="http://fx109138.github.io/tags/java/"/>
     
       <category term="ssm" scheme="http://fx109138.github.io/tags/ssm/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SSM框架之SpringMVC</title>
-    <link href="http://fx109138.github.io/2017/08/31/SSM%E6%A1%86%E6%9E%B6%E4%B9%8BSpringMVC/"/>
-    <id>http://fx109138.github.io/2017/08/31/SSM框架之SpringMVC/</id>
-    <published>2017-08-31T11:59:34.000Z</published>
-    <updated>2017-09-09T10:01:22.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="spring的重要部分–spring-MVC"><a href="#spring的重要部分–spring-MVC" class="headerlink" title="spring的重要部分–spring MVC"></a>spring的重要部分–spring MVC</h1><h2 id="最流行的Java-web-MVC框架"><a href="#最流行的Java-web-MVC框架" class="headerlink" title="最流行的Java web MVC框架"></a>最流行的Java web MVC框架</h2><p>如果说其他框架的地位还有什么争议的话，springMVC的王者地位绝对是无可置疑的，下面是2016年的Java框架使用统计信息图<br><img src="http://oux9g0njr.bkt.clouddn.com/17-8-31/35351504.jpg" alt=""><br>从中可以直观的看出来吧，springMVC的流行程度真的不是其他框架能比的，作为最好用的web MVC框架，它对Struts2的碾压自然不用多谈（Struts我用的次数不多，但是我知道它使用时候是要继承框架中的类，没办法做到不侵入），它是一款非侵入，松耦合的框架，同时本身作为spring家族的一员，它与spring本身就不需要刻意整合，优点还有很多，非常值得学习。</p><h1 id="spring-mvc工作流程"><a href="#spring-mvc工作流程" class="headerlink" title="spring mvc工作流程"></a>spring mvc工作流程</h1><h2 id="请求处理流程"><a href="#请求处理流程" class="headerlink" title="请求处理流程"></a>请求处理流程</h2><p>下面是一张springMVC工作流程图<br><img src="http://oux9g0njr.bkt.clouddn.com/17-8-31/74834707.jpg" alt=""><br>图片中包含了一次简单的请求springMVC的完整处理流程，当接收到用户发来的请求时，首先会交给前端控制器（DispatcherServlet），然后会去寻找对应的处理器映射器（HandlerMapping）向前端控制器返回Handler。拿到Handler后，前端控制器调用处理器适配器（HandlerAdapter）去执行Handler（就是我们写的Controller），由Handler调用业务层，完成业务操作，返回模型和视图（ModelAndView）。ModelAndView回传后，DispatcherServlet会去调用对应的视图解析器（ViewResolver），对view进行解析，解析好view再由DispatcherServlet将model填充进去，然后响应前端。</p><p>这就是springMVC的工作过程，而其中这些复杂的东西全部都是框架给我们完成的，我们需要自己开发的，也只有Controller部分，由此可见实际开发中springMVC其实很容易使用。</p><h2 id="简单的springMVC实例"><a href="#简单的springMVC实例" class="headerlink" title="简单的springMVC实例"></a>简单的springMVC实例</h2><p>首先我们要知道springMVC是web框架，所以我们首先要建立一个web项目，引入spring核心以及webMVC相关jar。然后就是配置web.xml里面只需要配置一个servlet，就是DispatcherServlet，响应所有的路径请求。然后配置springMVC，当然其中要配置spring及bean相关的东西，此外特有的就是需要处理类型所对应的HandlerMapping，ViewResolver，最后在Controller中使用注解配置好方法对应的请求路径就可以启动了。</p><hr><p>至此，SSM三大框架就全都学了一遍了，说的比较笼统，实例也没有代码演示，因为实际开发中整合框架还是最常用的，而且实际开发中jar是统一交给maven管理的，后面介绍SSM整合时候会有代码示例。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;spring的重要部分–spring-MVC&quot;&gt;&lt;a href=&quot;#spring的重要部分–spring-MVC&quot; class=&quot;headerlink&quot; title=&quot;spring的重要部分–spring MVC&quot;&gt;&lt;/a&gt;spring的重要部分–spring M
-      
-    
-    </summary>
-    
-    
-      <category term="java" scheme="http://fx109138.github.io/tags/java/"/>
-    
-      <category term="ssm" scheme="http://fx109138.github.io/tags/ssm/"/>
-    
-      <category term="springMVC" scheme="http://fx109138.github.io/tags/springMVC/"/>
     
   </entry>
   
