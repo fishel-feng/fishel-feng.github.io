@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="隋堤倦客" />
+  <meta name="keywords" content="设计模式," />
 
 
 
@@ -96,16 +96,20 @@
 
 
 
-<meta name="description" content="我挥舞着键盘和本子，发誓要把这世界写个明明白白！！！">
-<meta property="og:type" content="website">
-<meta property="og:title" content="隋堤倦客">
-<meta property="og:url" content="http://fx109138.github.io/page/3/index.html">
+<meta name="description" content="什么是迭代器模式 提供一种方法访问容器对象中各个元素，而又不需要暴露该对象的内部细节。  迭代器模式提供的是遍历容器的一种方法，它单独管理容器的遍历任务，使遍历与容器自身任务分离开。然而，这种模式现在已经深入到jdk内部了，我们早已经不需要自己手动实现迭代器模式了，不过为了学习还是试着写一下。 举个栗子迭代器模式的模型图 然后开始对各个角色开始编码  抽象迭代器  12345public inte">
+<meta name="keywords" content="设计模式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="设计模式之迭代器模式">
+<meta property="og:url" content="http://fx109138.github.io/2017/09/22/设计模式之迭代器模式/index.html">
 <meta property="og:site_name" content="隋堤倦客">
-<meta property="og:description" content="我挥舞着键盘和本子，发誓要把这世界写个明明白白！！！">
+<meta property="og:description" content="什么是迭代器模式 提供一种方法访问容器对象中各个元素，而又不需要暴露该对象的内部细节。  迭代器模式提供的是遍历容器的一种方法，它单独管理容器的遍历任务，使遍历与容器自身任务分离开。然而，这种模式现在已经深入到jdk内部了，我们早已经不需要自己手动实现迭代器模式了，不过为了学习还是试着写一下。 举个栗子迭代器模式的模型图 然后开始对各个角色开始编码  抽象迭代器  12345public inte">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://oux9g0njr.bkt.clouddn.com/17-9-22/65971582.jpg">
+<meta property="og:updated_time" content="2017-09-22T01:04:17.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="隋堤倦客">
-<meta name="twitter:description" content="我挥舞着键盘和本子，发誓要把这世界写个明明白白！！！">
+<meta name="twitter:title" content="设计模式之迭代器模式">
+<meta name="twitter:description" content="什么是迭代器模式 提供一种方法访问容器对象中各个元素，而又不需要暴露该对象的内部细节。  迭代器模式提供的是遍历容器的一种方法，它单独管理容器的遍历任务，使遍历与容器自身任务分离开。然而，这种模式现在已经深入到jdk内部了，我们早已经不需要自己手动实现迭代器模式了，不过为了学习还是试着写一下。 举个栗子迭代器模式的模型图 然后开始对各个角色开始编码  抽象迭代器  12345public inte">
+<meta name="twitter:image" content="http://oux9g0njr.bkt.clouddn.com/17-9-22/65971582.jpg">
 
 
 
@@ -134,13 +138,13 @@
 
 
 
-  <link rel="canonical" href="http://fx109138.github.io/page/3/"/>
+  <link rel="canonical" href="http://fx109138.github.io/2017/09/22/设计模式之迭代器模式/"/>
 
 
 
 
 
-  <title>隋堤倦客</title>
+  <title>设计模式之迭代器模式 | 隋堤倦客</title>
   
 
 
@@ -175,9 +179,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -304,9 +306,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -319,7 +321,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://fx109138.github.io/2017/09/08/SSM框架整合/">
+    <link itemprop="mainEntityOfPage" href="http://fx109138.github.io/2017/09/22/设计模式之迭代器模式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="隋堤倦客">
@@ -336,9 +338,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/08/SSM框架整合/" itemprop="url">SSM框架整合--工具准备</a></h1>
+          <h1 class="post-title" itemprop="name headline">设计模式之迭代器模式</h1>
         
 
         <div class="post-meta">
@@ -350,8 +350,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-08T15:38:11+08:00">
-                2017-09-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-22T08:19:55+08:00">
+                2017-09-22
               </time>
             
 
@@ -382,168 +382,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  1,824
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长</span>
-                
-                <span title="阅读时长">
-                  7
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          使用Intellij IDEA开发Java应用Intellij IDEA是什么首先Intellij IDEA是一款Java集成开发环境（IDE），是由JetBrains公司所创，该公司总部位于捷克共和国的首都布拉格，是一家在IDE领域十分优秀的公司，该公司还开发了WebStorm，PyCharm，P
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/09/08/SSM框架整合/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://fx109138.github.io/2017/08/31/SSM框架之SpringMVC/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="隋堤倦客">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/upload/image/fx.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="隋堤倦客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/31/SSM框架之SpringMVC/" itemprop="url">SSM框架之SpringMVC</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-31T19:59:34+08:00">
-                2017-08-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计</span>
-                
-                <span title="字数统计">
-                  657
+                  566
                 </span>
               
 
@@ -580,18 +419,37 @@
       
 
       
-        
-          
-          spring的重要部分–spring MVC最流行的Java web MVC框架如果说其他框架的地位还有什么争议的话，springMVC的王者地位绝对是无可置疑的，下面是2016年的Java框架使用统计信息图从中可以直观的看出来吧，springMVC的流行程度真的不是其他框架能比的，作为最好用的we
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/08/31/SSM框架之SpringMVC/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+        <h2 id="什么是迭代器模式"><a href="#什么是迭代器模式" class="headerlink" title="什么是迭代器模式"></a>什么是迭代器模式</h2><blockquote>
+<p>提供一种方法访问容器对象中各个元素，而又不需要暴露该对象的内部细节。</p>
+</blockquote>
+<p>迭代器模式提供的是遍历容器的一种方法，它单独管理容器的遍历任务，使遍历与容器自身任务分离开。然而，这种模式现在已经深入到jdk内部了，我们早已经不需要自己手动实现迭代器模式了，不过为了学习还是试着写一下。</p>
+<h2 id="举个栗子"><a href="#举个栗子" class="headerlink" title="举个栗子"></a>举个栗子</h2><p>迭代器模式的模型图<br><img src="http://oux9g0njr.bkt.clouddn.com/17-9-22/65971582.jpg" alt=""></p>
+<p>然后开始对各个角色开始编码</p>
+<ul>
+<li>抽象迭代器</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Iterator</span> </span>&#123;</div><div class="line">    <span class="function">Object <span class="title">next</span><span class="params">()</span></span>;</div><div class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">hasNext</span><span class="params">()</span></span>;</div><div class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">remove</span><span class="params">()</span></span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>具体迭代器</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConcreteIterator</span> <span class="keyword">implements</span> <span class="title">Iterator</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> Vector vector;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">int</span> cursor = <span class="number">0</span>;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ConcreteIterator</span><span class="params">(Vector vector)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.vector = vector;</div><div class="line">    &#125;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">next</span><span class="params">()</span> </span>&#123;</div><div class="line">        Object result = <span class="keyword">null</span>;</div><div class="line">        <span class="keyword">if</span> (hasNext()) &#123;</div><div class="line">            result = vector.get(cursor++);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> result;</div><div class="line">    &#125;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">hasNext</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> cursor != vector.size();</div><div class="line">    &#125;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">remove</span><span class="params">()</span> </span>&#123;</div><div class="line">        vector.remove(cursor);</div><div class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>抽象容器</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Aggregate</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(Object object)</span></span>;</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">remove</span><span class="params">(Object object)</span></span>;</div><div class="line">    <span class="function">Iterator <span class="title">createIterator</span><span class="params">()</span></span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>具体容器</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConcreteAggregate</span> <span class="keyword">implements</span> <span class="title">Aggregate</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> Vector vector = <span class="keyword">new</span> Vector();</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(Object object)</span> </span>&#123;</div><div class="line">        vector.add(object);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">remove</span><span class="params">(Object object)</span> </span>&#123;</div><div class="line">        vector.remove(object);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> Iterator <span class="title">createIterator</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> ConcreteIterator(vector);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>调用场景</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        Aggregate aggregate=<span class="keyword">new</span> ConcreteAggregate();</div><div class="line">        aggregate.add(<span class="string">"1"</span>);</div><div class="line">        aggregate.add(<span class="string">"2"</span>);</div><div class="line">        aggregate.add(<span class="string">"3"</span>);</div><div class="line">        Iterator iterator=aggregate.createIterator();</div><div class="line">        <span class="keyword">while</span> (iterator.hasNext())&#123;</div><div class="line">            System.out.println(iterator.next());</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>以上就是自己手动实现迭代器的过程，我们会发现，jdk中早就已经有了这些实现了，我们很多时候只要直接使用就可以了。</p>
+<h2 id="适用范围"><a href="#适用范围" class="headerlink" title="适用范围"></a>适用范围</h2><p>迭代器模式与集合容器分不开，他就是专门为了解决容器内元素迭代问题而产生的，为不同容器遍历提供了统一的接口。</p>
+<h2 id="优点缺点"><a href="#优点缺点" class="headerlink" title="优点缺点"></a>优点缺点</h2><p>迭代器模式的优点在于他简化了遍历方式，提供了统一的操作接口封装性良好，用户只需要得到迭代器就可以遍历，而对于遍历算法则不用去关心。</p>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>在实际开发中不只是java，很多高级语言都提供了了常用容器的迭代器，迭代器模式作为一个早期的设计模式现在看来我们只要知道有这个东西就可以了。</p>
+
       
     </div>
     
@@ -600,346 +458,81 @@
 
     <div>
       
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+      
     </div>
 
     
 
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechat.jpg" alt="隋堤倦客 WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/aipay.png" alt="隋堤倦客 Alipay"/>
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
     
 
     
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://fx109138.github.io/2017/08/21/SSM框架之spring/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="隋堤倦客">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/upload/image/fx.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="隋堤倦客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/21/SSM框架之spring/" itemprop="url">SSM框架之spring</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-21T11:32:57+08:00">
-                2017-08-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/设计模式/" rel="tag"><i class="fa fa-tag"></i> 设计模式</a>
           
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计</span>
-                
-                <span title="字数统计">
-                  1,030
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长</span>
-                
-                <span title="阅读时长">
-                  4
-                </span>
-              
-            </div>
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          
-          spring框架是什么没有spring的时代曾经，在spring产生之前，大型java EE项目的开发都要使用一种基于javaEE标准的EJB容器技术来实现，这是原生j2ee标准下的一种规范化的技术。不过在早期的EJB2时代，有很多复杂的规范，很大程度上增加了程序开发和维护的复杂性，spring就是
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/08/21/SSM框架之spring/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/21/设计模式之策略模式/" rel="next" title="设计模式之策略模式">
+                <i class="fa fa-chevron-left"></i> 设计模式之策略模式
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-    <div>
-      
-    </div>
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://fx109138.github.io/2017/08/19/SSM框架之mybatis/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="隋堤倦客">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/upload/image/fx.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="隋堤倦客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/19/SSM框架之mybatis/" itemprop="url">SSM框架之mybatis</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+          <div class="post-nav-prev post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-19T15:25:39+08:00">
-                2017-08-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计</span>
-                
-                <span title="字数统计">
-                  624
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长</span>
-                
-                <span title="阅读时长">
-                  2
-                </span>
-              
-            </div>
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-          mybatis框架的原理及使用什么是mybatis在java web开发中，mybatis是一个用于持久化层的框架，是对jdbc操作数据库的封装。下面是一个标准的基于SSM的java web工程的层级结构图，持久层的作用就是把用户产生的各种信息最后存储到数据库中，在标准项目中只有持久化层可以直接操作
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/08/19/SSM框架之mybatis/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -949,343 +542,24 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://fx109138.github.io/2017/08/09/SMM框架搭建背景/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="隋堤倦客">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/upload/image/fx.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="隋堤倦客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/09/SMM框架搭建背景/" itemprop="url">SSM框架搭建背景</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-09T12:56:14+08:00">
-                2017-08-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计</span>
-                
-                <span title="字数统计">
-                  1,477
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长</span>
-                
-                <span title="阅读时长">
-                  5
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          Java web开发中SSM框架搭建背景从web开发技术历史看javaweb从静态到动态追溯到最早的web开发，那个时候还没有动态页面，当时只有HTML技术，主要是文本和图片（包括gif动态图片）。这种页面显示内容简单，而且重点是它只能做信息的展示，无法同用户进行交互。在这种情况下，一旦有需要同服务
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/08/09/SMM框架搭建背景/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
 
 
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://fx109138.github.io/2017/08/08/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="隋堤倦客">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/upload/image/fx.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="隋堤倦客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/08/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-08T23:50:42+08:00">
-                2017-08-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计</span>
-                
-                <span title="字数统计">
-                  78
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in 
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/08/08/hello-world/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
+          
+
+
+          
+  <div class="comments" id="comments">
     
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMDk3OS83NTI4"></div>
     
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
 
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
-  </nav>
-
-
-
-          </div>
-          
-
-
-          
 
 
         </div>
@@ -1307,8 +581,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/upload/image/fx.jpeg"
@@ -1392,6 +675,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是迭代器模式"><span class="nav-number">1.</span> <span class="nav-text">什么是迭代器模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#举个栗子"><span class="nav-number">2.</span> <span class="nav-text">举个栗子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#适用范围"><span class="nav-number">3.</span> <span class="nav-text">适用范围</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优点缺点"><span class="nav-number">4.</span> <span class="nav-text">优点缺点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意事项"><span class="nav-number">5.</span> <span class="nav-text">注意事项</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1522,10 +821,10 @@
   
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
 
-  
+
 
   
 
@@ -1554,6 +853,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
