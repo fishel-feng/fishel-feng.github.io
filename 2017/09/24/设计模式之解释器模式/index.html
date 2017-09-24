@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="java,ssm,springMVC," />
+  <meta name="keywords" content="设计模式," />
 
 
 
@@ -96,21 +96,20 @@
 
 
 
-<meta name="description" content="spring的重要部分–spring MVC最流行的Java web MVC框架如果说其他框架的地位还有什么争议的话，springMVC的王者地位绝对是无可置疑的，下面是2016年的Java框架使用统计信息图从中可以直观的看出来吧，springMVC的流行程度真的不是其他框架能比的，作为最好用的web MVC框架，它对Struts2的碾压自然不用多谈（Struts我用的次数不多，但是我知道它使用时">
-<meta name="keywords" content="java,ssm,springMVC">
+<meta name="description" content="解释器模式的概念 给定一个语言，定义它的文法的一种表示，并定义一个解释器，这个解释器使用该表示来解释语言中的句子。  这是23种设计模式中最后一种了，它是一种不太常用的设计模式，不过还是要学习的。 举个栗子解释器模式的模型图 解释器模式里面有四种角色：抽象解释器，终结符表达式，非终结符表达式，环境角色。  抽象表达式  1234public abstract class Expression &amp;#">
+<meta name="keywords" content="设计模式">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SSM框架之SpringMVC">
-<meta property="og:url" content="http://fx109138.github.io/2017/08/31/SSM框架之SpringMVC/index.html">
+<meta property="og:title" content="设计模式之解释器模式">
+<meta property="og:url" content="http://fx109138.github.io/2017/09/24/设计模式之解释器模式/index.html">
 <meta property="og:site_name" content="隋堤倦客">
-<meta property="og:description" content="spring的重要部分–spring MVC最流行的Java web MVC框架如果说其他框架的地位还有什么争议的话，springMVC的王者地位绝对是无可置疑的，下面是2016年的Java框架使用统计信息图从中可以直观的看出来吧，springMVC的流行程度真的不是其他框架能比的，作为最好用的web MVC框架，它对Struts2的碾压自然不用多谈（Struts我用的次数不多，但是我知道它使用时">
+<meta property="og:description" content="解释器模式的概念 给定一个语言，定义它的文法的一种表示，并定义一个解释器，这个解释器使用该表示来解释语言中的句子。  这是23种设计模式中最后一种了，它是一种不太常用的设计模式，不过还是要学习的。 举个栗子解释器模式的模型图 解释器模式里面有四种角色：抽象解释器，终结符表达式，非终结符表达式，环境角色。  抽象表达式  1234public abstract class Expression &amp;#">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://oux9g0njr.bkt.clouddn.com/17-8-31/35351504.jpg">
-<meta property="og:image" content="http://oux9g0njr.bkt.clouddn.com/17-8-31/74834707.jpg">
-<meta property="og:updated_time" content="2017-09-09T10:01:22.000Z">
+<meta property="og:image" content="http://oux9g0njr.bkt.clouddn.com/17-9-24/234057.jpg">
+<meta property="og:updated_time" content="2017-09-24T08:15:48.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SSM框架之SpringMVC">
-<meta name="twitter:description" content="spring的重要部分–spring MVC最流行的Java web MVC框架如果说其他框架的地位还有什么争议的话，springMVC的王者地位绝对是无可置疑的，下面是2016年的Java框架使用统计信息图从中可以直观的看出来吧，springMVC的流行程度真的不是其他框架能比的，作为最好用的web MVC框架，它对Struts2的碾压自然不用多谈（Struts我用的次数不多，但是我知道它使用时">
-<meta name="twitter:image" content="http://oux9g0njr.bkt.clouddn.com/17-8-31/35351504.jpg">
+<meta name="twitter:title" content="设计模式之解释器模式">
+<meta name="twitter:description" content="解释器模式的概念 给定一个语言，定义它的文法的一种表示，并定义一个解释器，这个解释器使用该表示来解释语言中的句子。  这是23种设计模式中最后一种了，它是一种不太常用的设计模式，不过还是要学习的。 举个栗子解释器模式的模型图 解释器模式里面有四种角色：抽象解释器，终结符表达式，非终结符表达式，环境角色。  抽象表达式  1234public abstract class Expression &amp;#">
+<meta name="twitter:image" content="http://oux9g0njr.bkt.clouddn.com/17-9-24/234057.jpg">
 
 
 
@@ -139,13 +138,13 @@
 
 
 
-  <link rel="canonical" href="http://fx109138.github.io/2017/08/31/SSM框架之SpringMVC/"/>
+  <link rel="canonical" href="http://fx109138.github.io/2017/09/24/设计模式之解释器模式/"/>
 
 
 
 
 
-  <title>SSM框架之SpringMVC | 隋堤倦客</title>
+  <title>设计模式之解释器模式 | 隋堤倦客</title>
   
 
 
@@ -322,7 +321,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://fx109138.github.io/2017/08/31/SSM框架之SpringMVC/">
+    <link itemprop="mainEntityOfPage" href="http://fx109138.github.io/2017/09/24/设计模式之解释器模式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="隋堤倦客">
@@ -339,7 +338,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">SSM框架之SpringMVC</h1>
+          <h1 class="post-title" itemprop="name headline">设计模式之解释器模式</h1>
         
 
         <div class="post-meta">
@@ -351,8 +350,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-31T19:59:34+08:00">
-                2017-08-31
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-24T15:20:13+08:00">
+                2017-09-24
               </time>
             
 
@@ -383,7 +382,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  657
+                  718
                 </span>
               
 
@@ -399,7 +398,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  2
+                  3
                 </span>
               
             </div>
@@ -420,12 +419,35 @@
       
 
       
-        <h1 id="spring的重要部分–spring-MVC"><a href="#spring的重要部分–spring-MVC" class="headerlink" title="spring的重要部分–spring MVC"></a>spring的重要部分–spring MVC</h1><h2 id="最流行的Java-web-MVC框架"><a href="#最流行的Java-web-MVC框架" class="headerlink" title="最流行的Java web MVC框架"></a>最流行的Java web MVC框架</h2><p>如果说其他框架的地位还有什么争议的话，springMVC的王者地位绝对是无可置疑的，下面是2016年的Java框架使用统计信息图<br><img src="http://oux9g0njr.bkt.clouddn.com/17-8-31/35351504.jpg" alt=""><br>从中可以直观的看出来吧，springMVC的流行程度真的不是其他框架能比的，作为最好用的web MVC框架，它对Struts2的碾压自然不用多谈（Struts我用的次数不多，但是我知道它使用时候是要继承框架中的类，没办法做到不侵入），它是一款非侵入，松耦合的框架，同时本身作为spring家族的一员，它与spring本身就不需要刻意整合，优点还有很多，非常值得学习。</p>
-<h1 id="spring-mvc工作流程"><a href="#spring-mvc工作流程" class="headerlink" title="spring mvc工作流程"></a>spring mvc工作流程</h1><h2 id="请求处理流程"><a href="#请求处理流程" class="headerlink" title="请求处理流程"></a>请求处理流程</h2><p>下面是一张springMVC工作流程图<br><img src="http://oux9g0njr.bkt.clouddn.com/17-8-31/74834707.jpg" alt=""><br>图片中包含了一次简单的请求springMVC的完整处理流程，当接收到用户发来的请求时，首先会交给前端控制器（DispatcherServlet），然后会去寻找对应的处理器映射器（HandlerMapping）向前端控制器返回Handler。拿到Handler后，前端控制器调用处理器适配器（HandlerAdapter）去执行Handler（就是我们写的Controller），由Handler调用业务层，完成业务操作，返回模型和视图（ModelAndView）。ModelAndView回传后，DispatcherServlet会去调用对应的视图解析器（ViewResolver），对view进行解析，解析好view再由DispatcherServlet将model填充进去，然后响应前端。</p>
-<p>这就是springMVC的工作过程，而其中这些复杂的东西全部都是框架给我们完成的，我们需要自己开发的，也只有Controller部分，由此可见实际开发中springMVC其实很容易使用。</p>
-<h2 id="简单的springMVC实例"><a href="#简单的springMVC实例" class="headerlink" title="简单的springMVC实例"></a>简单的springMVC实例</h2><p>首先我们要知道springMVC是web框架，所以我们首先要建立一个web项目，引入spring核心以及webMVC相关jar。然后就是配置web.xml里面只需要配置一个servlet，就是DispatcherServlet，响应所有的路径请求。然后配置springMVC，当然其中要配置spring及bean相关的东西，此外特有的就是需要处理类型所对应的HandlerMapping，ViewResolver，最后在Controller中使用注解配置好方法对应的请求路径就可以启动了。</p>
+        <h2 id="解释器模式的概念"><a href="#解释器模式的概念" class="headerlink" title="解释器模式的概念"></a>解释器模式的概念</h2><blockquote>
+<p>给定一个语言，定义它的文法的一种表示，并定义一个解释器，这个解释器使用该表示来解释语言中的句子。</p>
+</blockquote>
+<p>这是23种设计模式中最后一种了，它是一种不太常用的设计模式，不过还是要学习的。</p>
+<h2 id="举个栗子"><a href="#举个栗子" class="headerlink" title="举个栗子"></a>举个栗子</h2><p>解释器模式的模型图<br><img src="http://oux9g0njr.bkt.clouddn.com/17-9-24/234057.jpg" alt=""></p>
+<p>解释器模式里面有四种角色：抽象解释器，终结符表达式，非终结符表达式，环境角色。</p>
+<ul>
+<li>抽象表达式</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Expression</span> </span>&#123;</div><div class="line">    <span class="comment">//解析任务</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> Object <span class="title">interpret</span><span class="params">(Context context)</span></span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>终结符表达式</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TerminalExpression</span> <span class="keyword">extends</span> <span class="title">Expression</span> </span>&#123;</div><div class="line">    <span class="comment">//终结符表达式通常只有一个</span></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">interpret</span><span class="params">(Context context)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>非终结符表达式</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NonterminalExpression</span> <span class="keyword">extends</span> <span class="title">Expression</span> </span>&#123;</div><div class="line">    <span class="comment">//非终结符表达式会依赖其他表达式</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">NonterminalExpression</span><span class="params">(Exception... exceptions)</span></span>&#123;</div><div class="line">    &#125;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">interpret</span><span class="params">(Context context)</span> </span>&#123;</div><div class="line">        <span class="comment">//进行文法处理</span></div><div class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>调用场景</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        Context context = <span class="keyword">new</span> Context();</div><div class="line">        <span class="comment">//容器</span></div><div class="line">        Stack&lt;Expression&gt; stack;</div><div class="line">        <span class="keyword">for</span> (; ; ) &#123;</div><div class="line">            <span class="comment">//语法判断，递归调用</span></div><div class="line">        &#125;</div><div class="line">        <span class="comment">//分析语法</span></div><div class="line">        Expression expression=stack.pop();</div><div class="line">        <span class="comment">//进入场景</span></div><div class="line">        expression.interpret(context);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>环境未列出，因为实际开发中可以采用HashMap代替，解释器模式封装了一个语法规范文件，避免了调用者和语法解析器之间产生耦合，在解释器模式中可以通过一种称之为抽象语法树的图形方式来直观地表示语言的构成，每一棵抽象语法树对应一个语言实例。</p>
+<h2 id="适用范围"><a href="#适用范围" class="headerlink" title="适用范围"></a>适用范围</h2><p>解释器模式适用与解决重复发生的解释语法的问题问，面对系统化的语法结构，恰当使用可以使工作大量简化。</p>
+<h2 id="优点缺点"><a href="#优点缺点" class="headerlink" title="优点缺点"></a>优点缺点</h2><p>优点是扩展方便，调整表达式结构就可以实现语法的修改。</p>
+<p>缺点一方面是类太多会造成类膨胀，另一方面就是内部的大量递归会严重影响性能。</p>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>尽量不要使用解释器模式处理重要的业务，解释器模式会带来很多维护性的问题，在实际应用中可以使用脚本语言来代替解释器模式。</p>
 <hr>
-<p>至此，SSM三大框架就全都学了一遍了，说的比较笼统，实例也没有代码演示，因为实际开发中整合框架还是最常用的，而且实际开发中jar是统一交给maven管理的，后面介绍SSM整合时候会有代码示例。</p>
+<h2 id="写在后面的话"><a href="#写在后面的话" class="headerlink" title="写在后面的话"></a>写在后面的话</h2><p>到此为止，设计模式的系列文章就要结束了，这里面说的设计模式是狭义上的，由GoF提出的23种设计模式，现在可能还有新的设计模式产生，在此不做讨论。这些设计模式在实际项目中当然不能独立存在，具体的组合应用要依场景而定，在这里只是系统的看了一遍这些基本概念，开发的路还很长，随着接触工程量的增加，对设计模式会有更深刻的了解。至此，本系列全部文章结束。</p>
 
       
     </div>
@@ -482,11 +504,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/java/" rel="tag"><i class="fa fa-tag"></i> java</a>
-          
-            <a href="/tags/ssm/" rel="tag"><i class="fa fa-tag"></i> ssm</a>
-          
-            <a href="/tags/springMVC/" rel="tag"><i class="fa fa-tag"></i> springMVC</a>
+            <a href="/tags/设计模式/" rel="tag"><i class="fa fa-tag"></i> 设计模式</a>
           
         </div>
       
@@ -499,8 +517,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/21/SSM框架之spring/" rel="next" title="SSM框架之spring">
-                <i class="fa fa-chevron-left"></i> SSM框架之spring
+              <a href="/2017/09/24/设计模式之状态模式/" rel="next" title="设计模式之状态模式">
+                <i class="fa fa-chevron-left"></i> 设计模式之状态模式
               </a>
             
           </div>
@@ -508,10 +526,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/09/08/SSM框架整合/" rel="prev" title="SSM框架整合--工具准备">
-                SSM框架整合--工具准备 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -670,7 +684,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#spring的重要部分–spring-MVC"><span class="nav-number">1.</span> <span class="nav-text">spring的重要部分–spring MVC</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#最流行的Java-web-MVC框架"><span class="nav-number">1.1.</span> <span class="nav-text">最流行的Java web MVC框架</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#spring-mvc工作流程"><span class="nav-number">2.</span> <span class="nav-text">spring mvc工作流程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#请求处理流程"><span class="nav-number">2.1.</span> <span class="nav-text">请求处理流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简单的springMVC实例"><span class="nav-number">2.2.</span> <span class="nav-text">简单的springMVC实例</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#解释器模式的概念"><span class="nav-number">1.</span> <span class="nav-text">解释器模式的概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#举个栗子"><span class="nav-number">2.</span> <span class="nav-text">举个栗子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#适用范围"><span class="nav-number">3.</span> <span class="nav-text">适用范围</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优点缺点"><span class="nav-number">4.</span> <span class="nav-text">优点缺点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意事项"><span class="nav-number">5.</span> <span class="nav-text">注意事项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#写在后面的话"><span class="nav-number">6.</span> <span class="nav-text">写在后面的话</span></a></li></ol></div>
             
 
           </div>
