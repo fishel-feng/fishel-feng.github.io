@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="隋堤倦客">
 <meta property="og:description" content="写了两篇，发现自己给自己挖了好多坑，现在得一点点慢慢填了。这次还是继续写一篇css的内容，来看一下浮动和BFC这两个概念。 浮动float float 属性定义元素在哪个方向浮动。以往这个属性总应用于图像，使文本围绕在图像周围，不过在 CSS 中，任何元素都可以浮动。浮动元素会生成一个块级框，而不论它本身是何种元素。 如果浮动非替换元素，则要指定一个明确的宽度；否则，它们会尽可能地窄。 假如在一行">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-15T15:32:21.796Z">
+<meta property="og:updated_time" content="2017-11-15T15:35:47.018Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="css中的浮动和BFC">
 <meta name="twitter:description" content="写了两篇，发现自己给自己挖了好多坑，现在得一点点慢慢填了。这次还是继续写一篇css的内容，来看一下浮动和BFC这两个概念。 浮动float float 属性定义元素在哪个方向浮动。以往这个属性总应用于图像，使文本围绕在图像周围，不过在 CSS 中，任何元素都可以浮动。浮动元素会生成一个块级框，而不论它本身是何种元素。 如果浮动非替换元素，则要指定一个明确的宽度；否则，它们会尽可能地窄。 假如在一行">
@@ -380,7 +380,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  1,772
+                  1,773
                 </span>
               
 
@@ -429,15 +429,13 @@
 <p>而随着互联网的发展，网站页面越来越复杂，float被拿来实现其它的显示效果，然而由于float的独有特性，float元素是脱离文档流的。通常，只要页面中有float元素，就会存在着潜在的危险。</p>
 <h4 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h4><p>浮动有很多副作用，如何清除浮动就是一个比较有价值的问题了。清除浮动的方式有很多，根据其原理分两类场景：</p>
 <ul>
-<li>使用clear属性清除浮动<blockquote>
-<p>clear 属性规定元素的哪一侧不允许其他浮动元素。</p>
-</blockquote>
-</li>
+<li>使用clear属性清除浮动</li>
 </ul>
 <blockquote>
+<p>clear 属性规定元素的哪一侧不允许其他浮动元素。</p>
 <p>clear 属性定义了元素的哪边上不允许出现浮动元素。在 CSS1 和 CSS2 中，这是通过自动为清除元素（即设置了 clear 属性的元素）增加上外边距实现的。在 CSS2.1 中，会在元素上外边距之上增加清除空间，而外边距本身并不改变。不论哪一种改变，最终结果都一样，如果声明为左边或右边清除，会使元素的上外边框边界刚好在该边上浮动元素的下外边距边界之下。</p>
-<p>clear属性能够清除元素，不过要注意，clear属性作用在浮动元素上面是无效的，原理很简单，因为float元素是脱离文档流的。可以采用在后面加空的<code>div</code>标签，在空标签上使用<code>clear:both;</code>，不过这并不是最佳方案，因为浪费了一个标签。更好的方式是使用伪类选择器<code>:after</code>，为其添加属性<code>{display:block; content:&#39;clear&#39;; clear:both; height:0; visibility:hidden;}</code><br>即可实现，如果要兼容不支持伪类的IE6/7，可以设置<code>{zoom:1;}</code>属性（zoom属性通过触发ie的 haslayout属性来实现清除浮动，由于旧版本IE几乎淡出市场，所以不做过多讨论）。</p>
 </blockquote>
+<p>clear属性能够清除元素，不过要注意，clear属性作用在浮动元素上面是无效的，原理很简单，因为float元素是脱离文档流的。可以采用在后面加空的<code>div</code>标签，在空标签上使用<code>clear:both;</code>，不过这并不是最佳方案，因为浪费了一个标签。更好的方式是使用伪类选择器<code>:after</code>，为其添加属性<code>{display:block; content:&#39;clear&#39;; clear:both; height:0; visibility:hidden;}</code><br>即可实现，如果要兼容不支持伪类的IE6/7，可以设置<code>{zoom:1;}</code>属性（zoom属性通过触发ie的 haslayout属性来实现清除浮动，由于旧版本IE几乎淡出市场，所以不做过多讨论）。</p>
 <ul>
 <li>使用BFC清除浮动<br>用父元素创建BFC即可实现清除浮动的效果，IE6/7同样不支持BFC，解决方案还是zoom属性，在此不做多谈。下面就来详细探讨一下BFC的问题。</li>
 </ul>
