@@ -40,16 +40,27 @@
   </entry>
   
   <entry>
-    <title>我的React之路</title>
+    <title>我的React之路--初识</title>
     <link href="http://fx109138.github.io/2018/01/07/%E6%88%91%E7%9A%84React%E4%B9%8B%E8%B7%AF/"/>
     <id>http://fx109138.github.io/2018/01/07/我的React之路/</id>
     <published>2018-01-06T17:19:11.000Z</published>
-    <updated>2018-01-06T17:19:11.249Z</updated>
+    <updated>2018-01-11T16:09:23.107Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="现代化前端"><a href="#现代化前端" class="headerlink" title="现代化前端"></a>现代化前端</h2><p>React.js是现代化前端三大主流框架之一。什么是现代化前端？随着node.js出现，前端工程化产生，前端开发者的工作已经早已不再是简单的画页面填数据了，曾经只会jQuery就可以完成工作的时代已经结束了。h5的出现，ajax的广泛应用，大前端时代的概念越来越清晰，web前端开发者承担的任务越来越多，移动端，桌面端，服务端的开发也受到了很多颠覆性的变革。这种变化，个人认为是一种机遇，采用工程化模式构建原本散乱无规范的前端本身就是一件好事，而拥抱这种变化，就要学习现代化前端开发的新技术。</p><h2 id="为什么选择React"><a href="#为什么选择React" class="headerlink" title="为什么选择React"></a>为什么选择React</h2><p>现代化前端的三大主流框架是angular，vue，react，对于前端开发者来说，下面这张图片很亲切</p><p><img src="http://oux9g0njr.bkt.clouddn.com/18-1-11/46701657.jpg" alt=""></p><p>angular是Google推出的从angular2开始采用typescript构建，并且引入大量新的概念，通常把一代称为angular.js，angular特指2以上版本，可以理解为是一个全新的框架，位列三大框架之一的也是angular。vue是国人尤雨溪个人开发的，是一个比较难得的非常受欢迎的个人项目，也是在国际上影响力最大的国人开发的项目，是一个非常好的框架。react是facebook公司推出的，是目前三大框架中全球用户量最多，最活跃的前端框架。</p><p>前端技术的特点就是多，而且社区特别活跃，变化特别快，所以一方面个人肯定不能贪多，另一方面还要能够及时拥抱变化。三大框架angular特点学习门槛高，对后端开发者友好，vue特点渐进式，新手友好，react本身很小，系统庞大，而且思想独特。框架的好坏和难易没有必然联系，也不是复杂的就一定是最好的。就我而言，angular我不了解，作为熟悉后端开发的我也许会喜欢上它，不过我没学过。vue是我最早接触的前端框架了，对于新手来说真的容易上手，开始完全可以像引入jquery一样直接引入单个文件来使用，而且它完美的融合了其他框架的优点，写起来特别优雅，而随着项目逐渐复杂，又可以使用工程化方式构建。react与vue完全相反，一上来就要先接触构建工具，学习jsx，初学者很容易就放弃了。</p><p>我从前开发一直使用的都是vue.js，用的时间也不长，现在也在用vue写一个项目，了解了一些前端工程化的东西，vue相关内容也使用过，算是掌握基本使用吧。而对于react，从前了解的并不多，了解到它是完全基于js来构建前端，当时觉得这个东西可能更适合我，于是今年，2018年第一个小目标就是学会使用react了。</p><p>react和vue都是采用虚拟DOM，数据更新会实时响应到视图上，两者很多东西也都很相似。而不同之处，也就是最吸引我的地方，就是react颠覆了一种思想。过去的前端，都是html为主，css和js全都写在html中。而在react中，一切都是js，html是通过js对象来构建的的，只是为了易读性引入了jsx语法糖，css也完全是js对象。此外，由于react完全基于工程化前端来构建，在react中可以享受最新的es语法等等工程化带来的好处。很多人不会喜欢react也大抵是因为此，仅仅是为了构建页面js是否有必要有那么高要求，我觉得这也体现了不同人思维方式的不同。就我而言，服务端编程出身，一直在和数据和逻辑打交道，页面展示布局一直都不是强项，也不够敏感。react能够把逻辑程序设计的体验带到页面设计上，大概是它最大的魅力吧。</p><h2 id="react系列的认识"><a href="#react系列的认识" class="headerlink" title="react系列的认识"></a>react系列的认识</h2><p>无论是react.js还是vue.js本身都是只是一个视图层解决方案，要想构建一个完整的前端工程这只是其中一部分。曾经使用vue.js时候,使用过vue+vue-router+vuex+axios的组合，而对于react也是需要有这么一套完整的集合的。而且选择也不唯一，按照目前来看，至少要学习redux，react-router，后面还会有很多，随着学习会进一步总结经验。特别的，学习react当然少不了react native，这是一个移动端的开发框架。这样算起来，要学习的东西其实很多，这篇是开始的一篇，只是谈一谈简单地认识，后面学习的过程中会有经验记录，如果可以后面还会有react和vue的对比。</p>]]></content>
     
     <summary type="html">
     
+      
+      
+        &lt;h2 id=&quot;现代化前端&quot;&gt;&lt;a href=&quot;#现代化前端&quot; class=&quot;headerlink&quot; title=&quot;现代化前端&quot;&gt;&lt;/a&gt;现代化前端&lt;/h2&gt;&lt;p&gt;React.js是现代化前端三大主流框架之一。什么是现代化前端？随着node.js出现，前端工程化产生，前端开发者的
+      
+    
     </summary>
     
+    
+      <category term="前端开发" scheme="http://fx109138.github.io/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+    
+      <category term="React" scheme="http://fx109138.github.io/tags/React/"/>
     
   </entry>
   
