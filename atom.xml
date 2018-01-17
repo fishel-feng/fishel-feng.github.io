@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fx109138.github.io/"/>
-  <updated>2018-01-16T14:16:36.620Z</updated>
+  <updated>2018-01-17T05:35:58.497Z</updated>
   <id>http://fx109138.github.io/</id>
   
   <author>
@@ -15,6 +15,24 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>工程前端打包工具--webpack入门</title>
+    <link href="http://fx109138.github.io/2018/01/17/%E5%B7%A5%E7%A8%8B%E5%89%8D%E7%AB%AF%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7-webpack%E5%85%A5%E9%97%A8/"/>
+    <id>http://fx109138.github.io/2018/01/17/工程前端打包工具-webpack入门/</id>
+    <published>2018-01-17T05:35:26.000Z</published>
+    <updated>2018-01-17T05:35:58.497Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="前端开发" scheme="http://fx109138.github.io/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+    
+      <category term="webpack" scheme="http://fx109138.github.io/tags/webpack/"/>
+    
+  </entry>
   
   <entry>
     <title>我的React之路--入门</title>
@@ -92,8 +110,8 @@
   
   <entry>
     <title>我的React之路--初识</title>
-    <link href="http://fx109138.github.io/2018/01/07/%E6%88%91%E7%9A%84React%E4%B9%8B%E8%B7%AF-%E5%88%9D%E8%AF%86/"/>
-    <id>http://fx109138.github.io/2018/01/07/我的React之路-初识/</id>
+    <link href="http://fx109138.github.io/2018/01/07/%E6%88%91%E7%9A%84React%E4%B9%8B%E8%B7%AF/"/>
+    <id>http://fx109138.github.io/2018/01/07/我的React之路/</id>
     <published>2018-01-06T17:19:11.000Z</published>
     <updated>2018-01-11T16:09:23.107Z</updated>
     
@@ -467,31 +485,6 @@
       
         &lt;h2 id=&quot;模板方法模式的定义&quot;&gt;&lt;a href=&quot;#模板方法模式的定义&quot; class=&quot;headerlink&quot; title=&quot;模板方法模式的定义&quot;&gt;&lt;/a&gt;模板方法模式的定义&lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;定义一个算法中的操作框架，而将一些步骤延迟到子类中。使得子
-      
-    
-    </summary>
-    
-    
-      <category term="设计模式" scheme="http://fx109138.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>设计模式之桥梁模式</title>
-    <link href="http://fx109138.github.io/2017/09/20/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E6%A1%A5%E6%A2%81%E6%A8%A1%E5%BC%8F/"/>
-    <id>http://fx109138.github.io/2017/09/20/设计模式之桥梁模式/</id>
-    <published>2017-09-20T06:07:05.000Z</published>
-    <updated>2017-09-20T07:17:01.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="什么是桥梁模式"><a href="#什么是桥梁模式" class="headerlink" title="什么是桥梁模式"></a>什么是桥梁模式</h2><blockquote><p>将抽象和实现解耦，使得两者可以独立地变化。</p></blockquote><p>桥梁模式是最后一种结构型模式了，它也叫桥接模式，是一种重要的解耦手段。</p><h2 id="举个栗子"><a href="#举个栗子" class="headerlink" title="举个栗子"></a>举个栗子</h2><p><img src="http://oux9g0njr.bkt.clouddn.com/17-9-20/79787036.jpg" alt=""></p><p>桥梁模式一共有四种角色，下面是编码实现</p><ul><li>实现化角色</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Implementor</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">operationImpl1</span><span class="params">()</span></span>;</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">operationImpl2</span><span class="params">()</span></span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure><ul><li>具体实现化角色</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ContreteImplementor</span> <span class="keyword">implements</span> <span class="title">Implementor</span> </span>&#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">operationImpl1</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="comment">//具体实现</span></div><div class="line">    &#125;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">operationImpl2</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="comment">//具体实现</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><ul><li>抽象化角色</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Abstraction</span> </span>&#123;</div><div class="line">    <span class="comment">//对实现化角色的引用</span></div><div class="line">    <span class="keyword">private</span> Implementor implementor;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Abstraction</span><span class="params">(Implementor implementor)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.implementor = implementor;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//自身属性行为</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">operation</span><span class="params">()</span></span>&#123;</div><div class="line">        implementor.operationImpl1();</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> Implementor <span class="title">getImplementor</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> implementor;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><ul><li>修正抽象化角色</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RefiendAbstraction</span> <span class="keyword">extends</span> <span class="title">Abstraction</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">RefiendAbstraction</span><span class="params">(Implementor implementor)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>(implementor);</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//修正父类行为</span></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">operation</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.operation();</div><div class="line">        <span class="keyword">super</span>.getImplementor().operationImpl2();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><ul><li>调用场景</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        Implementor implementor = <span class="keyword">new</span> ContreteImplementor();</div><div class="line">        Abstraction abstraction = <span class="keyword">new</span> RefiendAbstraction(implementor);</div><div class="line">        abstraction.operation();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><p>上面的结构一点都不复杂，只要熟练掌握面向对象基本思想就能写出上面的代码，但是你会发现，这个程序的条理非常清晰，结构很完整，而且扩展性也很好，这就是桥梁模式。它好像搭了一座桥，通过抽象建立联系，实现了类结构之间的松耦合，是一种很好用的设计模式。</p><h2 id="适用范围"><a href="#适用范围" class="headerlink" title="适用范围"></a>适用范围</h2><p>桥梁模式适用于当继承的方式受限太大，使用继承的方式制约较大的时候，桥梁模式可以很好的解决代码复用的问题。</p><h2 id="优点缺点"><a href="#优点缺点" class="headerlink" title="优点缺点"></a>优点缺点</h2><p>桥梁模式的优点是可以解决由继承带来的复杂限制问题，实现了低耦合，高扩展性，抽象和实现达到隔离，双方可以自由扩展。</p><h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>桥梁模式的根本目的在于对变化的封装，他能够在最小的范围内避免危险，但是不代表继承就一无是处，使用的时候要综合考量。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;什么是桥梁模式&quot;&gt;&lt;a href=&quot;#什么是桥梁模式&quot; class=&quot;headerlink&quot; title=&quot;什么是桥梁模式&quot;&gt;&lt;/a&gt;什么是桥梁模式&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;将抽象和实现解耦，使得两者可以独立地变化。&lt;/p&gt;
-&lt;/blockquot
       
     
     </summary>
