@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fx109138.github.io/"/>
-  <updated>2018-01-17T05:35:58.497Z</updated>
+  <updated>2018-01-18T02:45:38.930Z</updated>
   <id>http://fx109138.github.io/</id>
   
   <author>
@@ -21,9 +21,16 @@
     <link href="http://fx109138.github.io/2018/01/17/%E5%B7%A5%E7%A8%8B%E5%89%8D%E7%AB%AF%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7-webpack%E5%85%A5%E9%97%A8/"/>
     <id>http://fx109138.github.io/2018/01/17/工程前端打包工具-webpack入门/</id>
     <published>2018-01-17T05:35:26.000Z</published>
-    <updated>2018-01-17T05:35:58.497Z</updated>
+    <updated>2018-01-18T02:45:38.930Z</updated>
+    
+    <content type="html"><![CDATA[<p>对于webpack这个东西，应该是大多数现代前端开发者要使用的工具了。前端发展很快，从webpack的版本就能反映出来，有人还在用webpack1，现在4的测试版都已经发布了。昨天在知乎上看到一位老师吐槽，自己的技术书还没出版现在又得改书稿了。所以作为开发者，要有随时学习的态度，和对技术的热情。前段时间还新开源了一个叫Parcel的打包工具，号称零配置，热度很高，可能随时都要取代配置繁琐的webpack。但是，就目前来看，webpack还是要学习的。这篇文章就分享一点我作为一个初学者的webpack学习历程，本文采用目前最新的稳定版webpack3，重点在对整个体系的理解和学习的方法。</p><h2 id="webpack初识"><a href="#webpack初识" class="headerlink" title="webpack初识"></a>webpack初识</h2><p>我之前接触过webpack是在使用vue.js创建工程时候，当时直接使用vue-cli直接生成项目结构和基本配置，配置项仅仅是能够看懂，没有系统地学习过webpack，现在从头开始学习webpack，首先了解webpack是做什么的。</p><p><img src="http://oux9g0njr.bkt.clouddn.com/18-1-18/21007269.jpg" alt=""></p><p>在webpack官方主页上放着这张图片，整张图片描述的就是webpack的整个构建流程，webpack做的工作就是：把开发阶段的各种各样的模块文件模块打包成生产环境下的静态资源。在开发阶段，为了易于开发管理，我们使用各种各样的方式来处理前端工程，但是，一旦作为最终要运行在浏览器中的产品，里面是只能有浏览器可识别元素的。浏览器只能识别html，css，js，以及各种图片视频等媒体资源，所以一切sass，less，stylus，typescript，coffeescript，jade，ejs，vue，jsx，统统都要打包处理，并且高版本的js还需要转译成为浏览器能识别的ES5语法，样式文件还要加兼容前缀处理，这一系列的工作，肯定不能手动完成，我们会使用自动化构建工具，曾经使用grunt，gulp等等构建复杂的工作流，现在使用webpack，通常只使用npm脚本就可以完成项目构建了，webpack在其中发挥了非常重要的作用。</p><h2 id="webpack的基本概念"><a href="#webpack的基本概念" class="headerlink" title="webpack的基本概念"></a>webpack的基本概念</h2><p>构建webpack项目有一个配置文件webpack.config.js，webpack每次启动时候首先会加载这个配置文件，在配置文件中有四个核心配置项：entry，output，loader，plugins，下面具体来看每一项配置都是什么。</p><h3 id="entry（入口）"><a href="#entry（入口）" class="headerlink" title="entry（入口）"></a>entry（入口）</h3><h3 id="output（输出）"><a href="#output（输出）" class="headerlink" title="output（输出）"></a>output（输出）</h3><h3 id="loader（加载器）"><a href="#loader（加载器）" class="headerlink" title="loader（加载器）"></a>loader（加载器）</h3><h3 id="plugins（插件）"><a href="#plugins（插件）" class="headerlink" title="plugins（插件）"></a>plugins（插件）</h3>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;p&gt;对于webpack这个东西，应该是大多数现代前端开发者要使用的工具了。前端发展很快，从webpack的版本就能反映出来，有人还在用webpack1，现在4的测试版都已经发布了。昨天在知乎上看到一位老师吐槽，自己的技术书还没出版现在又得改书稿了。所以作为开发者，要有随时学习的
+      
     
     </summary>
     
