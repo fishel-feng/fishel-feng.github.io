@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="设计模式," />
+  <meta name="keywords" content="JavaScript,前端开发,node.js," />
 
 
 
@@ -96,20 +96,20 @@
 
 
 
-<meta name="description" content="什么是门面模式 提供一个统一的接口去访问多个子系统的多个不同的接口，它为子系统中的一组接口提供一个统一的高层接口。使得子系统更容易使用。  门面模式也叫外观模式，是一种很常用的封装模式。 举个栗子门面模式的模型图 上面包含两种角色，门面角色和子系统角色，其中子系统可能是几组类，很多类，不过这不重要，门面模式就是通过统一的门面来完成下面的行为，下面是编码  子系统  1234567891011121">
-<meta name="keywords" content="设计模式">
+<meta name="description" content="学习js开发，无论是前端开发还是node.js,都避免不了要接触异步编程这个问题,就和其它大多数以多线程同步为主的编程语言不同,js的主要设计是单线程异步模型。正因为js天生的与众不同，才使得它拥有一种独特的魅力，也给学习者带来了很多探索的道路。本文就从js的最初设计开始，整理一下js异步编程的发展历程。 什么是异步在研究js异步之前，先弄清楚异步是什么。异步是和同步相对的概念，同步，指的是一个调">
+<meta name="keywords" content="JavaScript,前端开发,node.js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="设计模式之门面模式">
-<meta property="og:url" content="http://fx109138.github.io/2017/09/19/设计模式之门面模式/index.html">
+<meta property="og:title" content="js学习之异步处理">
+<meta property="og:url" content="http://fx109138.github.io/2018/01/18/js学习之异步处理/index.html">
 <meta property="og:site_name" content="隋堤倦客">
-<meta property="og:description" content="什么是门面模式 提供一个统一的接口去访问多个子系统的多个不同的接口，它为子系统中的一组接口提供一个统一的高层接口。使得子系统更容易使用。  门面模式也叫外观模式，是一种很常用的封装模式。 举个栗子门面模式的模型图 上面包含两种角色，门面角色和子系统角色，其中子系统可能是几组类，很多类，不过这不重要，门面模式就是通过统一的门面来完成下面的行为，下面是编码  子系统  1234567891011121">
+<meta property="og:description" content="学习js开发，无论是前端开发还是node.js,都避免不了要接触异步编程这个问题,就和其它大多数以多线程同步为主的编程语言不同,js的主要设计是单线程异步模型。正因为js天生的与众不同，才使得它拥有一种独特的魅力，也给学习者带来了很多探索的道路。本文就从js的最初设计开始，整理一下js异步编程的发展历程。 什么是异步在研究js异步之前，先弄清楚异步是什么。异步是和同步相对的概念，同步，指的是一个调">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://oux9g0njr.bkt.clouddn.com/17-9-19/37537963.jpg">
-<meta property="og:updated_time" content="2017-09-19T13:32:18.000Z">
+<meta property="og:image" content="http://oux9g0njr.bkt.clouddn.com/18-1-18/99140678.jpg">
+<meta property="og:updated_time" content="2018-01-18T15:50:28.560Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="设计模式之门面模式">
-<meta name="twitter:description" content="什么是门面模式 提供一个统一的接口去访问多个子系统的多个不同的接口，它为子系统中的一组接口提供一个统一的高层接口。使得子系统更容易使用。  门面模式也叫外观模式，是一种很常用的封装模式。 举个栗子门面模式的模型图 上面包含两种角色，门面角色和子系统角色，其中子系统可能是几组类，很多类，不过这不重要，门面模式就是通过统一的门面来完成下面的行为，下面是编码  子系统  1234567891011121">
-<meta name="twitter:image" content="http://oux9g0njr.bkt.clouddn.com/17-9-19/37537963.jpg">
+<meta name="twitter:title" content="js学习之异步处理">
+<meta name="twitter:description" content="学习js开发，无论是前端开发还是node.js,都避免不了要接触异步编程这个问题,就和其它大多数以多线程同步为主的编程语言不同,js的主要设计是单线程异步模型。正因为js天生的与众不同，才使得它拥有一种独特的魅力，也给学习者带来了很多探索的道路。本文就从js的最初设计开始，整理一下js异步编程的发展历程。 什么是异步在研究js异步之前，先弄清楚异步是什么。异步是和同步相对的概念，同步，指的是一个调">
+<meta name="twitter:image" content="http://oux9g0njr.bkt.clouddn.com/18-1-18/99140678.jpg">
 
 
 
@@ -138,13 +138,13 @@
 
 
 
-  <link rel="canonical" href="http://fx109138.github.io/2017/09/19/设计模式之门面模式/"/>
+  <link rel="canonical" href="http://fx109138.github.io/2018/01/18/js学习之异步处理/"/>
 
 
 
 
 
-  <title>设计模式之门面模式 | 隋堤倦客</title>
+  <title>js学习之异步处理 | 隋堤倦客</title>
   
 
 
@@ -321,7 +321,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://fx109138.github.io/2017/09/19/设计模式之门面模式/">
+    <link itemprop="mainEntityOfPage" href="http://fx109138.github.io/2018/01/18/js学习之异步处理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="隋堤倦客">
@@ -338,7 +338,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">设计模式之门面模式</h1>
+          <h1 class="post-title" itemprop="name headline">js学习之异步处理</h1>
         
 
         <div class="post-meta">
@@ -350,8 +350,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-19T19:35:48+08:00">
-                2017-09-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-18T17:24:28+08:00">
+                2018-01-18
               </time>
             
 
@@ -382,7 +382,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  643
+                  1,188
                 </span>
               
 
@@ -398,7 +398,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  2
+                  4
                 </span>
               
             </div>
@@ -419,27 +419,22 @@
       
 
       
-        <h2 id="什么是门面模式"><a href="#什么是门面模式" class="headerlink" title="什么是门面模式"></a>什么是门面模式</h2><blockquote>
-<p>提供一个统一的接口去访问多个子系统的多个不同的接口，它为子系统中的一组接口提供一个统一的高层接口。使得子系统更容易使用。</p>
-</blockquote>
-<p>门面模式也叫外观模式，是一种很常用的封装模式。</p>
-<h2 id="举个栗子"><a href="#举个栗子" class="headerlink" title="举个栗子"></a>举个栗子</h2><p>门面模式的模型图<br><img src="http://oux9g0njr.bkt.clouddn.com/17-9-19/37537963.jpg" alt=""></p>
-<p>上面包含两种角色，门面角色和子系统角色，其中子系统可能是几组类，很多类，不过这不重要，门面模式就是通过统一的门面来完成下面的行为，下面是编码</p>
+        <p>学习js开发，无论是前端开发还是node.js,都避免不了要接触异步编程这个问题,就和其它大多数以多线程同步为主的编程语言不同,js的主要设计是单线程异步模型。正因为js天生的与众不同，才使得它拥有一种独特的魅力，也给学习者带来了很多探索的道路。本文就从js的最初设计开始，整理一下js异步编程的发展历程。</p>
+<h2 id="什么是异步"><a href="#什么是异步" class="headerlink" title="什么是异步"></a>什么是异步</h2><p>在研究js异步之前，先弄清楚异步是什么。异步是和同步相对的概念，同步，指的是一个调用发起后要等待结果返回，返回时候必须拿到返回结果。而异步的调用，发起之后直接返回，返回的时候还没有结果，也不用等待结果，而调用结果是产生结果后通过被调用者通知调用者来传递的。</p>
+<p>举个例子，A想找C，但是不知道C的电话号码，但是他有B的电话号码，于是A给B打电话询问C的电话号码，B需要查找才能知道C的电话号码，之后会出现两种场景看下面两个场景：</p>
 <ul>
-<li>子系统</li>
+<li>A不挂电话，等到B找到号码之后直接告诉A</li>
+<li>A挂电话，B找到后再给A打电话告诉A</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ClassA</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">methodA</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="comment">//方法A</span></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ClassB</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">methodB</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="comment">//方法B</span></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ClassC</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">methodC</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="comment">//方法C</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
-<li>门面</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Facade</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> ClassA classA = <span class="keyword">new</span> ClassA();</div><div class="line">    <span class="keyword">private</span> ClassB classB = <span class="keyword">new</span> ClassB();</div><div class="line">    <span class="keyword">private</span> ClassC classC = <span class="keyword">new</span> ClassC();</div><div class="line">    <span class="comment">//统一方法</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">methodA</span><span class="params">()</span> </span>&#123;</div><div class="line">        classA.methodA();</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">methodB</span><span class="params">()</span> </span>&#123;</div><div class="line">        classB.methodB();</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">methodC</span><span class="params">()</span> </span>&#123;</div><div class="line">        classC.methodC();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>在门面模式中，子系统并不知道门面的存在，门面和普通的调用者没什么区别。而对于真正的调用者而言，他们无需关心子系统有多么复杂，只要和门面进行交互即可，这就是门面模式。</p>
-<h2 id="适用范围"><a href="#适用范围" class="headerlink" title="适用范围"></a>适用范围</h2><p>门面模式实现了一个极好的封装，在子系统复杂且相互独立的时候，使用门面模式可以无需关注细节。同时，深度的封装可以实现黑箱操作，可以防止过多的暴露带来的风险。</p>
-<h2 id="优点缺点"><a href="#优点缺点" class="headerlink" title="优点缺点"></a>优点缺点</h2><p>门面模式把黑盒和白盒的交互通过门面连接起来，实现了两边程序的解耦，系统间无需直接依赖，这样程序更加灵活。同时也能增强系统的安全性。</p>
-<p>门面模式的缺点就是门面作为系统的核心，一旦有接口增减就要面临着修改，这样不符合开闭原则。</p>
-<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>门面可以有多个，如果门面过大可以拆分，有特殊需求可以重组，提供新的门面的时候业务也无需委托子系统，只要委托给现有的系统即可。</p>
-<p>注意门面模式不要依赖子系统内部逻辑，一个门面方法最好只委托给一个子系统的逻辑，这样可以避免子系统的逻辑依赖门面，不会破坏程序原有结构。如果需要充组就提供一个重组的子系统，总之，不要用门面来组合系统的逻辑。</p>
-
+<p>能感受到这两种情况是不同的吧，前一种就是同步，后一种就是异步。</p>
+<h2 id="为什么是异步的"><a href="#为什么是异步的" class="headerlink" title="为什么是异步的"></a>为什么是异步的</h2><p>先来看js的诞生，JavaScript诞生于1995年，由Brendan Eich设计，最早是在Netscape公司的浏览器上实现，用来实现在浏览器中处理简单的表单验证等用户交互。至于后来提交到ECMA，形成规范，种种历史不是这篇文章的重点，提到这些就是想说一点，js的最初设计就是为了浏览器的GUI交互。对于图形化界面处理，引入多线程势必会带来各种各样的同步问题，因此浏览器中的js被设计成单线程，还是很容易理解的。但是单线程有一个问题：一旦这个唯一的线程被阻塞就没办法工作了–这肯定是不行的。由于异步编程可以实现“非阻塞”的调用效果，引入异步编程自然就是顺理成章的事情了。</p>
+<p>现在，js的运行环境不限于浏览器，还有node.js，node.js设计的最初想法就是设计一个完全由事件驱动，非阻塞式IO实现的服务器运行环境，因为网络IO请求是一个非常大的性能瓶颈，前期使用其他编程语言都失败了，就是因为人们固有的同步编程思想，人们更倾向于使用同步设计的API。而js由于最初设计就是全异步的，人们不会有很多不适应，加上V8高性能引擎的出现，才造就了node.js技术的产生。node.js擅长处理IO密集型业务，就得益于事件驱动，非阻塞IO的设计，而这一切都与异步编程密不可分。</p>
+<h2 id="js异步原理"><a href="#js异步原理" class="headerlink" title="js异步原理"></a>js异步原理</h2><p>这是一张简化的浏览器js执行流程图，nodejs和它不太一样，但是都有一个队列</p>
+<p><img src="http://oux9g0njr.bkt.clouddn.com/18-1-18/99140678.jpg" alt=""></p>
+<p>这个队列就是异步队列，它是处理异步事件的核心，整个js调用时候，同步任务和其他编程语言一样，在栈中调用，一旦遇上异步任务，不立刻执行，直接把它放到异步队列里面，这样就形成了两种不同的任务。由于主线程中没有阻塞，很快就完成，栈中任务边空之后，就会有一个事件循环，把队列里面的任务一个一个取出来执行。只要主线程空闲，异步队列有任务，事件循环就会从队列中取出任务执行。</p>
+<p>说的比较简单，js执行引擎设计比这复杂的多得多，但是在js的异步实现原理中，事件循环和异步队列是核心的内容。</p>
+<h2 id="异步编程实现"><a href="#异步编程实现" class="headerlink" title="异步编程实现"></a>异步编程实现</h2><p>异步编程的代码实现，随着时间的推移也在逐渐完善，不止是在js中，许多编程语言的使用者都在寻找一种优雅的异步编程代码书写方式，下面来看js中的曾出现的几种重要的实现方式。</p>
+<h3 id="最经典的异步编程方式–callback"><a href="#最经典的异步编程方式–callback" class="headerlink" title="最经典的异步编程方式–callback"></a>最经典的异步编程方式–callback</h3><h3 id="从地狱中走出来–promise"><a href="#从地狱中走出来–promise" class="headerlink" title="从地狱中走出来–promise"></a>从地狱中走出来–promise</h3><h3 id="颠覆性的变革–generator"><a href="#颠覆性的变革–generator" class="headerlink" title="颠覆性的变革–generator"></a>颠覆性的变革–generator</h3><h3 id="新时代的写法–async，await"><a href="#新时代的写法–async，await" class="headerlink" title="新时代的写法–async，await"></a>新时代的写法–async，await</h3>
       
     </div>
     
@@ -495,7 +490,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/设计模式/" rel="tag"><i class="fa fa-tag"></i> 设计模式</a>
+            <a href="/tags/JavaScript/" rel="tag"><i class="fa fa-tag"></i> JavaScript</a>
+          
+            <a href="/tags/前端开发/" rel="tag"><i class="fa fa-tag"></i> 前端开发</a>
+          
+            <a href="/tags/node-js/" rel="tag"><i class="fa fa-tag"></i> node.js</a>
           
         </div>
       
@@ -508,8 +507,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/19/设计模式之组合模式/" rel="next" title="设计模式之组合模式">
-                <i class="fa fa-chevron-left"></i> 设计模式之组合模式
+              <a href="/2018/01/17/工程前端打包工具-webpack入门/" rel="next" title="工程前端打包工具--webpack入门">
+                <i class="fa fa-chevron-left"></i> 工程前端打包工具--webpack入门
               </a>
             
           </div>
@@ -517,10 +516,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/09/19/设计模式之享元模式/" rel="prev" title="设计模式之享元模式">
-                设计模式之享元模式 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -679,7 +674,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是门面模式"><span class="nav-number">1.</span> <span class="nav-text">什么是门面模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#举个栗子"><span class="nav-number">2.</span> <span class="nav-text">举个栗子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#适用范围"><span class="nav-number">3.</span> <span class="nav-text">适用范围</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优点缺点"><span class="nav-number">4.</span> <span class="nav-text">优点缺点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意事项"><span class="nav-number">5.</span> <span class="nav-text">注意事项</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是异步"><span class="nav-number">1.</span> <span class="nav-text">什么是异步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么是异步的"><span class="nav-number">2.</span> <span class="nav-text">为什么是异步的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#js异步原理"><span class="nav-number">3.</span> <span class="nav-text">js异步原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异步编程实现"><span class="nav-number">4.</span> <span class="nav-text">异步编程实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#最经典的异步编程方式–callback"><span class="nav-number">4.1.</span> <span class="nav-text">最经典的异步编程方式–callback</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#从地狱中走出来–promise"><span class="nav-number">4.2.</span> <span class="nav-text">从地狱中走出来–promise</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#颠覆性的变革–generator"><span class="nav-number">4.3.</span> <span class="nav-text">颠覆性的变革–generator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新时代的写法–async，await"><span class="nav-number">4.4.</span> <span class="nav-text">新时代的写法–async，await</span></a></li></ol></li></ol></div>
             
 
           </div>
