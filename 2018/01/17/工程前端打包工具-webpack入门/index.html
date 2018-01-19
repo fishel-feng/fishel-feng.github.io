@@ -105,7 +105,7 @@
 <meta property="og:description" content="对于webpack这个东西，应该是大多数现代前端开发者要使用的工具了。前端发展很快，从webpack的版本就能反映出来，有人还在用webpack1，现在4的测试版都已经发布了。昨天在知乎上看到一位老师吐槽，自己的技术书还没出版现在又得改书稿了。所以作为开发者，要有随时学习的态度，和对技术的热情。前段时间还新开源了一个叫Parcel的打包工具，号称零配置，热度很高，可能随时都要取代配置繁琐的webp">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://oux9g0njr.bkt.clouddn.com/18-1-18/21007269.jpg">
-<meta property="og:updated_time" content="2018-01-18T04:00:09.569Z">
+<meta property="og:updated_time" content="2018-01-19T06:50:38.813Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="工程前端打包工具--webpack入门">
 <meta name="twitter:description" content="对于webpack这个东西，应该是大多数现代前端开发者要使用的工具了。前端发展很快，从webpack的版本就能反映出来，有人还在用webpack1，现在4的测试版都已经发布了。昨天在知乎上看到一位老师吐槽，自己的技术书还没出版现在又得改书稿了。所以作为开发者，要有随时学习的态度，和对技术的热情。前段时间还新开源了一个叫Parcel的打包工具，号称零配置，热度很高，可能随时都要取代配置繁琐的webp">
@@ -382,7 +382,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  926
+                  973
                 </span>
               
 
@@ -398,7 +398,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  3
+                  4
                 </span>
               
             </div>
@@ -428,10 +428,12 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> config = &#123;</div><div class="line">  entry: <span class="string">'./path/to/my/entry/file.js'</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 <p>entry后面配置的就是入口文件的路径，而对于多页面路径，可以这样配置：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> config = &#123;</div><div class="line">  entry: &#123;</div><div class="line">    pageOne: <span class="string">'./src/pageOne/index.js'</span>,</div><div class="line">    pageTwo: <span class="string">'./src/pageTwo/index.js'</span>,</div><div class="line">    pageThree: <span class="string">'./src/pageThree/index.js'</span></div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p>entry后面可以写对象，对象的key代表最终打包的Chunk Name，value为每一个chunk的打包入口，这样配置就可以从多个入口开始执行打包任务。而无论是单入口还是多入口，最终都要有一个输出的地方，就是出口。</p>
+<p>entry后面可以写对象，对象的属性代表最终打包的Chunk Name，值为每一个chunk的打包入口，这样配置就可以从多个入口开始执行打包任务。而无论是单入口还是多入口，最终都要有一个输出的地方，就是出口。</p>
 <h3 id="output（输出）"><a href="#output（输出）" class="headerlink" title="output（输出）"></a>output（输出）</h3><p>输出代表webpack文件最终被打包的样子，output后面写一个对象，filename代表最终的文件名，path指向最终保存文件的路径。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">const config = &#123;</div><div class="line">  output: &#123;</div><div class="line">    filename: &apos;bundle.js&apos;,</div><div class="line">    path: &apos;/home/proj/public/assets&apos;</div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<h3 id="loader（加载器）"><a href="#loader（加载器）" class="headerlink" title="loader（加载器）"></a>loader（加载器）</h3><h3 id="plugins（插件）"><a href="#plugins（插件）" class="headerlink" title="plugins（插件）"></a>plugins（插件）</h3>
+<h3 id="loader（加载器）"><a href="#loader（加载器）" class="headerlink" title="loader（加载器）"></a>loader（加载器）</h3><h3 id="plugins（插件）"><a href="#plugins（插件）" class="headerlink" title="plugins（插件）"></a>plugins（插件）</h3><hr>
+<p>尊重原创，转载分享前请先知悉作者，也欢迎指出错误不足共同交流，更多内容欢迎关注作者博客<a href="https://fx109138.github.io/">点击这里</a></p>
+
       
     </div>
     
@@ -725,7 +727,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共44.1k字</span>
+  <span class="post-count">博客全站共46.1k字</span>
 </div>
 
         
