@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fx109138.github.io/"/>
-  <updated>2018-01-21T05:52:52.267Z</updated>
+  <updated>2018-01-21T16:23:30.104Z</updated>
   <id>http://fx109138.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>五子棋小游戏开发心得</title>
+    <link href="http://fx109138.github.io/2018/01/22/%E4%BA%94%E5%AD%90%E6%A3%8B%E5%B0%8F%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E5%BF%83%E5%BE%97/"/>
+    <id>http://fx109138.github.io/2018/01/22/五子棋小游戏开发心得/</id>
+    <published>2018-01-21T16:21:34.000Z</published>
+    <updated>2018-01-21T16:23:30.104Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="前端开发" scheme="http://fx109138.github.io/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+    
+      <category term="socket.io" scheme="http://fx109138.github.io/tags/socket-io/"/>
+    
+      <category term="node.js" scheme="http://fx109138.github.io/tags/node-js/"/>
+    
+      <category term="移动开发" scheme="http://fx109138.github.io/tags/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
   
   <entry>
     <title>socket.io小记</title>
@@ -36,11 +58,11 @@
     </summary>
     
     
+      <category term="socket.io" scheme="http://fx109138.github.io/tags/socket-io/"/>
+    
       <category term="node.js" scheme="http://fx109138.github.io/tags/node-js/"/>
     
       <category term="javascript" scheme="http://fx109138.github.io/tags/javascript/"/>
-    
-      <category term="socket.io" scheme="http://fx109138.github.io/tags/socket-io/"/>
     
   </entry>
   
@@ -65,9 +87,9 @@
     
       <category term="JavaScript" scheme="http://fx109138.github.io/tags/JavaScript/"/>
     
-      <category term="node.js" scheme="http://fx109138.github.io/tags/node-js/"/>
-    
       <category term="前端开发" scheme="http://fx109138.github.io/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+    
+      <category term="node.js" scheme="http://fx109138.github.io/tags/node-js/"/>
     
   </entry>
   
@@ -475,30 +497,6 @@
       
         &lt;h2 id=&quot;责任链模式的定义&quot;&gt;&lt;a href=&quot;#责任链模式的定义&quot; class=&quot;headerlink&quot; title=&quot;责任链模式的定义&quot;&gt;&lt;/a&gt;责任链模式的定义&lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;使多个对象都有机会处理请求，从而避免了请求的发送者和接受者之间的耦
-      
-    
-    </summary>
-    
-    
-      <category term="设计模式" scheme="http://fx109138.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>设计模式之命令模式</title>
-    <link href="http://fx109138.github.io/2017/09/21/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/"/>
-    <id>http://fx109138.github.io/2017/09/21/设计模式之命令模式/</id>
-    <published>2017-09-21T10:49:10.000Z</published>
-    <updated>2017-09-21T12:38:41.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="什么是命令模式"><a href="#什么是命令模式" class="headerlink" title="什么是命令模式"></a>什么是命令模式</h2><blockquote><p>将一个请求封装为一个对象，从而使你可用不同的请求对客户进行参数化; 对请求排队或记录请求日志，以及支持可撤销的操作。</p></blockquote><p>还是通过例子来理解这种设计模式。</p><h2 id="举个栗子"><a href="#举个栗子" class="headerlink" title="举个栗子"></a>举个栗子</h2><p>命令模式的模型图<br><img src="http://oux9g0njr.bkt.clouddn.com/17-9-21/11670976.jpg" alt=""></p><p>命令模式有三种角色：接收者、命令、调用者，他的封装性特别好，下面来体验一下编码过程</p><ul><li>抽象接收者及实现</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Receiver</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">action</span><span class="params">()</span></span>;</div><div class="line">&#125;</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConcreteReceiver</span> <span class="keyword">extends</span> <span class="title">Receiver</span> </span>&#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">action</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="comment">//接收者任务</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><ul><li>抽象命令及实现</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Command</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">execute</span><span class="params">()</span></span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConcreteCommand</span> <span class="keyword">extends</span> <span class="title">Command</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> Receiver receiver;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ConcreteCommand</span><span class="params">(Receiver receiver)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.receiver = receiver;</div><div class="line">    &#125;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">execute</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="comment">//执行命令</span></div><div class="line">        receiver.action();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><ul><li>调用者</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Invoker</span> </span>&#123;</div><div class="line">    <span class="comment">//接受并执行</span></div><div class="line">    <span class="keyword">private</span> Command command;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setCommand</span><span class="params">(Command command)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.command = command;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">invokeCommand</span><span class="params">()</span></span>&#123;</div><div class="line">        command.execute();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><ul><li>使用场景</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        Invoker invoker=<span class="keyword">new</span> Invoker();</div><div class="line">        Receiver receiver=<span class="keyword">new</span> ConcreteReceiver();</div><div class="line">        Command command=<span class="keyword">new</span> ConcreteCommand(receiver);</div><div class="line">        invoker.setCommand(command);</div><div class="line">        invoker.invokeCommand();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><p>这就是命令模式，它的特点是命令的接收者和调用者之间没有任何耦合，这样可以很容易地应对各种变化。</p><h2 id="适用范围"><a href="#适用范围" class="headerlink" title="适用范围"></a>适用范围</h2><p>命令模式的使用和它的名字一样，只要是命令的地方就可以用命令模式，结合其他设计模式使用会更加能发挥它的价值。</p><h2 id="优点缺点"><a href="#优点缺点" class="headerlink" title="优点缺点"></a>优点缺点</h2><p>优点就是命令的接受和调用完全解耦，有利于扩展，而且开发简单。</p><p>缺点就是命令过多的时候类的数量会增加，如果不结合其他设计模式难以维护。</p><h2 id="封闭接收者的命令模式"><a href="#封闭接收者的命令模式" class="headerlink" title="封闭接收者的命令模式"></a>封闭接收者的命令模式</h2><p>在命令模式中，其实有时候调用者无需知道命令的接收者，此时可以换一种方式，变更代码如下</p><ul><li>抽象命令及实现</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Command</span> </span>&#123;</div><div class="line">    <span class="keyword">protected</span> <span class="keyword">final</span> Receiver receiver;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Command</span><span class="params">(Receiver receiver)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.receiver = receiver;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">execute</span><span class="params">()</span></span>;</div><div class="line">&#125;</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConcreteCommand</span> <span class="keyword">extends</span> <span class="title">Command</span> </span>&#123;</div><div class="line">    <span class="comment">//默认接收者</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ConcreteCommand</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>(<span class="keyword">new</span> ConcreteReceiver());</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//自定义接收者</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ConcreteCommand</span><span class="params">(Receiver receiver)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>(receiver);</div><div class="line">    &#125;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">execute</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="comment">//执行命令</span></div><div class="line">        receiver.action();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><ul><li>调用场景</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        Invoker invoker=<span class="keyword">new</span> Invoker();</div><div class="line">        Command command=<span class="keyword">new</span> ConcreteCommand();</div><div class="line">        invoker.setCommand(command);</div><div class="line">        invoker.invokeCommand();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><p>这样高层模块就无需知道具体接收者是谁了，这也是命令模式的一种很常用的用法。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;什么是命令模式&quot;&gt;&lt;a href=&quot;#什么是命令模式&quot; class=&quot;headerlink&quot; title=&quot;什么是命令模式&quot;&gt;&lt;/a&gt;什么是命令模式&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;将一个请求封装为一个对象，从而使你可用不同的请求对客户进行参数化; 对请求
       
     
     </summary>
