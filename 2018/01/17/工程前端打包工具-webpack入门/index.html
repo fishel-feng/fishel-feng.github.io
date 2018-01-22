@@ -105,7 +105,7 @@
 <meta property="og:description" content="对于webpack这个东西，应该是大多数现代前端开发者要使用的工具了。前端发展很快，从webpack的版本就能反映出来，有人还在用webpack1，现在4的测试版都已经发布了。昨天在知乎上看到一位老师吐槽，自己的技术书还没出版现在又得改书稿了。所以作为开发者，要有随时学习的态度，和对技术的热情。前段时间还新开源了一个叫Parcel的打包工具，号称零配置，热度很高，可能随时都要取代配置繁琐的webp">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://oux9g0njr.bkt.clouddn.com/18-1-18/21007269.jpg">
-<meta property="og:updated_time" content="2018-01-19T06:50:38.813Z">
+<meta property="og:updated_time" content="2018-01-22T07:23:47.708Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="工程前端打包工具--webpack入门">
 <meta name="twitter:description" content="对于webpack这个东西，应该是大多数现代前端开发者要使用的工具了。前端发展很快，从webpack的版本就能反映出来，有人还在用webpack1，现在4的测试版都已经发布了。昨天在知乎上看到一位老师吐槽，自己的技术书还没出版现在又得改书稿了。所以作为开发者，要有随时学习的态度，和对技术的热情。前段时间还新开源了一个叫Parcel的打包工具，号称零配置，热度很高，可能随时都要取代配置繁琐的webp">
@@ -382,7 +382,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  973
+                  1,449
                 </span>
               
 
@@ -398,7 +398,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  4
+                  5
                 </span>
               
             </div>
@@ -430,8 +430,53 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> config = &#123;</div><div class="line">  entry: &#123;</div><div class="line">    pageOne: <span class="string">'./src/pageOne/index.js'</span>,</div><div class="line">    pageTwo: <span class="string">'./src/pageTwo/index.js'</span>,</div><div class="line">    pageThree: <span class="string">'./src/pageThree/index.js'</span></div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 <p>entry后面可以写对象，对象的属性代表最终打包的Chunk Name，值为每一个chunk的打包入口，这样配置就可以从多个入口开始执行打包任务。而无论是单入口还是多入口，最终都要有一个输出的地方，就是出口。</p>
 <h3 id="output（输出）"><a href="#output（输出）" class="headerlink" title="output（输出）"></a>output（输出）</h3><p>输出代表webpack文件最终被打包的样子，output后面写一个对象，filename代表最终的文件名，path指向最终保存文件的路径。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">const config = &#123;</div><div class="line">  output: &#123;</div><div class="line">    filename: &apos;bundle.js&apos;,</div><div class="line">    path: &apos;/home/proj/public/assets&apos;</div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<h3 id="loader（加载器）"><a href="#loader（加载器）" class="headerlink" title="loader（加载器）"></a>loader（加载器）</h3><h3 id="plugins（插件）"><a href="#plugins（插件）" class="headerlink" title="plugins（插件）"></a>plugins（插件）</h3><hr>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> config = &#123;</div><div class="line">  output: &#123;</div><div class="line">    filename: <span class="string">'bundle.js'</span>,</div><div class="line">    path: <span class="string">'/home/proj/public/assets'</span></div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>需要注意的就是webpack3不支持相对路径了，可以通过引入path模块使用<code>path.resolve(__dirname, &#39;dist&#39;)</code>来描述路径信息。对于多入口，可以使用占位符来保证文件唯一性：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">模板</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">[hash]</td>
+<td style="text-align:center">模块标识符(module identifier)的 hash</td>
+</tr>
+<tr>
+<td style="text-align:center">[chunkhash]</td>
+<td style="text-align:center">chunk 内容的 hash</td>
+</tr>
+<tr>
+<td style="text-align:center">[name]</td>
+<td style="text-align:center">模块名称</td>
+</tr>
+<tr>
+<td style="text-align:center">[id]</td>
+<td style="text-align:center">模块标识符(module identifier)</td>
+</tr>
+<tr>
+<td style="text-align:center">[query]</td>
+<td style="text-align:center">模块的 query，例如，文件名 ? 后面的字符串</td>
+</tr>
+</tbody>
+</table>
+<h3 id="loader（加载器）"><a href="#loader（加载器）" class="headerlink" title="loader（加载器）"></a>loader（加载器）</h3><p>loader是webpack最重要的一部分，如果不是为了使用loader我们完全没必要引入复杂的webpack。loader 用于对模块的源代码进行转换，只有使用了正确的loader，webpack才会识别对应的文件，并且能够把它转化成想要的样子。</p>
+<p>在webpack中支持三种使用loader的方式：</p>
+<ul>
+<li>配置（推荐）：在 webpack.config.js 文件中指定 loader。</li>
+<li>内联：在每个 import 语句中显式指定 loader。</li>
+<li>CLI：在 shell 命令中指定它们。</li>
+</ul>
+<p>实际使用的时候主要使用配置的方式，首先需要安装loader，之后再rules里面添加规则：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>: &#123;</div><div class="line">    rules: [</div><div class="line">      &#123;</div><div class="line">        test: <span class="regexp">/\.css$/</span>,</div><div class="line">        use: [</div><div class="line">          &#123; <span class="attr">loader</span>: <span class="string">'style-loader'</span> &#125;,</div><div class="line">          &#123;</div><div class="line">            loader: <span class="string">'css-loader'</span>,</div><div class="line">            options: &#123;</div><div class="line">              modules: <span class="literal">true</span></div><div class="line">            &#125;</div><div class="line">          &#125;</div><div class="line">        ]</div><div class="line">      &#125;</div><div class="line">    ]</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<p>实际开发中，我们只要知道常用的loader，选择需要的即可，</p>
+<h3 id="plugins（插件）"><a href="#plugins（插件）" class="headerlink" title="plugins（插件）"></a>plugins（插件）</h3><p>很多功能强大的系统都是依赖插件来构建的，webpack也提供了一套插件机制，我们可以使用插件来完成复杂的任务。插件可以通过在plugins中传入new实例来配置：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">plugins: [</div><div class="line">    <span class="keyword">new</span> webpack.optimize.UglifyJsPlugin(),</div><div class="line">    <span class="keyword">new</span> HtmlWebpackPlugin(&#123;<span class="attr">template</span>: <span class="string">'./src/index.html'</span>&#125;)</div><div class="line">  ]</div></pre></td></tr></table></figure>
+<p>实际开发中，也有很多好用的插件，等到需要了，就可以安装使用。</p>
+<h2 id="小总结"><a href="#小总结" class="headerlink" title="小总结"></a>小总结</h2><p>其实这篇文章只是对webpack的粗浅认识，在打包方面还要注意性能问题，加载方式等等不过这里都没提到，所以这篇真的只是入门的东西，后面随着经验变多了我会继续总结。</p>
+<hr>
 <p>尊重原创，转载分享前请先知悉作者，也欢迎指出错误不足共同交流，更多内容欢迎关注作者博客<a href="https://fx109138.github.io/">点击这里</a></p>
 
       
@@ -675,7 +720,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#webpack初识"><span class="nav-number">1.</span> <span class="nav-text">webpack初识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#webpack的基本概念"><span class="nav-number">2.</span> <span class="nav-text">webpack的基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#entry（入口）"><span class="nav-number">2.1.</span> <span class="nav-text">entry（入口）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#output（输出）"><span class="nav-number">2.2.</span> <span class="nav-text">output（输出）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#loader（加载器）"><span class="nav-number">2.3.</span> <span class="nav-text">loader（加载器）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#plugins（插件）"><span class="nav-number">2.4.</span> <span class="nav-text">plugins（插件）</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#webpack初识"><span class="nav-number">1.</span> <span class="nav-text">webpack初识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#webpack的基本概念"><span class="nav-number">2.</span> <span class="nav-text">webpack的基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#entry（入口）"><span class="nav-number">2.1.</span> <span class="nav-text">entry（入口）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#output（输出）"><span class="nav-number">2.2.</span> <span class="nav-text">output（输出）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#loader（加载器）"><span class="nav-number">2.3.</span> <span class="nav-text">loader（加载器）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#plugins（插件）"><span class="nav-number">2.4.</span> <span class="nav-text">plugins（插件）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小总结"><span class="nav-number">3.</span> <span class="nav-text">小总结</span></a></li></ol></div>
             
 
           </div>
@@ -727,7 +772,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共47.2k字</span>
+  <span class="post-count">博客全站共47.7k字</span>
 </div>
 
         
