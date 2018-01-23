@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fx109138.github.io/"/>
-  <updated>2018-01-22T04:55:54.854Z</updated>
+  <updated>2018-01-23T03:03:25.079Z</updated>
   <id>http://fx109138.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://fx109138.github.io/2018/01/22/%E4%BA%94%E5%AD%90%E6%A3%8B%E5%B0%8F%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E5%B0%8F%E8%AE%B0/"/>
     <id>http://fx109138.github.io/2018/01/22/五子棋小游戏开发小记/</id>
     <published>2018-01-21T16:21:34.000Z</published>
-    <updated>2018-01-22T04:55:54.854Z</updated>
+    <updated>2018-01-23T03:03:25.079Z</updated>
     
-    <content type="html"><![CDATA[<p>由于最近写项目要使用socekt.io技术，于是研究了一段时间，把自己早期学习阶段写的小游戏改造了一下，变成了一个比较完整的小程序。<a href="http://fengxu.ink:5001" target="_blank" rel="external">点击这里</a>可以体验游戏,建议使用手机模式查看，也可以下载打包好的webapp，安卓版已上架酷安市场。</p><p>整个东西其实很简单，游戏界面使用canvas绘制，AI算法来自慕课网学习视频，联机对战使用socket.io实现实时推送，完整代码已经开源，<a href="https://github.com/fx109138/gobang" target="_blank" rel="external">点击传送</a>，喜欢的给个star，欢迎fork，更欢迎指出不足，提出建议。</p>]]></content>
+    <content type="html"><![CDATA[<p>由于最近写项目要使用socekt.io技术，于是研究了一段时间，把自己早期学习阶段写的小游戏改造了一下，变成了一个比较完整的小程序。<a href="http://fengxu.ink:5001" target="_blank" rel="external">点击这里</a>可以体验游戏,建议使用手机模式查看，也可以下载打包好的webapp，安卓版已上架酷安市场,扫码可下载体验：</p><p><img src="https://www.coolapk.com/qr/image?data=base64:aHR0cHM6Ly93d3cuY29vbGFway5jb20vYXBrL2NvbS5meC5nb2Jhbmc_ZnJvbT1xcg~~&amp;h=3e39a3df" alt=""></p><p>整个东西其实很简单，游戏界面使用canvas绘制，AI算法来自慕课网学习视频，联机对战使用socket.io实现实时推送，完整代码已经开源，<a href="https://github.com/fx109138/gobang" target="_blank" rel="external">点击传送</a>，喜欢的给个star，欢迎fork，更欢迎指出不足，提出建议。</p>]]></content>
     
     <summary type="html">
     
@@ -37,9 +37,9 @@
     
       <category term="前端开发" scheme="http://fx109138.github.io/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
     
-      <category term="node.js" scheme="http://fx109138.github.io/tags/node-js/"/>
-    
       <category term="socket.io" scheme="http://fx109138.github.io/tags/socket-io/"/>
+    
+      <category term="node.js" scheme="http://fx109138.github.io/tags/node-js/"/>
     
       <category term="移动开发" scheme="http://fx109138.github.io/tags/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/"/>
     
@@ -65,11 +65,11 @@
     </summary>
     
     
+      <category term="socket.io" scheme="http://fx109138.github.io/tags/socket-io/"/>
+    
       <category term="node.js" scheme="http://fx109138.github.io/tags/node-js/"/>
     
       <category term="javascript" scheme="http://fx109138.github.io/tags/javascript/"/>
-    
-      <category term="socket.io" scheme="http://fx109138.github.io/tags/socket-io/"/>
     
   </entry>
   
