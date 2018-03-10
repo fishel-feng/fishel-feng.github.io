@@ -96,19 +96,20 @@
 
 
 
-<meta name="description" content="vue.js是一个非常优秀的前端开发框架，不是我说的，大家都知道。本人也使用过vue.js开发过移动端SPA应用，还是学习阶段，经验尚浅，能力有限。不过我也懂得只会使用轮子不知所以然是远远不够的，凭自己浅薄的见识，斗胆写一篇略微深入的一点文章。 首先我现在的能力，独立阅读源码还是有很大压力的，所幸vue写的很规范，通过方法名基本可以略知一二，里面的原理不懂的地方多方面查找资料，其中核心的部分通过自">
+<meta name="description" content="vue.js是一个非常优秀的前端开发框架，不是我说的，大家都知道。本人也使用过vue.js开发过移动端SPA应用，还是学习阶段，经验尚浅，能力有限。不过我也懂得只会使用轮子不知所以然是远远不够的，凭自己浅薄的见识，斗胆写一篇略微深入的一点文章。 首先我现在的能力，独立阅读源码还是有很大压力的，所幸vue写的很规范，通过方法名基本可以略知一二，里面的原理不懂的地方多方面查找资料，本文中不规范不正确的">
 <meta name="keywords" content="前端开发,vue.js">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue.js原理初探">
 <meta property="og:url" content="http://fx109138.github.io/2018/03/09/vue-js原理初探/index.html">
 <meta property="og:site_name" content="隋堤倦客">
-<meta property="og:description" content="vue.js是一个非常优秀的前端开发框架，不是我说的，大家都知道。本人也使用过vue.js开发过移动端SPA应用，还是学习阶段，经验尚浅，能力有限。不过我也懂得只会使用轮子不知所以然是远远不够的，凭自己浅薄的见识，斗胆写一篇略微深入的一点文章。 首先我现在的能力，独立阅读源码还是有很大压力的，所幸vue写的很规范，通过方法名基本可以略知一二，里面的原理不懂的地方多方面查找资料，其中核心的部分通过自">
+<meta property="og:description" content="vue.js是一个非常优秀的前端开发框架，不是我说的，大家都知道。本人也使用过vue.js开发过移动端SPA应用，还是学习阶段，经验尚浅，能力有限。不过我也懂得只会使用轮子不知所以然是远远不够的，凭自己浅薄的见识，斗胆写一篇略微深入的一点文章。 首先我现在的能力，独立阅读源码还是有很大压力的，所幸vue写的很规范，通过方法名基本可以略知一二，里面的原理不懂的地方多方面查找资料，本文中不规范不正确的">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://oux9g0njr.bkt.clouddn.com/18-3-9/14631487.jpg">
-<meta property="og:updated_time" content="2018-03-09T16:32:51.528Z">
+<meta property="og:image" content="http://oux9g0njr.bkt.clouddn.com/18-3-10/91233550.jpg">
+<meta property="og:updated_time" content="2018-03-10T04:59:23.001Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue.js原理初探">
-<meta name="twitter:description" content="vue.js是一个非常优秀的前端开发框架，不是我说的，大家都知道。本人也使用过vue.js开发过移动端SPA应用，还是学习阶段，经验尚浅，能力有限。不过我也懂得只会使用轮子不知所以然是远远不够的，凭自己浅薄的见识，斗胆写一篇略微深入的一点文章。 首先我现在的能力，独立阅读源码还是有很大压力的，所幸vue写的很规范，通过方法名基本可以略知一二，里面的原理不懂的地方多方面查找资料，其中核心的部分通过自">
+<meta name="twitter:description" content="vue.js是一个非常优秀的前端开发框架，不是我说的，大家都知道。本人也使用过vue.js开发过移动端SPA应用，还是学习阶段，经验尚浅，能力有限。不过我也懂得只会使用轮子不知所以然是远远不够的，凭自己浅薄的见识，斗胆写一篇略微深入的一点文章。 首先我现在的能力，独立阅读源码还是有很大压力的，所幸vue写的很规范，通过方法名基本可以略知一二，里面的原理不懂的地方多方面查找资料，本文中不规范不正确的">
 <meta name="twitter:image" content="http://oux9g0njr.bkt.clouddn.com/18-3-9/14631487.jpg">
 
 
@@ -225,12 +226,12 @@
         </li>
       
         
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+        <li class="menu-item menu-item-resume">
+          <a href="/resume/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
-            关于
+            简历
           </a>
         </li>
       
@@ -251,6 +252,16 @@
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            关于
           </a>
         </li>
       
@@ -382,7 +393,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  1,593
+                  2,027
                 </span>
               
 
@@ -398,7 +409,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  6
+                  7
                 </span>
               
             </div>
@@ -420,7 +431,7 @@
 
       
         <p>vue.js是一个非常优秀的前端开发框架，不是我说的，大家都知道。本人也使用过vue.js开发过移动端SPA应用，还是学习阶段，经验尚浅，能力有限。不过我也懂得只会使用轮子不知所以然是远远不够的，凭自己浅薄的见识，斗胆写一篇略微深入的一点文章。</p>
-<p>首先我现在的能力，独立阅读源码还是有很大压力的，所幸vue写的很规范，通过方法名基本可以略知一二，里面的原理不懂的地方多方面查找资料，其中核心的部分通过自己动手实现来感受一下其中的精妙。本文中不规范不正确的地方欢迎指正，学生非常愿意接受各位前辈提出宝贵的建议和指导。</p>
+<p>首先我现在的能力，独立阅读源码还是有很大压力的，所幸vue写的很规范，通过方法名基本可以略知一二，里面的原理不懂的地方多方面查找资料，本文中不规范不正确的地方欢迎指正，学生非常愿意接受各位前辈提出宝贵的建议和指导。</p>
 <p>写这篇文章时GitHub上vue最新版是<a href="https://github.com/vuejs/vue/releases/tag/v2.5.13" target="_blank" rel="external">v2.5.13</a>，采用了flow作为类型管理工具，关于flow相关内容选择性忽略了，不考虑类型系统，只考虑实现原理，写下这篇文章。</p>
 <p>本文大概涉及到vue几个核心的地方：vue实例化，虚拟DOM，模板编译过程，数据绑定。</p>
 <p>下图为最新版本vue的生命周期</p>
@@ -434,9 +445,17 @@
 <h2 id="虚拟DOM"><a href="#虚拟DOM" class="headerlink" title="虚拟DOM"></a>虚拟DOM</h2><p>虚拟DOM技术是一个很流行的东西，现代前端开发框架vue和react都是基于虚拟DOM来实现的。虚拟DOM技术是为了解决一个很重要的问题：浏览器进行DOM操作会带来较大的开销。</p>
 <p>操作DOM是不可避免的，常规的操作也不会有任何问题，但是经验不足的开发者往往很容易写出大量的多余或重复的DOM操作，成为前端性能优化中重要的问题。想提升效率，我们就要尽可能减少DOM操作，只修改需要修改的地方。要知道js本身运行速度是很快的，而js对象又可以很准确地描述出类似DOM的树形结构，基于这一前提，人们研究出一种方式，通过使用js描述出一个假的DOM结构，每次数据变化时候，在假的DOM上分析数据变化前后结构差别，找出这个最小差别并且在真实DOM上只更新这个最小的变化内容，这样就极大程度上降低了对DOM的操作带来的性能开销。</p>
 <p>上面的假的DOM结构就是虚拟DOM，比对的算法成为diff算法，这是实现虚拟DOM技术的关键，在vue初始化时，首先用JS对象描述出DOM树的结构，用这个描述树去构建真实DOM，并实际展现到页面中，一旦有数据状态变更，需要重新构建一个新的JS的DOM树，对比两棵树差别，找出最小更新内容，并将最小差异内容更新到真实DOM上。</p>
-<p>关于虚拟DOM和diff算法待补充。</p>
 <p>有了虚拟DOM，下面一个问题就是，什么时候会触发更新，接下来要介绍的，就是vue中最具特色的功能–数据响应系统及实现。</p>
-<h2 id="数据绑定"><a href="#数据绑定" class="headerlink" title="数据绑定"></a>数据绑定</h2><p>— TODO  未完，白天补充</p>
+<h2 id="数据绑定"><a href="#数据绑定" class="headerlink" title="数据绑定"></a>数据绑定</h2><p>记得vue.js的作者尤雨溪老师在知乎上一个回答中提到过自己创作vue的过程，最初就是尝试实现一个类似angular1的东西，发现里面对于数据处理非常不优雅，于是创造性的尝试利用ES5中的Object.defineProperty来实现数据绑定，于是就有了最初的vue。vue中响应式的数据处理方式是一项很有价值的东西。</p>
+<p>关于响应式的实现原理，vue官网上面其实有具体介绍，下面是一张官方图片：</p>
+<p><img src="http://oux9g0njr.bkt.clouddn.com/18-3-10/91233550.jpg" alt=""></p>
+<p>vue会遍历此data中对象所有的属性，并使用Object.defineProperty把这些属性全部转为getter/setter，而每个组件实例都有watcher对象，它会在组件渲染的过程中把属性记录为依赖，之后当依赖项的 setter被调用时，会通知watcher重新计算，从而致使它关联的组件得以更新。这就是响应实现的基本原理，Object.defineProperty无法shim，所以vue不支持IE8及以下不支持ES5的浏览器。</p>
+<p>一个简单的demo：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">id</span>=<span class="string">"inputName"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"showName"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 传统方式处理数据</span></div><div class="line"><span class="comment">// document.getElementById('inputName').addEventListener('keyup', function (e) &#123;</span></div><div class="line"><span class="comment">//   document.getElementById('showName').innerText = e.target.value;</span></div><div class="line"><span class="comment">// &#125;);</span></div><div class="line"></div><div class="line"><span class="comment">// 利用Object.defineProperty自动响应数据</span></div><div class="line"><span class="keyword">var</span> obj = &#123;&#125;;</div><div class="line"><span class="built_in">Object</span>.defineProperty(obj, <span class="string">'name'</span>, &#123;</div><div class="line">  get: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line">  &#125;,</div><div class="line">  set: <span class="function"><span class="keyword">function</span> (<span class="params">val</span>) </span>&#123;</div><div class="line">    <span class="built_in">document</span>.getElementById(<span class="string">'showName'</span>).innerText = val;</div><div class="line">  &#125;</div><div class="line">&#125;);</div><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">'inputName'</span>).addEventListener(<span class="string">'keyup'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">  obj.name = e.target.value;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>这个例子并不是什么复杂的实现，但是却体现了vue最核心的东西，我们可以发现，Object.defineProperty下的get和set是可以自动相应的，基于此vue实现了一套基于数据驱动视图的自动响应系统，使得开发模型得到了极大的简化。</p>
+<hr>
+<p>至此，本文就暂时结束了，水平一般能力有限，后面随着理解的加深会更深入去学习。更多文章欢迎访问<a href="http://fengxu.ink" target="_blank" rel="external">个人网站</a>。</p>
 
       
     </div>
@@ -641,12 +660,34 @@
               </span>
             
               <span class="links-of-author-item">
-                <a href="http://www.zhihu.com/people/sui-di-juan-ke" target="_blank" title="zhihu">
+                <a href="http://www.zhihu.com/people/sui-di-juan-ke" target="_blank" title="知乎">
                   
                     <i class="fa fa-fw fa-globe"></i>
                   
                     
-                      zhihu
+                      知乎
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://juejin.im/user/585c72fb8d6d810065d820b8" target="_blank" title="掘金">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      掘金
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://segmentfault.com/u/fx109138" target="_blank" title="segmentfault">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      segmentfault
                     
                 </a>
               </span>
@@ -727,7 +768,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共52.4k字</span>
+  <span class="post-count">博客全站共52.9k字</span>
 </div>
 
         
@@ -1182,6 +1223,21 @@
   
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
 
