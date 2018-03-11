@@ -111,9 +111,9 @@
     
       <category term="前端开发" scheme="http://fx109138.github.io/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
     
-      <category term="node.js" scheme="http://fx109138.github.io/tags/node-js/"/>
-    
       <category term="socket.io" scheme="http://fx109138.github.io/tags/socket-io/"/>
+    
+      <category term="node.js" scheme="http://fx109138.github.io/tags/node-js/"/>
     
       <category term="移动开发" scheme="http://fx109138.github.io/tags/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/"/>
     
@@ -139,11 +139,11 @@
     </summary>
     
     
+      <category term="socket.io" scheme="http://fx109138.github.io/tags/socket-io/"/>
+    
       <category term="node.js" scheme="http://fx109138.github.io/tags/node-js/"/>
     
       <category term="javascript" scheme="http://fx109138.github.io/tags/javascript/"/>
-    
-      <category term="socket.io" scheme="http://fx109138.github.io/tags/socket-io/"/>
     
   </entry>
   
