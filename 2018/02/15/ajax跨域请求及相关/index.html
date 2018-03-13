@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="隋堤倦客">
 <meta property="og:description" content="对于一个前端开发者来说，跨域是一个老生常谈的问题，不可避免，不可不谈更不能不会。最近在逐步地写项目经验总结，第一篇就从经典的跨域问题开始谈一谈。 什么是跨域跨域问题来自于浏览器同源策略的限制，包括DOM同源限制和ajax同源限制，本文探讨的是ajax跨域。ajax跨域指的是一个页面的ajax只能请求和当前页面同源的数据，如果发现请求到的数据不符合要求，浏览器就会阻止返回的数据。所谓同源，指的是协议">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-20T10:09:55.591Z">
+<meta property="og:updated_time" content="2018-03-13T10:25:55.633Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ajax跨域请求及相关">
 <meta name="twitter:description" content="对于一个前端开发者来说，跨域是一个老生常谈的问题，不可避免，不可不谈更不能不会。最近在逐步地写项目经验总结，第一篇就从经典的跨域问题开始谈一谈。 什么是跨域跨域问题来自于浏览器同源策略的限制，包括DOM同源限制和ajax同源限制，本文探讨的是ajax跨域。ajax跨域指的是一个页面的ajax只能请求和当前页面同源的数据，如果发现请求到的数据不符合要求，浏览器就会阻止返回的数据。所谓同源，指的是协议">
@@ -390,7 +390,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  1,500
+                  2,051
                 </span>
               
 
@@ -406,7 +406,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  5
+                  7
                 </span>
               
             </div>
@@ -465,7 +465,16 @@
 <p>对于非简单请求，正式请求之前会增加一次OPTIONS请求来进行”预检”，此次请求会带上请求源，服务器会校验是否符合条件，如果不符合会返回一个不带任何CORS相关的头信息字段，浏览器就会知道请求不允许，触发错误，停止继续发送请求。</p>
 <p>CROS重点就在服务器上，只要配置了允许CROS，就可以正常发送请求，非常方便且安全性好，具体的服务器配置取决于服务端的不同实现。</p>
 <h3 id="服务器代理"><a href="#服务器代理" class="headerlink" title="服务器代理"></a>服务器代理</h3><p>这是一种终极的解决方案，因为限制只存在于浏览器中，在其他环境下是不存在的，服务器中中自然也不存在，所以只需要在服务器做好请求代理，请求变成同源的自然就不存在问题了。</p>
+<p>服务器代理可以采用nginx作为代理，也可以使用nodejs中间件等方式，无论哪种方式，其目的都是绕开浏览器的限制，在浏览器视角来看，还是同源访问，自然也就不存在跨域的问题了。</p>
 <p>以上是ajax跨域的主要方式，对于另一种跨域–页面之间跨域交互限制，还有其特定的解决方案，常用的方式有document.domain，window.name，postMessage几种方案，由于现阶段我接触的不够多，等到后面有实际操作经验后再补充文章。本文只探讨ajax跨域。</p>
+<hr>
+<h2 id="补充：其他的跨域解决方案"><a href="#补充：其他的跨域解决方案" class="headerlink" title="补充：其他的跨域解决方案"></a>补充：其他的跨域解决方案</h2><p>由于经验尚浅，以下内容本人并未在开发中使用过，作为理论学习经验写在这里，欢迎指正。</p>
+<h3 id="iframe跨域"><a href="#iframe跨域" class="headerlink" title="iframe跨域"></a>iframe跨域</h3><p>浏览器同源限制另一个问题就是：浏览器中不同域的框架之间不能进行js的交互操作，一下几种方式，就是为了解决这一限制的。</p>
+<h4 id="document-domain来跨子域"><a href="#document-domain来跨子域" class="headerlink" title="document.domain来跨子域"></a>document.domain来跨子域</h4><p>这种方式适用于主域名相同，而子域名不同的情况。如a页面<a href="http://a.test.com，b页面http://b.test.com，此时向跨域访问，可以分别给两个页面设置document.domain=test.com，之后通过parent或者window[&#39;iframename&#39;]等方式就可以跨域操作iframe了。" target="_blank" rel="external">http://a.test.com，b页面http://b.test.com，此时向跨域访问，可以分别给两个页面设置document.domain=test.com，之后通过parent或者window[&#39;iframename&#39;]等方式就可以跨域操作iframe了。</a></p>
+<h4 id="window-name跨域"><a href="#window-name跨域" class="headerlink" title="window.name跨域"></a>window.name跨域</h4><p>window对象有个name属性，该属性有个特征：即在一个window的生命周期内, window载入的所有的页面都是共享一个window.name的，即使页面甚至域名都不同。每个页面对window.name都有读写的权限，并且name长度可以达到2MB，这就提供了一个跨域共享资源的机会。</p>
+<h4 id="location-hash跨域"><a href="#location-hash跨域" class="headerlink" title="location.hash跨域"></a>location.hash跨域</h4><p>location.hash跨域利用了子框架具有修改父框架src的hash值，且页面不会刷新这一特点。利用这种方式传递的数据的字节数是有限的。</p>
+<h3 id="HTML5的postMessage跨域"><a href="#HTML5的postMessage跨域" class="headerlink" title="HTML5的postMessage跨域"></a>HTML5的postMessage跨域</h3><p>window.postMessage(message,targetOrigin)是一个HTML5的api，允许两个窗口之间进行跨域发送消息，它可以实现页面和其打开的新窗口的数据传递，多窗口之间消息传递，页面与嵌套的iframe消息传递等情景下的跨域问题。</p>
+<h3 id="websocket协议跨域"><a href="#websocket协议跨域" class="headerlink" title="websocket协议跨域"></a>websocket协议跨域</h3><p>websocket是一种不同于http的新的协议，它实现了浏览器与服务器全双工通信，同时允许跨域通讯，有关websocket相关内容我在<a href="http://fengxu.ink/2018/01/21/%E5%AD%A6%E4%B9%A0socket-io/" target="_blank" rel="external">之前文章</a>中提到过，在此不再过多讨论。</p>
 <hr>
 <p>尊重原创，转载分享前请先知悉作者，也欢迎指出错误不足共同交流，更多内容欢迎关注作者博客<a href="http://fengxu.ink" target="_blank" rel="external">点击这里</a></p>
 
@@ -730,7 +739,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是跨域"><span class="nav-number">1.</span> <span class="nav-text">什么是跨域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跨域请求的方式"><span class="nav-number">2.</span> <span class="nav-text">跨域请求的方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JSONP"><span class="nav-number">2.1.</span> <span class="nav-text">JSONP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CORS"><span class="nav-number">2.2.</span> <span class="nav-text">CORS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务器代理"><span class="nav-number">2.3.</span> <span class="nav-text">服务器代理</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是跨域"><span class="nav-number">1.</span> <span class="nav-text">什么是跨域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跨域请求的方式"><span class="nav-number">2.</span> <span class="nav-text">跨域请求的方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JSONP"><span class="nav-number">2.1.</span> <span class="nav-text">JSONP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CORS"><span class="nav-number">2.2.</span> <span class="nav-text">CORS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务器代理"><span class="nav-number">2.3.</span> <span class="nav-text">服务器代理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#补充：其他的跨域解决方案"><span class="nav-number">3.</span> <span class="nav-text">补充：其他的跨域解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#iframe跨域"><span class="nav-number">3.1.</span> <span class="nav-text">iframe跨域</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#document-domain来跨子域"><span class="nav-number">3.1.1.</span> <span class="nav-text">document.domain来跨子域</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#window-name跨域"><span class="nav-number">3.1.2.</span> <span class="nav-text">window.name跨域</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#location-hash跨域"><span class="nav-number">3.1.3.</span> <span class="nav-text">location.hash跨域</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML5的postMessage跨域"><span class="nav-number">3.2.</span> <span class="nav-text">HTML5的postMessage跨域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#websocket协议跨域"><span class="nav-number">3.3.</span> <span class="nav-text">websocket协议跨域</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -782,7 +791,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共52.9k字</span>
+  <span class="post-count">博客全站共53.4k字</span>
 </div>
 
         
