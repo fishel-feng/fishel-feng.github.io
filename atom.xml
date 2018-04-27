@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fx109138.github.io/"/>
-  <updated>2018-04-26T23:53:31.388Z</updated>
+  <updated>2018-04-27T00:13:35.867Z</updated>
   <id>http://fx109138.github.io/</id>
   
   <author>
@@ -21,12 +21,25 @@
     <link href="http://fx109138.github.io/2018/04/27/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8xss%E5%92%8Ccsrf%E5%85%A5%E9%97%A8/"/>
     <id>http://fx109138.github.io/2018/04/27/网络安全xss和csrf入门/</id>
     <published>2018-04-26T23:53:31.000Z</published>
-    <updated>2018-04-26T23:53:31.388Z</updated>
+    <updated>2018-04-27T00:13:35.867Z</updated>
+    
+    <content type="html"><![CDATA[<p>在互联网的世界里面，安全始终是一个极为重要的问题。平时开发时候往往会忽略这一点，但是，一旦开发生产环境的项目时候，安全是一定要放在第一位的。在web开发中，理解常见的网络安全隐患，知道其原理并学会防护是一项重要的技能。</p><p>本文未完。。。待补充</p>]]></content>
     
     <summary type="html">
     
+      
+      
+        &lt;p&gt;在互联网的世界里面，安全始终是一个极为重要的问题。平时开发时候往往会忽略这一点，但是，一旦开发生产环境的项目时候，安全是一定要放在第一位的。在web开发中，理解常见的网络安全隐患，知道其原理并学会防护是一项重要的技能。&lt;/p&gt;
+&lt;p&gt;本文未完。。。待补充&lt;/p&gt;
+
+      
+    
     </summary>
     
+    
+      <category term="web开发" scheme="http://fx109138.github.io/tags/web%E5%BC%80%E5%8F%91/"/>
+    
+      <category term="网络安全" scheme="http://fx109138.github.io/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"/>
     
   </entry>
   

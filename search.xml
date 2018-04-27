@@ -3,7 +3,11 @@
   <entry>
     <title><![CDATA[网络安全xss和csrf入门]]></title>
     <url>%2F2018%2F04%2F27%2F%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8xss%E5%92%8Ccsrf%E5%85%A5%E9%97%A8%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[在互联网的世界里面，安全始终是一个极为重要的问题。平时开发时候往往会忽略这一点，但是，一旦开发生产环境的项目时候，安全是一定要放在第一位的。在web开发中，理解常见的网络安全隐患，知道其原理并学会防护是一项重要的技能。 本文未完。。。待补充]]></content>
+      <tags>
+        <tag>web开发</tag>
+        <tag>网络安全</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[函数节流和函数防抖]]></title>
