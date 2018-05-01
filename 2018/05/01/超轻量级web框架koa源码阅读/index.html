@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="隋堤倦客" />
+  <meta name="keywords" content="node.js,web开发,koa," />
 
 
 
@@ -96,17 +96,18 @@
 
 
 
-<meta name="description" content="冯旭目标岗位： 前端开发工程师联系方式 手机: 13009715105 e-mail: fengxuneau@foxmail.com qq/微信: 1091381572  个人信息 冯旭/男/1997 东北农业大学/软件工程/本科(2015-2019) 技术博客： http://fengxu.ink GitHub： https://github.com/fx109138 专业技能： 掌握算法与数据">
-<meta property="og:type" content="website">
-<meta property="og:title" content="隋堤倦客">
-<meta property="og:url" content="http://fx109138.github.io/resume/index.html">
+<meta name="description" content="koa是一个非常轻量的web框架，里面除了ctx和middleware之外什么都没有，甚至连最基本的router功能都需要通过安装其他中间件来实现。不过虽然简单，但是它却非常强大，仅仅依靠中间件机制就可以构建完整的web服务。而koa的源码同样很简洁，基础代码只有不到2000行，非常适合阅读学习。最近计划阅读koa以及常用中间件的源码，接下来几篇博客可能都与koa相关，本篇先从核心代码开始。 ko">
+<meta name="keywords" content="node.js,web开发,koa">
+<meta property="og:type" content="article">
+<meta property="og:title" content="超轻量级web框架koa源码阅读">
+<meta property="og:url" content="http://fx109138.github.io/2018/05/01/超轻量级web框架koa源码阅读/index.html">
 <meta property="og:site_name" content="隋堤倦客">
-<meta property="og:description" content="冯旭目标岗位： 前端开发工程师联系方式 手机: 13009715105 e-mail: fengxuneau@foxmail.com qq/微信: 1091381572  个人信息 冯旭/男/1997 东北农业大学/软件工程/本科(2015-2019) 技术博客： http://fengxu.ink GitHub： https://github.com/fx109138 专业技能： 掌握算法与数据">
+<meta property="og:description" content="koa是一个非常轻量的web框架，里面除了ctx和middleware之外什么都没有，甚至连最基本的router功能都需要通过安装其他中间件来实现。不过虽然简单，但是它却非常强大，仅仅依靠中间件机制就可以构建完整的web服务。而koa的源码同样很简洁，基础代码只有不到2000行，非常适合阅读学习。最近计划阅读koa以及常用中间件的源码，接下来几篇博客可能都与koa相关，本篇先从核心代码开始。 ko">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-18T04:35:28.599Z">
+<meta property="og:updated_time" content="2018-05-01T16:51:45.167Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="隋堤倦客">
-<meta name="twitter:description" content="冯旭目标岗位： 前端开发工程师联系方式 手机: 13009715105 e-mail: fengxuneau@foxmail.com qq/微信: 1091381572  个人信息 冯旭/男/1997 东北农业大学/软件工程/本科(2015-2019) 技术博客： http://fengxu.ink GitHub： https://github.com/fx109138 专业技能： 掌握算法与数据">
+<meta name="twitter:title" content="超轻量级web框架koa源码阅读">
+<meta name="twitter:description" content="koa是一个非常轻量的web框架，里面除了ctx和middleware之外什么都没有，甚至连最基本的router功能都需要通过安装其他中间件来实现。不过虽然简单，但是它却非常强大，仅仅依靠中间件机制就可以构建完整的web服务。而koa的源码同样很简洁，基础代码只有不到2000行，非常适合阅读学习。最近计划阅读koa以及常用中间件的源码，接下来几篇博客可能都与koa相关，本篇先从核心代码开始。 ko">
 
 
 
@@ -135,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="http://fx109138.github.io/resume/"/>
+  <link rel="canonical" href="http://fx109138.github.io/2018/05/01/超轻量级web框架koa源码阅读/"/>
 
 
 
 
 
-  <title> | 隋堤倦客</title>
+  <title>超轻量级web框架koa源码阅读 | 隋堤倦客</title>
   
 
 
@@ -316,69 +317,229 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://fx109138.github.io/2018/05/01/超轻量级web框架koa源码阅读/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="隋堤倦客">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/upload/image/fx.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="隋堤倦客">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h2 class="post-title" itemprop="name headline"></h2>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <h1 id="冯旭"><a href="#冯旭" class="headerlink" title="冯旭"></a>冯旭</h1><h1 id="目标岗位：-前端开发工程师"><a href="#目标岗位：-前端开发工程师" class="headerlink" title="目标岗位： 前端开发工程师"></a>目标岗位： 前端开发工程师</h1><h2 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h2><ul>
-<li>手机: 13009715105</li>
-<li>e-mail: fengxuneau@foxmail.com</li>
-<li>qq/微信: 1091381572</li>
-</ul>
-<h2 id="个人信息"><a href="#个人信息" class="headerlink" title="个人信息"></a>个人信息</h2><ul>
-<li>冯旭/男/1997</li>
-<li>东北农业大学/软件工程/本科(2015-2019)</li>
-<li><strong>技术博客： <a href="http://fengxu.ink" target="_blank" rel="external">http://fengxu.ink</a></strong></li>
-<li><strong>GitHub： <a href="https://github.com/fx109138" target="_blank" rel="external">https://github.com/fx109138</a></strong></li>
-<li>专业技能： 掌握算法与数据结构，计算机网络，操作系统等软件工程专业相关课程</li>
-<li>职业技能： 掌握w3c标准以及HTML，CSS，JavaScript等前端开发基础，以及HTML5，CSS3，ECMAScript6新特性，了解前端工程化，熟悉前端开发框架vue.js的基本使用并了解简单原理，了解react.js，熟悉前后端Ajax交互，了解node.js的基本使用，能够使用node.js搭建服务端程序</li>
-</ul>
-<h2 id="自我评价"><a href="#自我评价" class="headerlink" title="自我评价"></a>自我评价</h2><ul>
-<li>热爱技术，乐于接受新事物，关注新技术发展动向</li>
-<li>学习能力强，能够在短时间内学习之前未接触过的技术并投入开发</li>
-<li>乐观积极面对生活并一直为提升自己而不断努力</li>
-</ul>
-<h2 id="项目经历"><a href="#项目经历" class="headerlink" title="项目经历"></a>项目经历</h2><h3 id="小农之家app"><a href="#小农之家app" class="headerlink" title="小农之家app"></a>小农之家app</h3><ul>
-<li>项目简介： 学校科创比赛立项项目，一款农业app，包括农业新闻，专家问答，农业社区，聊天等功能</li>
-<li>主要技术： 整个软件完全采用js来构建：服务器端使用node.js,基于egg.js框架，连接MongoDB数据库，搭建rest接口，使用socket.io实现IM和消息推送；前端是采用vue.js框架搭建的SPA，使用了vue-router路由,vuex数据管理；最终软件产品使用cordova打包成app</li>
-<li>承担任务： 前端开发和服务端开发</li>
-</ul>
-<h3 id="黑白子app"><a href="#黑白子app" class="headerlink" title="黑白子app"></a>黑白子app</h3><ul>
-<li>项目简介： 个人小作品，一个五子棋小游戏，支持人机对战和联机对战，Android版本在酷安发布</li>
-<li>主要技术： 棋盘和棋子采用canvas绘制，采用socket.io实现联机对战功能，适配移动端，使用webview打包成app</li>
-</ul>
-<h3 id="动效画廊"><a href="#动效画廊" class="headerlink" title="动效画廊"></a>动效画廊</h3><ul>
-<li>项目简介： 一个静态图片展示画廊</li>
-<li>主要技术： 使用原生js实现，利用css3的transition属性实现动效变换效果</li>
-</ul>
-<h3 id="贪吃蛇小游戏"><a href="#贪吃蛇小游戏" class="headerlink" title="贪吃蛇小游戏"></a>贪吃蛇小游戏</h3><ul>
-<li>项目简介： 学习前端早期作品，web版贪吃蛇小游戏</li>
-<li>主要技术： 分为前后两个版本，均使用原生js实现，第一版采用调整定位方式实现，第二版采用cavans绘制游戏视图来提升渲染性能</li>
-</ul>
-<h2 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h2><p>感谢您花时间阅读我的简历，期待能有机会和您共事</p>
-
+          <h2 class="post-title" itemprop="name headline">超轻量级web框架koa源码阅读</h2>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-01T17:35:48+08:00">
+                2018-05-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  1,338
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  5
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p>koa是一个非常轻量的web框架，里面除了ctx和middleware之外什么都没有，甚至连最基本的router功能都需要通过安装其他中间件来实现。不过虽然简单，但是它却非常强大，仅仅依靠中间件机制就可以构建完整的web服务。而koa的源码同样很简洁，基础代码只有不到2000行，非常适合阅读学习。最近计划阅读koa以及常用中间件的源码，接下来几篇博客可能都与koa相关，本篇先从核心代码开始。</p>
+<p>koa的源码直接从<a href="https://github.com/koajs/koa" target="_blank" rel="external">github</a>获取，本文采用目前最新的2.5.1版本。</p>
+<h2 id="代码结构"><a href="#代码结构" class="headerlink" title="代码结构"></a>代码结构</h2><p>第一眼看到koa的源码时候我真的懵了，反复确认没有看错之后才确信，koa源码只有四个文件–application.js，context.js，request.js，response.js，位于项目的lib文件夹下。而且一看文件名基本上就能猜到每个文件是做什么的了，接下来就是打开查看里面的内容。</p>
+<h2 id="koa基本启动流程"><a href="#koa基本启动流程" class="headerlink" title="koa基本启动流程"></a>koa基本启动流程</h2><p>首先看package.json里面的main，可以知道application.js是入口文件，里面是一个继承自event模块下的Emitter类的Application类，我们使用koa时候创建的app实例就是在这里定义的。</p>
+<p>分析一个类自然要先看它的构造函数，里面重点的就是定义了一个数组middleware，还有三个属性context，request，response分别为三个对象，而这三个对象就是在对应的其他三个文件中定义的。在此我们先不看另外的文件，想想我们使用koa的时候，创建app实例之后，接下来就是use各种中间件了，所以直接看use方法。</p>
+<p>use接收一个中间件函数作为参数，首先做类型校验，如果传入的是generator，在koa2中会先通过convert转换（convert的实现后续分析），最后其实只做了一件事，就是把这个函数push到middleware数组中去。use方法最后会返回this，也就是koa实例本身，这就意味着我们可以实现链式调用。</p>
+<p>设置好中间件，我们开启koa服务的最后一步就是调用listen方法设置监听端口，接下来就看一下listen方法的实现。我们会发现listen更简单，只有两行，其实什么额外的事情也没做，只是调用了node原生的http模块下面的createServer方法创建服务，listen方法设置监听，仅此而已。我们都知道http的createServer需要传入一个函数，这个函数在koa里面是通过调用callback方法返回的，接下来看callback的实现。</p>
+<p>callback里面首先使用compose把所有的中间件变成一个函数（compose的实现同样后续会详细分析），这里会首先调用Emitter中的listenerCount方法判断是否有error事件的监听器，如果没有会为error事件注册默认的事件监听方法onerror，之后就是定义我们要的那个传入createServer的函数了。这个函数接收req和res两个参数，之后，koa会对其做一个处理：通过调用createContext方法把req和res封装成我们熟悉的ctx对象（createContext具体做了哪些工作接下来会说），然后把ctx和之前处理好的中间件函数fnMiddleware传入handleRequest方法中。</p>
+<p>handleRequest中首先先取出res，先把状态置为404，然后对执行中间件后的成功和失败状态注册方法，失败调用ctx.onerror捕获异常，成功调用respond方法处理结果。这里还是用了onFinished模块，onFinished能确保一个流在关闭、完成和报错时都会执行相应的回调函数，这里把我们的异常处理函数传入用以处理错误信息。而respond方法，里面做的，就是读取ctx信息，把数据写入res中并响应请求。至此，整个流程就完成了。</p>
+<h2 id="ctx的创建"><a href="#ctx的创建" class="headerlink" title="ctx的创建"></a>ctx的创建</h2><p>createContext里面的代码其实特别简单，就是创建了三个对象context，request，response，然后把使用ctx时候的各种东西都挂到context对象上，这样我们就可以在ctx上面获取到req，res等等各种信息了。创建context，request，response对象时候用到了当前app类里面的三个对象，它们是通过从外部三个文件中引入的对象来创建的，所以接下来就看一下这三个文件中都有什么。</p>
+<p>这三个文件导出的都是对象，在context中，只做了一些基础方法的定义，剩下的一切属性方法全部都使用delegate代理到request和response属性的访问了。而前面我们已经知道，context上面的request和response就是通过另外的两个文件中的对象创建得到的。而这两个文件的内容就更加简洁了，都是我们平时使用时候访问的属性和方法，通过getter和setter的方式来控制上面的req和res从而实现对实际请求和响应操作的封装。于是整个koa核心的四个文件就彻底完成了。</p>
+<h2 id="convert实现原理"><a href="#convert实现原理" class="headerlink" title="convert实现原理"></a>convert实现原理</h2><h2 id="compose实现原理与中间件机制"><a href="#compose实现原理与中间件机制" class="headerlink" title="compose实现原理与中间件机制"></a>compose实现原理与中间件机制</h2><p>本文未完，待补充。。。</p>
+
       
     </div>
     
     
     
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+      
+    </div>
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechat.jpg" alt="隋堤倦客 WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/aipay.png" alt="隋堤倦客 Alipay"/>
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/node-js/" rel="tag"><i class="fa fa-tag"></i> node.js</a>
+          
+            <a href="/tags/web开发/" rel="tag"><i class="fa fa-tag"></i> web开发</a>
+          
+            <a href="/tags/koa/" rel="tag"><i class="fa fa-tag"></i> koa</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/27/网络安全xss和csrf入门/" rel="next" title="网络安全xss和csrf入门">
+                <i class="fa fa-chevron-left"></i> 网络安全xss和csrf入门
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -540,7 +701,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#冯旭"><span class="nav-number">1.</span> <span class="nav-text">冯旭</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目标岗位：-前端开发工程师"><span class="nav-number">2.</span> <span class="nav-text">目标岗位： 前端开发工程师</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#联系方式"><span class="nav-number">2.1.</span> <span class="nav-text">联系方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#个人信息"><span class="nav-number">2.2.</span> <span class="nav-text">个人信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自我评价"><span class="nav-number">2.3.</span> <span class="nav-text">自我评价</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目经历"><span class="nav-number">2.4.</span> <span class="nav-text">项目经历</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#小农之家app"><span class="nav-number">2.4.1.</span> <span class="nav-text">小农之家app</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#黑白子app"><span class="nav-number">2.4.2.</span> <span class="nav-text">黑白子app</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动效画廊"><span class="nav-number">2.4.3.</span> <span class="nav-text">动效画廊</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#贪吃蛇小游戏"><span class="nav-number">2.4.4.</span> <span class="nav-text">贪吃蛇小游戏</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#致谢"><span class="nav-number">2.5.</span> <span class="nav-text">致谢</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#代码结构"><span class="nav-number">1.</span> <span class="nav-text">代码结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#koa基本启动流程"><span class="nav-number">2.</span> <span class="nav-text">koa基本启动流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ctx的创建"><span class="nav-number">3.</span> <span class="nav-text">ctx的创建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#convert实现原理"><span class="nav-number">4.</span> <span class="nav-text">convert实现原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compose实现原理与中间件机制"><span class="nav-number">5.</span> <span class="nav-text">compose实现原理与中间件机制</span></a></li></ol></div>
             
 
           </div>
@@ -671,10 +832,10 @@
   
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
 
-  
+
 
   
 
