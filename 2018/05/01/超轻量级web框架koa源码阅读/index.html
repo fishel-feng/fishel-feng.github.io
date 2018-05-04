@@ -96,19 +96,19 @@
 
 
 
-<meta name="description" content="koa是一个非常轻量的web框架，里面除了ctx和middleware之外什么都没有，甚至连最基本的router功能都需要通过安装其他中间件来实现。不过虽然简单，但是它却非常强大，仅仅依靠中间件机制就可以构建完整的web服务。而koa的源码同样很简洁，基础代码只有不到2000行，非常适合阅读学习。最近计划阅读koa以及常用中间件的源码，接下来几篇博客可能都与koa相关，本篇先从核心代码开始。 ko">
+<meta name="description" content="koa是一个非常轻量的web框架，里面除了ctx和middleware之外什么都没有，甚至连最基本的router功能都需要通过安装其他中间件来实现。不过虽然简单，但是它却非常强大，仅仅依靠中间件机制就可以构建完整的web服务。而koa的源码同样很简洁，基础代码只有不到2000行，非常适合阅读学习。 koa的源码直接从github获取，本文采用目前最新的2.5.1版本。 代码结构第一眼看到koa的源">
 <meta name="keywords" content="node.js,web开发,koa">
 <meta property="og:type" content="article">
 <meta property="og:title" content="超轻量级web框架koa源码阅读">
 <meta property="og:url" content="http://fx109138.github.io/2018/05/01/超轻量级web框架koa源码阅读/index.html">
 <meta property="og:site_name" content="隋堤倦客">
-<meta property="og:description" content="koa是一个非常轻量的web框架，里面除了ctx和middleware之外什么都没有，甚至连最基本的router功能都需要通过安装其他中间件来实现。不过虽然简单，但是它却非常强大，仅仅依靠中间件机制就可以构建完整的web服务。而koa的源码同样很简洁，基础代码只有不到2000行，非常适合阅读学习。最近计划阅读koa以及常用中间件的源码，接下来几篇博客可能都与koa相关，本篇先从核心代码开始。 ko">
+<meta property="og:description" content="koa是一个非常轻量的web框架，里面除了ctx和middleware之外什么都没有，甚至连最基本的router功能都需要通过安装其他中间件来实现。不过虽然简单，但是它却非常强大，仅仅依靠中间件机制就可以构建完整的web服务。而koa的源码同样很简洁，基础代码只有不到2000行，非常适合阅读学习。 koa的源码直接从github获取，本文采用目前最新的2.5.1版本。 代码结构第一眼看到koa的源">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://oux9g0njr.bkt.clouddn.com/18-5-2/11187787.jpg">
-<meta property="og:updated_time" content="2018-05-02T00:41:08.375Z">
+<meta property="og:updated_time" content="2018-05-04T00:51:34.789Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="超轻量级web框架koa源码阅读">
-<meta name="twitter:description" content="koa是一个非常轻量的web框架，里面除了ctx和middleware之外什么都没有，甚至连最基本的router功能都需要通过安装其他中间件来实现。不过虽然简单，但是它却非常强大，仅仅依靠中间件机制就可以构建完整的web服务。而koa的源码同样很简洁，基础代码只有不到2000行，非常适合阅读学习。最近计划阅读koa以及常用中间件的源码，接下来几篇博客可能都与koa相关，本篇先从核心代码开始。 ko">
+<meta name="twitter:description" content="koa是一个非常轻量的web框架，里面除了ctx和middleware之外什么都没有，甚至连最基本的router功能都需要通过安装其他中间件来实现。不过虽然简单，但是它却非常强大，仅仅依靠中间件机制就可以构建完整的web服务。而koa的源码同样很简洁，基础代码只有不到2000行，非常适合阅读学习。 koa的源码直接从github获取，本文采用目前最新的2.5.1版本。 代码结构第一眼看到koa的源">
 <meta name="twitter:image" content="http://oux9g0njr.bkt.clouddn.com/18-5-2/11187787.jpg">
 
 
@@ -392,7 +392,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  1,909
+                  1,847
                 </span>
               
 
@@ -429,7 +429,7 @@
       
 
       
-        <p>koa是一个非常轻量的web框架，里面除了ctx和middleware之外什么都没有，甚至连最基本的router功能都需要通过安装其他中间件来实现。不过虽然简单，但是它却非常强大，仅仅依靠中间件机制就可以构建完整的web服务。而koa的源码同样很简洁，基础代码只有不到2000行，非常适合阅读学习。最近计划阅读koa以及常用中间件的源码，接下来几篇博客可能都与koa相关，本篇先从核心代码开始。</p>
+        <p>koa是一个非常轻量的web框架，里面除了ctx和middleware之外什么都没有，甚至连最基本的router功能都需要通过安装其他中间件来实现。不过虽然简单，但是它却非常强大，仅仅依靠中间件机制就可以构建完整的web服务。而koa的源码同样很简洁，基础代码只有不到2000行，非常适合阅读学习。</p>
 <p>koa的源码直接从<a href="https://github.com/koajs/koa" target="_blank" rel="external">github</a>获取，本文采用目前最新的2.5.1版本。</p>
 <h2 id="代码结构"><a href="#代码结构" class="headerlink" title="代码结构"></a>代码结构</h2><p>第一眼看到koa的源码时候我真的懵了，反复确认没有看错之后才确信，koa源码只有四个文件–application.js，context.js，request.js，response.js，位于项目的lib文件夹下。而且一看文件名基本上就能猜到每个文件是做什么的了，接下来就是打开查看里面的内容。</p>
 <h2 id="koa基本启动流程"><a href="#koa基本启动流程" class="headerlink" title="koa基本启动流程"></a>koa基本启动流程</h2><p>首先看package.json里面的main，可以知道application.js是入口文件，里面是一个继承自event模块下的Emitter类的Application类，我们使用koa时候创建的app实例就是在这里定义的。</p>
@@ -443,7 +443,7 @@
 <h2 id="compose实现原理与中间件机制"><a href="#compose实现原理与中间件机制" class="headerlink" title="compose实现原理与中间件机制"></a>compose实现原理与中间件机制</h2><p>首先做一些合法性校验，重点在于最后的返回结果是一个函数，这个函数就是我们上面的fnMiddleware，它同样也有context和next两个参数，在其内部采用index变量记录当前处理到哪个中间件，然后从第一个开始调用dispatch方法。首先会判断当前传入参数与index的关系，如果在一个中间件内多次调用next，会出现参数小于index的情况，此时就会报错。之后把当前中间件从数组中取出来，每次执行时会把ctx和next传入，next中调用dispatch，参数为下一个位置，这样就会按顺序把中间件添加进来，最后当i等于中间件数组长度时候，也就是没有其他中间件了，那么执行一开始传入的next参数，如果fn不存在，返回空的promise。当中心执行完，也就是前一个中间件的next执行完，自然会触发await向下执行，之后执行权会反向顺序返回，最终组合的结果就是先从外向里，再从里向外，就是我们熟知的洋葱圈模型。</p>
 <p><img src="http://oux9g0njr.bkt.clouddn.com/18-5-2/11187787.jpg" alt=""></p>
 <h2 id="错误处理机制"><a href="#错误处理机制" class="headerlink" title="错误处理机制"></a>错误处理机制</h2><p>koa的错误处理机制也很有特点，我们只要监听koa实例的error事件，就可以统一处理所有的错误。我们在前面提到过，调用fnMiddleware失败后会被统一的onerror方法捕获，这个方法是对应到ctx上的onerror方法，我们来看一下里面的实现，里面非常重要的一行就是<code>this.app.emit(&#39;error&#39;, err, this);</code>，由于我们的koa是继承自event，所以可以派发出一个error事件，我们只要处理该事件即可。而前面在中间件处理中，如果发生错误就会reject，自然可以被catch捕获到。</p>
-<p>以上，就是koa基本核心模块的流程，想要实现完整的服务这些是远远不够的，还需要有其他中间件的配合，接下来计划阅读几个比较常用的koa中间件源码。</p>
+<p>以上，就是koa基本核心模块的流程，原理很简单，但是配合各种中间件，koa完全可以实现一个功能完整web server。</p>
 <p>本文原创，愿意分享但转载请提前告知，更多文章查看<a href="http://fengxu.ink" target="_blank" rel="external">我的主页</a>，感谢阅读，如错误欢迎指正。</p>
 
       
@@ -759,7 +759,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共56.2k字</span>
+  <span class="post-count">博客全站共56.1k字</span>
 </div>
 
         
