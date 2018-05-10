@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fx109138.github.io/"/>
-  <updated>2018-05-04T00:51:34.789Z</updated>
+  <updated>2018-05-10T16:07:31.817Z</updated>
   <id>http://fx109138.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>从零开始实现node.js静态服务器</title>
+    <link href="http://fx109138.github.io/2018/05/06/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%AE%9E%E7%8E%B0node-js%E9%9D%99%E6%80%81%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    <id>http://fx109138.github.io/2018/05/06/从零开始实现node-js静态服务器/</id>
+    <published>2018-05-06T04:33:04.000Z</published>
+    <updated>2018-05-10T16:07:31.817Z</updated>
+    
+    <content type="html"><![CDATA[<p>静态资源服务器是一个很常用的东西，apache，nginx都是非常强大的静态服务器。node.js提供了很多底层操作api，使用node.js构建的后端程序是不需要依赖外部容器运行的，因此，我们可以使用node.js实现一个很基础的静态资源服务器功能。</p><p>本文未完。。。。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;静态资源服务器是一个很常用的东西，apache，nginx都是非常强大的静态服务器。node.js提供了很多底层操作api，使用node.js构建的后端程序是不需要依赖外部容器运行的，因此，我们可以使用node.js实现一个很基础的静态资源服务器功能。&lt;/p&gt;
+&lt;p&gt;本文未
+      
+    
+    </summary>
+    
+    
+      <category term="node.js" scheme="http://fx109138.github.io/tags/node-js/"/>
+    
+      <category term="web开发" scheme="http://fx109138.github.io/tags/web%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
   
   <entry>
     <title>超轻量级web框架koa源码阅读</title>
@@ -489,30 +515,6 @@
       
         &lt;h2 id=&quot;解释器模式的概念&quot;&gt;&lt;a href=&quot;#解释器模式的概念&quot; class=&quot;headerlink&quot; title=&quot;解释器模式的概念&quot;&gt;&lt;/a&gt;解释器模式的概念&lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;给定一个语言，定义它的文法的一种表示，并定义一个解释器，这个解释器
-      
-    
-    </summary>
-    
-    
-      <category term="设计模式" scheme="http://fx109138.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>设计模式之状态模式</title>
-    <link href="http://fx109138.github.io/2017/09/24/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F/"/>
-    <id>http://fx109138.github.io/2017/09/24/设计模式之状态模式/</id>
-    <published>2017-09-24T06:01:34.000Z</published>
-    <updated>2017-09-24T07:18:50.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="什么是状态模式"><a href="#什么是状态模式" class="headerlink" title="什么是状态模式"></a>什么是状态模式</h2><blockquote><p>允许一个对象在其内部状态改变时改变它的行为，对象看起来似乎修改了它的类。</p></blockquote><p>状态模式处理的问题就是复杂的状态变更问题，它做了核心的封装，是状态的改变看起来像是类发生变化一样。</p><h2 id="举个栗子"><a href="#举个栗子" class="headerlink" title="举个栗子"></a>举个栗子</h2><p>状态模式的模型图<br><img src="http://oux9g0njr.bkt.clouddn.com/17-9-24/36222077.jpg" alt=""></p><p>下面是状态模式三种角色的实现</p><ul><li>抽象状态</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">State</span> </span>&#123;</div><div class="line">    <span class="keyword">protected</span> Context context</div><div class="line">    <span class="function"><span class="keyword">public</span> Context <span class="title">getContext</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> context;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setContext</span><span class="params">(Context context)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.context = context;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">method1</span><span class="params">()</span></span>;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">method2</span><span class="params">()</span></span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure><ul><li>具体状态</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConcreteState1</span> <span class="keyword">extends</span> <span class="title">State</span> </span>&#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method1</span><span class="params">()</span> </span>&#123;</div><div class="line"><span class="comment">//当前状态业务</span></div><div class="line">    &#125;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method2</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.context.setCurrentState(Context.STATE2);</div><div class="line">        <span class="keyword">super</span>.context.handle2();</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConcreteState2</span> <span class="keyword">extends</span> <span class="title">State</span> </span>&#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method1</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.context.setCurrentState(Context.STATE1);</div><div class="line">        <span class="keyword">super</span>.context.handle1();</div><div class="line">    &#125;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method2</span><span class="params">()</span> </span>&#123;</div><div class="line"><span class="comment">//当前状态业务</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><ul><li>环境</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Context</span> </span>&#123;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> State STATE1 = <span class="keyword">new</span> ConcreteState1();</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> State STATE2 = <span class="keyword">new</span> ConcreteState2();</div><div class="line">    <span class="keyword">private</span> State currentState;</div><div class="line">    <span class="function"><span class="keyword">public</span> State <span class="title">getCurrentState</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> currentState;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setCurrentState</span><span class="params">(State currentState)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.currentState = currentState;</div><div class="line">        currentState.setContext(<span class="keyword">this</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handle1</span><span class="params">()</span> </span>&#123;</div><div class="line">        currentState.method1();</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handle2</span><span class="params">()</span> </span>&#123;</div><div class="line">        currentState.method2();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><ul><li>调用场景</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        Context context=<span class="keyword">new</span> Context();</div><div class="line">        context.setCurrentState(<span class="keyword">new</span> ConcreteState1());</div><div class="line">        context.handle1();</div><div class="line">        context.handle2();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><p>我们会发现在使用的时候，我们只要知道场景里面的事情就够了，至于状态究竟是如何改变的，我们不需要关心，通过一个视角的切换使得程序变得更加清晰。</p><h2 id="适用范围"><a href="#适用范围" class="headerlink" title="适用范围"></a>适用范围</h2><p>状态模式解决的是行为和状态的变化问题，在不同的状态下执行相同的行为结果也可能不相同，状态模式对其做出了很好的封装，同时他还可以优化由大量条件分支带来的逻辑混乱问题。</p><h2 id="优点缺点"><a href="#优点缺点" class="headerlink" title="优点缺点"></a>优点缺点</h2><p>状态模式的优点是封装性好，它把状态的变化放到了类的内部，使得从外面看结构清楚，同时它易于扩展，符合开闭原则。</p><p>状态模式的缺点是随着情况复杂，类数量会增加，过度使用会造成类爆炸的问题。</p><h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>状态模式使用时候要注意状态的个数，尽量不能太多。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;什么是状态模式&quot;&gt;&lt;a href=&quot;#什么是状态模式&quot; class=&quot;headerlink&quot; title=&quot;什么是状态模式&quot;&gt;&lt;/a&gt;什么是状态模式&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;允许一个对象在其内部状态改变时改变它的行为，对象看起来似乎修改了它的类。&lt;
       
     
     </summary>
