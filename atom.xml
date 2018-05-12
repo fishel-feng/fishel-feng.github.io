@@ -74,17 +74,16 @@
     <link href="http://fx109138.github.io/2018/04/27/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8xss%E5%92%8Ccsrf%E5%85%A5%E9%97%A8/"/>
     <id>http://fx109138.github.io/2018/04/27/网络安全xss和csrf入门/</id>
     <published>2018-04-26T23:53:31.000Z</published>
-    <updated>2018-04-27T00:13:35.867Z</updated>
+    <updated>2018-05-12T16:11:29.893Z</updated>
     
-    <content type="html"><![CDATA[<p>在互联网的世界里面，安全始终是一个极为重要的问题。平时开发时候往往会忽略这一点，但是，一旦开发生产环境的项目时候，安全是一定要放在第一位的。在web开发中，理解常见的网络安全隐患，知道其原理并学会防护是一项重要的技能。</p><p>本文未完。。。待补充</p>]]></content>
+    <content type="html"><![CDATA[<p>在互联网的世界里面，安全始终是一个极为重要的问题。平时自己写demo时候往往会忽略这一点，但是，一旦想要成为产品，安全是一定要放在第一位的。在web开发中，理解常见的网络安全隐患，知道其原理并学会防护是一项重要的技能。</p><h2 id="XSS"><a href="#XSS" class="headerlink" title="XSS"></a>XSS</h2><h3 id="什么是xss"><a href="#什么是xss" class="headerlink" title="什么是xss"></a>什么是xss</h3><p>XSS全称跨站脚本攻击（Cross Site Scripting），是一种非常经典的网络攻击方式，它的攻击方法很简单，就是把脚本写到要攻击的网站上执行。</p><p>如何让别人的页面执行自己的脚本，这就是一个注入的过程，xss注入方式主要分两种，反射型xss和存储型xss。</p><h3 id="存储型xss"><a href="#存储型xss" class="headerlink" title="存储型xss"></a>存储型xss</h3><p>存储型xss非常直接，向内容需要提交到数据库输入框中输入<code>&lt;script&gt;&lt;/script&gt;</code>标签，里面直接写自己的脚本，然后，数据存到数据库，别人浏览的时候从数据库读取内容，当浏览器解析到script标签的时候，就会执行里面的js代码，这就完成了一次简单的注入。注入的手段有很多，除了script之外，比如一个img标签，如果加载不到资源会触发一个onerror回调函数，这样也可以执行注入的脚本。存储型xss的特点就是，xss攻击内容是持久化的。</p><h3 id="反射型xss"><a href="#反射型xss" class="headerlink" title="反射型xss"></a>反射型xss</h3><p>反射性xss的特点就是非持久化，需要用户交互，典型的方法比如在url参数中注入script标签，如果是需要获取请求参数的页面，页面加载的时候就会读取到脚本内容，从而执行攻击代码。这种方式工作的前提是诱导用户点击攻击url，不过脚本内容是不需要进入数据库的，进页面即可触发。</p><p>道理都是一样的，接下来就是做注入之后的事了。</p><p>一个网站上如果能随意执行其他人的脚本，其实是非常可怕的一件事。首先js能修改页面内容，能跳转链接，对方可以做很多恶意操作。而且，js可以获取cookie，cookie泄露的后果大家应该都懂。</p><h3 id="xss防范"><a href="#xss防范" class="headerlink" title="xss防范"></a>xss防范</h3><p>防范xss攻击是一个很重要的工作，最基本的原则就是，不要相信任何来自用户的输入，一切可以注入的机会都要严格防范。此外，即便保证输入安全，也要做好有不安全内容的准备，所以，在页面上展示的内容一定要经过转义编码，不要给任何外来脚本执行的机会。此外，可以将cookie设置HttpOnly，这样可以避免js获取cookie，避免了由于cookie泄露造成的危害，即便有xss漏洞，也能将损失降到最低。</p><h2 id="CSRF"><a href="#CSRF" class="headerlink" title="CSRF"></a>CSRF</h2><h3 id="什么是CSRF"><a href="#什么是CSRF" class="headerlink" title="什么是CSRF"></a>什么是CSRF</h3><p>CSRF全称跨站请求伪造（Cross-site request forgery），指的是利用各种不法手段，在用户不知情的情况下以用户身份发送恶意请求。</p><p>举个简单的csrf例子，用户登录了a网站，此时登录攻击网站b，b网站如果直接跳过去操作a网站的话，是以登录用户的身份来做的，它可以在用户不知情的情况下以用户身份操控a网站，这就是csrf。</p><h3 id="csrf防范"><a href="#csrf防范" class="headerlink" title="csrf防范"></a>csrf防范</h3><p>防范csrf的方式主要有三种：</p><ol><li><p>验证HTTP Referer字段：在HTTP头中有Referer字段，它记录该HTTP请求的来源地址，如果跳转的网站与来源地址相符，那就是合法的，如果不符则可能是csrf攻击，拒绝该请求。</p></li><li><p>在请求地址中添加token并验证：在请求的时候加一个随机产生的token，token是存入数据库之后，后台返给客户端的，如果客户端再次登录的时候，后台发现token没有，或者通过查询数据库不正确，那么就拒绝该请求。</p></li><li><p>在HTTP头中自定义属性并验证：原理和上面其实一样，只是验证信息这次被加到了http请求头里面，每次只要验证即可。</p></li></ol><hr><p>以上是关于web安全的一点内容，只能算是认识了解了一下，安全无小事，网站的安全也应当高度重视。</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;在互联网的世界里面，安全始终是一个极为重要的问题。平时开发时候往往会忽略这一点，但是，一旦开发生产环境的项目时候，安全是一定要放在第一位的。在web开发中，理解常见的网络安全隐患，知道其原理并学会防护是一项重要的技能。&lt;/p&gt;
-&lt;p&gt;本文未完。。。待补充&lt;/p&gt;
-
+        &lt;p&gt;在互联网的世界里面，安全始终是一个极为重要的问题。平时自己写demo时候往往会忽略这一点，但是，一旦想要成为产品，安全是一定要放在第一位的。在web开发中，理解常见的网络安全隐患，知道其原理并学会防护是一项重要的技能。&lt;/p&gt;
+&lt;h2 id=&quot;XSS&quot;&gt;&lt;a href=&quot;#
       
     
     </summary>
