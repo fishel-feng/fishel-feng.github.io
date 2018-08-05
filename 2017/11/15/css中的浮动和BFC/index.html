@@ -96,18 +96,18 @@
 
 
 
-<meta name="description" content="写了两篇，发现自己给自己挖了好多坑，现在得一点点慢慢填了。这次还是继续写一篇css的内容，来看一下浮动和BFC这两个概念。 浮动float float 属性定义元素在哪个方向浮动。以往这个属性总应用于图像，使文本围绕在图像周围，不过在 CSS 中，任何元素都可以浮动。浮动元素会生成一个块级框，而不论它本身是何种元素。 如果浮动非替换元素，则要指定一个明确的宽度；否则，它们会尽可能地窄。 假如在一行">
+<meta name="description" content="写了两篇，发现自己给自己挖了好多坑，现在得一点点慢慢填了。这次还是继续写一篇css的内容，来看一下浮动和BFC这两个概念。 浮动float float 属性定义元素在哪个方向浮动。以往这个属性总应用于图像，使文本围绕在图像周围，不过在 CSS 中，任何元素都可以浮动。浮动元素会生成一个块级框，而不论它本身是何种元素。   如果浮动非替换元素，则要指定一个明确的宽度；否则，它们会尽可能地窄。   假">
 <meta name="keywords" content="css">
 <meta property="og:type" content="article">
 <meta property="og:title" content="css中的浮动和BFC">
 <meta property="og:url" content="http://fx109138.github.io/2017/11/15/css中的浮动和BFC/index.html">
 <meta property="og:site_name" content="隋堤倦客">
-<meta property="og:description" content="写了两篇，发现自己给自己挖了好多坑，现在得一点点慢慢填了。这次还是继续写一篇css的内容，来看一下浮动和BFC这两个概念。 浮动float float 属性定义元素在哪个方向浮动。以往这个属性总应用于图像，使文本围绕在图像周围，不过在 CSS 中，任何元素都可以浮动。浮动元素会生成一个块级框，而不论它本身是何种元素。 如果浮动非替换元素，则要指定一个明确的宽度；否则，它们会尽可能地窄。 假如在一行">
+<meta property="og:description" content="写了两篇，发现自己给自己挖了好多坑，现在得一点点慢慢填了。这次还是继续写一篇css的内容，来看一下浮动和BFC这两个概念。 浮动float float 属性定义元素在哪个方向浮动。以往这个属性总应用于图像，使文本围绕在图像周围，不过在 CSS 中，任何元素都可以浮动。浮动元素会生成一个块级框，而不论它本身是何种元素。   如果浮动非替换元素，则要指定一个明确的宽度；否则，它们会尽可能地窄。   假">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2017-11-15T15:35:47.018Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="css中的浮动和BFC">
-<meta name="twitter:description" content="写了两篇，发现自己给自己挖了好多坑，现在得一点点慢慢填了。这次还是继续写一篇css的内容，来看一下浮动和BFC这两个概念。 浮动float float 属性定义元素在哪个方向浮动。以往这个属性总应用于图像，使文本围绕在图像周围，不过在 CSS 中，任何元素都可以浮动。浮动元素会生成一个块级框，而不论它本身是何种元素。 如果浮动非替换元素，则要指定一个明确的宽度；否则，它们会尽可能地窄。 假如在一行">
+<meta name="twitter:description" content="写了两篇，发现自己给自己挖了好多坑，现在得一点点慢慢填了。这次还是继续写一篇css的内容，来看一下浮动和BFC这两个概念。 浮动float float 属性定义元素在哪个方向浮动。以往这个属性总应用于图像，使文本围绕在图像周围，不过在 CSS 中，任何元素都可以浮动。浮动元素会生成一个块级框，而不论它本身是何种元素。   如果浮动非替换元素，则要指定一个明确的宽度；否则，它们会尽可能地窄。   假">
 
 
 
@@ -430,7 +430,11 @@
         <p>写了两篇，发现自己给自己挖了好多坑，现在得一点点慢慢填了。这次还是继续写一篇css的内容，来看一下浮动和BFC这两个概念。</p>
 <h3 id="浮动float"><a href="#浮动float" class="headerlink" title="浮动float"></a>浮动float</h3><blockquote>
 <p>float 属性定义元素在哪个方向浮动。以往这个属性总应用于图像，使文本围绕在图像周围，不过在 CSS 中，任何元素都可以浮动。浮动元素会生成一个块级框，而不论它本身是何种元素。</p>
+</blockquote>
+<blockquote>
 <p>如果浮动非替换元素，则要指定一个明确的宽度；否则，它们会尽可能地窄。</p>
+</blockquote>
+<blockquote>
 <p>假如在一行之上只有极少的空间可供浮动元素，那么这个元素会跳至下一行，这个过程会持续到某一行拥有足够的空间为止。</p>
 </blockquote>
 <p>这些东西都是最基本的定义，写过css的人都应该知道，不过浮动会产生很多副作用，甚至产生很多难以解释的结果，弄清楚这些问题，才是深入理解浮动属性的关键。</p>
@@ -443,6 +447,8 @@
 </ul>
 <blockquote>
 <p>clear 属性规定元素的哪一侧不允许其他浮动元素。</p>
+</blockquote>
+<blockquote>
 <p>clear 属性定义了元素的哪边上不允许出现浮动元素。在 CSS1 和 CSS2 中，这是通过自动为清除元素（即设置了 clear 属性的元素）增加上外边距实现的。在 CSS2.1 中，会在元素上外边距之上增加清除空间，而外边距本身并不改变。不论哪一种改变，最终结果都一样，如果声明为左边或右边清除，会使元素的上外边框边界刚好在该边上浮动元素的下外边距边界之下。</p>
 </blockquote>
 <p>clear属性能够清除元素，不过要注意，clear属性作用在浮动元素上面是无效的，原理很简单，因为float元素是脱离文档流的。可以采用在后面加空的<code>div</code>标签，在空标签上使用<code>clear:both;</code>，不过这并不是最佳方案，因为浪费了一个标签。更好的方式是使用伪类选择器<code>:after</code>，为其添加属性<code>{display:block; content:&#39;clear&#39;; clear:both; height:0; visibility:hidden;}</code><br>即可实现，如果要兼容不支持伪类的IE6/7，可以设置<code>{zoom:1;}</code>属性（zoom属性通过触发ie的 haslayout属性来实现清除浮动，由于旧版本IE几乎淡出市场，所以不做过多讨论）。</p>
@@ -796,7 +802,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共57.2k字</span>
+  <span class="post-count">博客全站共59.5k字</span>
 </div>
 
         

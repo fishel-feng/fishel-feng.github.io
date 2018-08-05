@@ -392,7 +392,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  953
+                  973
                 </span>
               
 
@@ -408,7 +408,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  3
+                  4
                 </span>
               
             </div>
@@ -438,9 +438,9 @@
 <p>ws://server.example.com/chat</p>
 </blockquote>
 <p>这就是一次websocket请求，请求头大概是这样的：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">GET /chat HTTP/1.1</div><div class="line">Host: server.example.com</div><div class="line">Upgrade: websocket</div><div class="line">Connection: Upgrade</div><div class="line">Sec-WebSocket-Key: x3JJHMbDL1EzLkh9GBhXDw==</div><div class="line">Sec-WebSocket-Protocol: chat, superchat</div><div class="line">Sec-WebSocket-Version: 13</div><div class="line">Origin: http://example.com</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">GET /chat HTTP/1.1</span><br><span class="line">Host: server.example.com</span><br><span class="line">Upgrade: websocket</span><br><span class="line">Connection: Upgrade</span><br><span class="line">Sec-WebSocket-Key: x3JJHMbDL1EzLkh9GBhXDw==</span><br><span class="line">Sec-WebSocket-Protocol: chat, superchat</span><br><span class="line">Sec-WebSocket-Version: 13</span><br><span class="line">Origin: http://example.com</span><br></pre></td></tr></table></figure>
 <p>看起来和http很像，因为它握手阶段是要借助http协议的，不过在请求中加入了Upgrade相关内容，而相应信息是这样的：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">HTTP/1.1 101 Switching Protocols</div><div class="line">Upgrade: websocket</div><div class="line">Connection: Upgrade</div><div class="line">Sec-WebSocket-Accept: HSmrc0sMlYUkAGmm5OPpG2HaGWk=</div><div class="line">Sec-WebSocket-Protocol: chat</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.1 101 Switching Protocols</span><br><span class="line">Upgrade: websocket</span><br><span class="line">Connection: Upgrade</span><br><span class="line">Sec-WebSocket-Accept: HSmrc0sMlYUkAGmm5OPpG2HaGWk=</span><br><span class="line">Sec-WebSocket-Protocol: chat</span><br></pre></td></tr></table></figure>
 <p>服务端也响应了Upgrade，此时，已经和http没什么关系了，协议升级后双方建立的就是websocket连接了。只建立了一次连接，现在客户端和服务端可以实现应用层全双工通信了,整个过程如图所示：</p>
 <p><img src="http://oux9g0njr.bkt.clouddn.com/18-1-21/67715308.jpg" alt=""></p>
 <h2 id="socket-io的实现"><a href="#socket-io的实现" class="headerlink" title="socket.io的实现"></a>socket.io的实现</h2><p>socket.io想实现双向通信，当然websocket是必不可少的技术了，不过socket.io不仅仅是websocket的封装，在不支持websocket的环境中，socket.io还有多种轮询解决方案，确保它能够正常运行。</p>
@@ -764,7 +764,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共57.2k字</span>
+  <span class="post-count">博客全站共59.5k字</span>
 </div>
 
         

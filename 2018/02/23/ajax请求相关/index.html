@@ -392,7 +392,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  1,644
+                  1,663
                 </span>
               
 
@@ -441,8 +441,8 @@
 </ol>
 <p>以上就是一次完整的ajax交互，下面来通过代码展示一下简单的ajax流程。</p>
 <h2 id="代码演示"><a href="#代码演示" class="headerlink" title="代码演示"></a>代码演示</h2><p>先来看代码</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();          </div><div class="line">xhr.open(<span class="string">'GET'</span>, url, <span class="literal">true</span>); <span class="comment">// url 是一个URL</span></div><div class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (xhr.readyState == <span class="number">4</span> &amp;&amp; xhr.status == <span class="number">200</span> || xhr.status == <span class="number">304</span>)&#123;        </div><div class="line">        <span class="comment">// 获得 xhr.responseText 为相应数据</span></div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line">xhr.send();</div></pre></td></tr></table></figure>
-<p>我们来一点点看其中涉及到的方法和相关概念，首先创建了一个XMLHttpRequest对象，然后接下来是一个open方法，第一个参数是请求方法，第二个参数是一个URL，默认情况要求同源（关于同源策略和跨域可以看我<a href="http://fengxu.ink/2018/02/15/ajax%E8%B7%A8%E5%9F%9F%E8%AF%B7%E6%B1%82%E5%8F%8A%E7%9B%B8%E5%85%B3/" target="_blank" rel="external">上一篇文章</a>），第三个参数指的是是否为异步请求，默认是true可以省略。open方法结束会初始化HTTP请求参数，但是并不发送请求。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();          </span><br><span class="line">xhr.open(<span class="string">'GET'</span>, url, <span class="literal">true</span>); <span class="comment">// url 是一个URL</span></span><br><span class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (xhr.readyState == <span class="number">4</span> &amp;&amp; xhr.status == <span class="number">200</span> || xhr.status == <span class="number">304</span>)&#123;        </span><br><span class="line">        <span class="comment">// 获得 xhr.responseText 为相应数据</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">xhr.send();</span><br></pre></td></tr></table></figure>
+<p>我们来一点点看其中涉及到的方法和相关概念，首先创建了一个XMLHttpRequest对象，然后接下来是一个open方法，第一个参数是请求方法，第二个参数是一个URL，默认情况要求同源（关于同源策略和跨域可以看我<a href="http://fengxu.ink/2018/02/15/ajax%E8%B7%A8%E5%9F%9F%E8%AF%B7%E6%B1%82%E5%8F%8A%E7%9B%B8%E5%85%B3/" target="_blank" rel="noopener">上一篇文章</a>），第三个参数指的是是否为异步请求，默认是true可以省略。open方法结束会初始化HTTP请求参数，但是并不发送请求。</p>
 <p>做好请求发送准备了，不过现在还不能发送请求。因为请求是异步的，我们无法获知请求的进度和响应状态，XMLHttpRequest给我们提供了一个事件onreadystatechange，我们可以通过监听这个时间来关注这种变化，所以下一步是注册onreadystatechange事件。</p>
 <p>先了解一下readyState，当一个XMLHttpRequest初次创建时，这个readyState的值从0开始，直到接收到完整的HTTP响应，这个值增加到4，具体情况如下：</p>
 <table>
@@ -491,10 +491,10 @@
 <p>首先fetch是新东西，先来看浏览器支持率：</p>
 <p><img src="http://oux9g0njr.bkt.clouddn.com/18-2-23/13404054.jpg" alt=""></p>
 <p>可以看出其实不是很乐观，不过不要紧，我们可以使用polyfill来实现，所以可以直接来看fetch的例子：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">fetch(url, &#123; </div><div class="line">    method: <span class="string">'GET'</span>,</div><div class="line">    headers: <span class="keyword">new</span> Headers(&#123;</div><div class="line">      <span class="string">'Accept'</span>: <span class="string">'application/json'</span></div><div class="line">    &#125;)</div><div class="line">  &#125;).then(<span class="function"><span class="params">res</span>=&gt;</span>&#123;</div><div class="line">    <span class="keyword">return</span> res.json() </div><div class="line">  &#125;).then(<span class="function"><span class="params">res</span>=&gt;</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(res) </div><div class="line">  &#125;).catch(<span class="function"><span class="params">err</span>=&gt;</span>&#123;</div><div class="line">    <span class="comment">// 处理异常</span></div><div class="line">  &#125;)</div></pre></td></tr></table></figure>
-<p>可以看出fetch是基于promise的（关于promise相关内容在<a href="http://fengxu.ink/2018/01/18/js%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%BC%82%E6%AD%A5%E5%A4%84%E7%90%86/" target="_blank" rel="external">这篇文章</a>中提到过）,所以可以链式调用，整个过程不难理解，请求结果如果是json还支持直接处理，fetch的api非常实用，适合现代前端开发使用，使用React开发时候通常我们都选fetch作为数据请求工具。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">fetch(url, &#123; </span><br><span class="line">    method: <span class="string">'GET'</span>,</span><br><span class="line">    headers: <span class="keyword">new</span> Headers(&#123;</span><br><span class="line">      <span class="string">'Accept'</span>: <span class="string">'application/json'</span></span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;).then(<span class="function"><span class="params">res</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> res.json() </span><br><span class="line">  &#125;).then(<span class="function"><span class="params">res</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(res) </span><br><span class="line">  &#125;).catch(<span class="function"><span class="params">err</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="comment">// 处理异常</span></span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
+<p>可以看出fetch是基于promise的（关于promise相关内容在<a href="http://fengxu.ink/2018/01/18/js%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%BC%82%E6%AD%A5%E5%A4%84%E7%90%86/" target="_blank" rel="noopener">这篇文章</a>中提到过）,所以可以链式调用，整个过程不难理解，请求结果如果是json还支持直接处理，fetch的api非常实用，适合现代前端开发使用，使用React开发时候通常我们都选fetch作为数据请求工具。</p>
 <hr>
-<p>至此，这篇文章内容就结束了，最后还是版权信息：尊重原创，转载分享前请先知悉作者，也欢迎指出错误不足共同交流，更多内容欢迎关注作者博客<a href="http://fengxu.ink" target="_blank" rel="external">点击这里</a></p>
+<p>至此，这篇文章内容就结束了，最后还是版权信息：尊重原创，转载分享前请先知悉作者，也欢迎指出错误不足共同交流，更多内容欢迎关注作者博客<a href="http://fengxu.ink" target="_blank" rel="noopener">点击这里</a></p>
 
       
     </div>
@@ -809,7 +809,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共57.2k字</span>
+  <span class="post-count">博客全站共59.5k字</span>
 </div>
 
         

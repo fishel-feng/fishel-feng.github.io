@@ -390,7 +390,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  2,051
+                  2,068
                 </span>
               
 
@@ -406,7 +406,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  7
+                  8
                 </span>
               
             </div>
@@ -435,9 +435,9 @@
 <h3 id="JSONP"><a href="#JSONP" class="headerlink" title="JSONP"></a>JSONP</h3><p>首先最有名的一种方式就是jsonp，在学习jsonp之前首先要知道虽然浏览器有同源限制，但是有三个标签是不符合这种限制的<code>&lt;img&gt;</code>的src（获取图片），<code>&lt;link&gt;</code>的href（获取css），<code>&lt;script&gt;</code>的src（获取javascript），这是由他们的自身特性所决定的。而jsonp，就是利用了script标签不限制同源的特点来实现的。</p>
 <p>清楚了jsonp的原理之后，再看jsonp其实很简单了，下面来看一个简单的小例子。</p>
 <p>假设客户端需要获取的json数据{code: 200, data: “success”},一个简单的服务端实现如下（使用node.js原生http模块）</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</div><div class="line"><span class="keyword">const</span> url = <span class="built_in">require</span>(<span class="string">'url'</span>);</div><div class="line"></div><div class="line">http.createServer(<span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</div><div class="line">  <span class="keyword">if</span> (req.url.startsWith(<span class="string">'/test'</span>)) &#123;</div><div class="line">    res.writeHead(<span class="number">200</span>, &#123;<span class="string">'Content-Type'</span>: <span class="string">'text/plain'</span>&#125;);</div><div class="line">    <span class="keyword">const</span> callback = url.parse(req.url, <span class="literal">true</span>).query.callback;</div><div class="line">    <span class="keyword">const</span> result = <span class="string">'&#123;code: 200, data: "success"&#125;'</span>;</div><div class="line">    <span class="keyword">const</span> jsonpCallback = <span class="string">`<span class="subst">$&#123;callback&#125;</span>(<span class="subst">$&#123;result&#125;</span>)`</span></div><div class="line">    res.end(jsonpCallback);</div><div class="line">  &#125;</div><div class="line">&#125;).listen(<span class="number">8888</span>);</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"><span class="keyword">const</span> url = <span class="built_in">require</span>(<span class="string">'url'</span>);</span><br><span class="line"></span><br><span class="line">http.createServer(<span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (req.url.startsWith(<span class="string">'/test'</span>)) &#123;</span><br><span class="line">    res.writeHead(<span class="number">200</span>, &#123;<span class="string">'Content-Type'</span>: <span class="string">'text/plain'</span>&#125;);</span><br><span class="line">    <span class="keyword">const</span> callback = url.parse(req.url, <span class="literal">true</span>).query.callback;</span><br><span class="line">    <span class="keyword">const</span> result = <span class="string">'&#123;code: 200, data: "success"&#125;'</span>;</span><br><span class="line">    <span class="keyword">const</span> jsonpCallback = <span class="string">`<span class="subst">$&#123;callback&#125;</span>(<span class="subst">$&#123;result&#125;</span>)`</span></span><br><span class="line">    res.end(jsonpCallback);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;).listen(<span class="number">8888</span>);</span><br></pre></td></tr></table></figure>
 <p>客户端的请求如下</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">  <span class="function"><span class="keyword">function</span> <span class="title">jsonpCallback</span> (<span class="params">res</span>) </span>&#123;</span></div><div class="line"><span class="javascript">    <span class="comment">// 在这里处理请求结果</span></span></div><div class="line"><span class="javascript">    <span class="built_in">console</span>.log(res);</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://127.0.0.1:8888/test?callback=jsonpCallback"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="function"><span class="keyword">function</span> <span class="title">jsonpCallback</span> (<span class="params">res</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">    <span class="comment">// 在这里处理请求结果</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(res);</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://127.0.0.1:8888/test?callback=jsonpCallback"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>综合客户端和服务端的代码，可以看出，在客户端，通过请求参数传递一个jsonp方法名，在服务器端，返回的结果使用指定的jsonp方法调用来包装，这样相当于请求了一段js，而真正的返回结果可以通过函数调用参数来获取，这样就可以绕开浏览器同源限制，获取跨域请求结果。</p>
 <p>jsonp是一种常用的跨域方式，目前有很多前端的jsonp请求封装，它们通过通过动态创建script标签来实现，我们可以直接调用。jsonp方式兼容所有的浏览器，但是只支持get请求。</p>
 <h3 id="CORS"><a href="#CORS" class="headerlink" title="CORS"></a>CORS</h3><p>CORS中文是“跨域资源共享”（Cross-origin resource sharing），是W3C支持的一种新的跨域方式，它与其它的方式不同的是，它是写入标准的跨域请求方式，现代浏览器普遍支持。它允许在服务器支持的前提之下，像发起普通ajax请求一样发送跨域请求。除了get请求CROS支持其它种类请求。</p>
@@ -470,13 +470,13 @@
 <hr>
 <h2 id="补充：其他的跨域解决方案"><a href="#补充：其他的跨域解决方案" class="headerlink" title="补充：其他的跨域解决方案"></a>补充：其他的跨域解决方案</h2><p>由于经验尚浅，以下内容本人并未在开发中使用过，作为理论学习经验写在这里，欢迎指正。</p>
 <h3 id="iframe跨域"><a href="#iframe跨域" class="headerlink" title="iframe跨域"></a>iframe跨域</h3><p>浏览器同源限制另一个问题就是：浏览器中不同域的框架之间不能进行js的交互操作，一下几种方式，就是为了解决这一限制的。</p>
-<h4 id="document-domain来跨子域"><a href="#document-domain来跨子域" class="headerlink" title="document.domain来跨子域"></a>document.domain来跨子域</h4><p>这种方式适用于主域名相同，而子域名不同的情况。如a页面<a href="http://a.test.com，b页面http://b.test.com，此时向跨域访问，可以分别给两个页面设置document.domain=test.com，之后通过parent或者window[&#39;iframename&#39;]等方式就可以跨域操作iframe了。" target="_blank" rel="external">http://a.test.com，b页面http://b.test.com，此时向跨域访问，可以分别给两个页面设置document.domain=test.com，之后通过parent或者window[&#39;iframename&#39;]等方式就可以跨域操作iframe了。</a></p>
+<h4 id="document-domain来跨子域"><a href="#document-domain来跨子域" class="headerlink" title="document.domain来跨子域"></a>document.domain来跨子域</h4><p>这种方式适用于主域名相同，而子域名不同的情况。如a页面<a href="http://a.test.com，b页面http://b.test.com，此时向跨域访问，可以分别给两个页面设置document.domain=test.com，之后通过parent或者window[&#39;iframename&#39;]等方式就可以跨域操作iframe了。" target="_blank" rel="noopener">http://a.test.com，b页面http://b.test.com，此时向跨域访问，可以分别给两个页面设置document.domain=test.com，之后通过parent或者window[&#39;iframename&#39;]等方式就可以跨域操作iframe了。</a></p>
 <h4 id="window-name跨域"><a href="#window-name跨域" class="headerlink" title="window.name跨域"></a>window.name跨域</h4><p>window对象有个name属性，该属性有个特征：即在一个window的生命周期内, window载入的所有的页面都是共享一个window.name的，即使页面甚至域名都不同。每个页面对window.name都有读写的权限，并且name长度可以达到2MB，这就提供了一个跨域共享资源的机会。</p>
 <h4 id="location-hash跨域"><a href="#location-hash跨域" class="headerlink" title="location.hash跨域"></a>location.hash跨域</h4><p>location.hash跨域利用了子框架具有修改父框架src的hash值，且页面不会刷新这一特点。利用这种方式传递的数据的字节数是有限的。</p>
 <h3 id="HTML5的postMessage跨域"><a href="#HTML5的postMessage跨域" class="headerlink" title="HTML5的postMessage跨域"></a>HTML5的postMessage跨域</h3><p>window.postMessage(message,targetOrigin)是一个HTML5的api，允许两个窗口之间进行跨域发送消息，它可以实现页面和其打开的新窗口的数据传递，多窗口之间消息传递，页面与嵌套的iframe消息传递等情景下的跨域问题。</p>
-<h3 id="websocket协议跨域"><a href="#websocket协议跨域" class="headerlink" title="websocket协议跨域"></a>websocket协议跨域</h3><p>websocket是一种不同于http的新的协议，它实现了浏览器与服务器全双工通信，同时允许跨域通讯，有关websocket相关内容我在<a href="http://fengxu.ink/2018/01/21/%E5%AD%A6%E4%B9%A0socket-io/" target="_blank" rel="external">之前文章</a>中提到过，在此不再过多讨论。</p>
+<h3 id="websocket协议跨域"><a href="#websocket协议跨域" class="headerlink" title="websocket协议跨域"></a>websocket协议跨域</h3><p>websocket是一种不同于http的新的协议，它实现了浏览器与服务器全双工通信，同时允许跨域通讯，有关websocket相关内容我在<a href="http://fengxu.ink/2018/01/21/%E5%AD%A6%E4%B9%A0socket-io/" target="_blank" rel="noopener">之前文章</a>中提到过，在此不再过多讨论。</p>
 <hr>
-<p>尊重原创，转载分享前请先知悉作者，也欢迎指出错误不足共同交流，更多内容欢迎关注作者博客<a href="http://fengxu.ink" target="_blank" rel="external">点击这里</a></p>
+<p>尊重原创，转载分享前请先知悉作者，也欢迎指出错误不足共同交流，更多内容欢迎关注作者博客<a href="http://fengxu.ink" target="_blank" rel="noopener">点击这里</a></p>
 
       
     </div>
@@ -791,7 +791,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共57.2k字</span>
+  <span class="post-count">博客全站共59.5k字</span>
 </div>
 
         
