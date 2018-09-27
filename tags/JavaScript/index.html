@@ -99,7 +99,7 @@
 <meta name="description" content="我挥舞着键盘和本子，发誓要把这世界写个明明白白！！！">
 <meta property="og:type" content="website">
 <meta property="og:title" content="隋堤倦客">
-<meta property="og:url" content="http://fx109138.github.io/tags/javascript/index.html">
+<meta property="og:url" content="http://fx109138.github.io/tags/JavaScript/index.html">
 <meta property="og:site_name" content="隋堤倦客">
 <meta property="og:description" content="我挥舞着键盘和本子，发誓要把这世界写个明明白白！！！">
 <meta property="og:locale" content="zh-Hans">
@@ -134,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://fx109138.github.io/tags/javascript/"/>
+  <link rel="canonical" href="http://fx109138.github.io/tags/JavaScript/"/>
 
 
 
 
 
-  <title>标签: javascript | 隋堤倦客</title>
+  <title>标签: JavaScript | 隋堤倦客</title>
   
 
 
@@ -320,7 +320,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h2>javascript<small>标签</small>
+        <h2>JavaScript<small>标签</small>
         </h2>
       </div>
 
@@ -332,9 +332,9 @@
 
       <h3 class="post-title">
         
-            <a class="post-title-link" href="/2018/09/16/JavaScript-Immutable-学习/" itemprop="url">
+            <a class="post-title-link" href="/2018/04/11/函数节流和函数防抖/" itemprop="url">
               
-                <span itemprop="name">JavaScript Immutable 学习</span>
+                <span itemprop="name">函数节流和函数防抖</span>
               
             </a>
         
@@ -342,9 +342,9 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-16T18:06:08+08:00"
-              content="2018-09-16" >
-          09-16
+              datetime="2018-04-11T23:45:09+08:00"
+              content="2018-04-11" >
+          04-11
         </time>
       </div>
 
@@ -360,9 +360,9 @@
 
       <h3 class="post-title">
         
-            <a class="post-title-link" href="/2018/01/21/学习socket-io/" itemprop="url">
+            <a class="post-title-link" href="/2018/01/18/js学习之异步处理/" itemprop="url">
               
-                <span itemprop="name">学习socket.io</span>
+                <span itemprop="name">js学习之异步处理</span>
               
             </a>
         
@@ -370,9 +370,65 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-21T10:08:27+08:00"
-              content="2018-01-21" >
-          01-21
+              datetime="2018-01-18T17:24:28+08:00"
+              content="2018-01-18" >
+          01-18
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h3 class="post-title">
+        
+            <a class="post-title-link" href="/2018/01/14/原生js之DOM事件相关/" itemprop="url">
+              
+                <span itemprop="name">原生js之DOM事件相关</span>
+              
+            </a>
+        
+      </h3>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-01-14T22:54:58+08:00"
+              content="2018-01-14" >
+          01-14
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h3 class="post-title">
+        
+            <a class="post-title-link" href="/2017/10/26/JavaScript闭包及相关/" itemprop="url">
+              
+                <span itemprop="name">JavaScript闭包及相关</span>
+              
+            </a>
+        
+      </h3>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-10-26T18:40:53+08:00"
+              content="2017-10-26" >
+          10-26
         </time>
       </div>
 
@@ -976,73 +1032,6 @@
           }
 
           // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
-
-
-
-
-
-  
-
-  
-<script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
-
-
-  
-
-  
-
-  
-
-  
-
-</body>
-</html>
-<!-- 页面点击小红心 -->
-<script type="text/javascript" src="/js/src/love.js"></script>
-imation
           $(".local-search-pop-overlay").remove();
           $('body').css('overflow', '');
 
