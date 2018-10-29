@@ -100,7 +100,7 @@
 <meta name="keywords" content="node.js,web开发,koa">
 <meta property="og:type" content="article">
 <meta property="og:title" content="超轻量级web框架koa源码阅读">
-<meta property="og:url" content="http://fx109138.github.io/2018/05/01/超轻量级web框架koa源码阅读/index.html">
+<meta property="og:url" content="fengxu.ink/2018/05/01/超轻量级web框架koa源码阅读/index.html">
 <meta property="og:site_name" content="隋堤倦客">
 <meta property="og:description" content="koa是一个非常轻量的web框架，里面除了ctx和middleware之外什么都没有，甚至连最基本的router功能都需要通过安装其他中间件来实现。不过虽然简单，但是它却非常强大，仅仅依靠中间件机制就可以构建完整的web服务。而koa的源码同样很简洁，基础代码只有不到2000行，非常适合阅读学习。 koa的源码直接从github获取，本文采用目前最新的2.5.1版本。 代码结构第一眼看到koa的源">
 <meta property="og:locale" content="zh-Hans">
@@ -138,7 +138,7 @@
 
 
 
-  <link rel="canonical" href="http://fx109138.github.io/2018/05/01/超轻量级web框架koa源码阅读/"/>
+  <link rel="canonical" href="fengxu.ink/2018/05/01/超轻量级web框架koa源码阅读/"/>
 
 
 
@@ -331,7 +331,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://fx109138.github.io/2018/05/01/超轻量级web框架koa源码阅读/">
+    <link itemprop="mainEntityOfPage" href="fengxu.ink/2018/05/01/超轻量级web框架koa源码阅读/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="隋堤倦客">
@@ -444,7 +444,7 @@
 <p><img src="http://oux9g0njr.bkt.clouddn.com/18-5-2/11187787.jpg" alt=""></p>
 <h2 id="错误处理机制"><a href="#错误处理机制" class="headerlink" title="错误处理机制"></a>错误处理机制</h2><p>koa的错误处理机制也很有特点，我们只要监听koa实例的error事件，就可以统一处理所有的错误。我们在前面提到过，调用fnMiddleware失败后会被统一的onerror方法捕获，这个方法是对应到ctx上的onerror方法，我们来看一下里面的实现，里面非常重要的一行就是<code>this.app.emit(&#39;error&#39;, err, this);</code>，由于我们的koa是继承自event，所以可以派发出一个error事件，我们只要处理该事件即可。而前面在中间件处理中，如果发生错误就会reject，自然可以被catch捕获到。</p>
 <p>以上，就是koa基本核心模块的流程，原理很简单，但是配合各种中间件，koa完全可以实现一个功能完整web server。</p>
-<p>本文原创，愿意分享但转载请提前告知，更多文章查看<a href="http://fengxu.ink" target="_blank" rel="noopener">我的主页</a>，感谢阅读，如错误欢迎指正。</p>
+<p>本文原创，愿意分享但转载请提前告知，更多文章查看<a href="http://fengxu.ink">我的主页</a>，感谢阅读，如错误欢迎指正。</p>
 
       
     </div>

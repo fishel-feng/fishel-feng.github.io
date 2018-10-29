@@ -100,7 +100,7 @@
 <meta name="keywords" content="前端开发,vue.js">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue.js原理初探">
-<meta property="og:url" content="http://fx109138.github.io/2018/03/09/vue-js原理初探/index.html">
+<meta property="og:url" content="fengxu.ink/2018/03/09/vue-js原理初探/index.html">
 <meta property="og:site_name" content="隋堤倦客">
 <meta property="og:description" content="vue.js是一个非常优秀的前端开发框架，不是我说的，大家都知道。本人也使用过vue.js开发过移动端SPA应用，还是学习阶段，经验尚浅，能力有限。不过我也懂得只会使用轮子不知所以然是远远不够的，凭自己浅薄的见识，斗胆写一篇略微深入的一点文章。 首先我现在的能力，独立阅读源码还是有很大压力的，所幸vue写的很规范，通过方法名基本可以略知一二，里面的原理不懂的地方多方面查找资料，本文中不规范不正确的">
 <meta property="og:locale" content="zh-Hans">
@@ -139,7 +139,7 @@
 
 
 
-  <link rel="canonical" href="http://fx109138.github.io/2018/03/09/vue-js原理初探/"/>
+  <link rel="canonical" href="fengxu.ink/2018/03/09/vue-js原理初探/"/>
 
 
 
@@ -332,7 +332,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://fx109138.github.io/2018/03/09/vue-js原理初探/">
+    <link itemprop="mainEntityOfPage" href="fengxu.ink/2018/03/09/vue-js原理初探/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="隋堤倦客">
@@ -455,7 +455,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 传统方式处理数据</span></span><br><span class="line"><span class="comment">// document.getElementById('inputName').addEventListener('keyup', function (e) &#123;</span></span><br><span class="line"><span class="comment">//   document.getElementById('showName').innerText = e.target.value;</span></span><br><span class="line"><span class="comment">// &#125;);</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 利用Object.defineProperty自动响应数据</span></span><br><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line"><span class="built_in">Object</span>.defineProperty(obj, <span class="string">'name'</span>, &#123;</span><br><span class="line">  get: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">  &#125;,</span><br><span class="line">  set: <span class="function"><span class="keyword">function</span> (<span class="params">val</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">document</span>.getElementById(<span class="string">'showName'</span>).innerText = val;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'inputName'</span>).addEventListener(<span class="string">'keyup'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">  obj.name = e.target.value;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>这个例子并不是什么复杂的实现，但是却体现了vue最核心的东西，我们可以发现，Object.defineProperty下的get和set是可以自动相应的，基于此vue实现了一套基于数据驱动视图的自动响应系统，使得开发模型得到了极大的简化。</p>
 <hr>
-<p>至此，本文就暂时结束了，水平一般能力有限，后面随着理解的加深会更深入去学习。更多文章欢迎访问<a href="http://fengxu.ink" target="_blank" rel="noopener">个人网站</a>。</p>
+<p>至此，本文就暂时结束了，水平一般能力有限，后面随着理解的加深会更深入去学习。更多文章欢迎访问<a href="http://fengxu.ink">个人网站</a>。</p>
 
       
     </div>
