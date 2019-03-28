@@ -68,8 +68,8 @@
     <content type="text"><![CDATA[由于最近写项目要使用socekt.io技术，于是研究了一段时间，把自己早期学习阶段写的小游戏改造了一下，变成了一个比较完整的小程序。点击这里可以体验游戏,建议使用手机模式查看，也可以下载打包好的webapp，安卓版已上架酷安市场,扫码可下载体验： 整个东西其实很简单，游戏界面使用canvas绘制，AI算法来自慕课网学习视频，联机对战使用socket.io实现实时推送，完整代码已经开源，点击传送，喜欢的给个star，欢迎fork，更欢迎指出不足，提出建议。]]></content>
       <tags>
         <tag>前端开发</tag>
-        <tag>node.js</tag>
         <tag>socket.io</tag>
+        <tag>node.js</tag>
         <tag>移动开发</tag>
       </tags>
   </entry>
@@ -78,9 +78,9 @@
     <url>%2F2018%2F01%2F21%2F%E5%AD%A6%E4%B9%A0socket-io%2F</url>
     <content type="text"><![CDATA[在我接触过的小型类库框架中，socket.io绝对是最惊艳的一个，它可以只使用几行代码就能实现简单的聊天小程序。一直以来我都在想找机会应用到开发中，最近在写项目的时候刚好有需求了。在正式使用之前先做了一点小研究，又写了一个小的demo，在此记录一点心得。 什么是socket.ioSocket.IO是一个支持基于事件的实时双向通信的类库，它可以在任何平台，浏览器或设备上工作，同时在可靠性和速度方面有保证，可以构建实时性很强的应用。它兼容性极好，对于不兼容的环境采用降级策略，支持的浏览器最低达IE5.5。 为什么要有socket.io，它是怎么工作的，为什么它能够实现实时通讯。想要理解socket.io，还要从网络基础来谈起。 从轮询到websocket先来看一个比较新的网络应用层协议：websocket。在传统网络应用中，大多数场景下都在使用http协议，那么有没有http处理不了或者不容易处理的问题呢？考虑一个场景，如果服务器想要给客户端推送消息，应该如何实现。在http协议之下，网络通信是只能由客户端向服务端发起的，服务器是没办法主动向客户端推送消息的，客户端要想接收服务器的消息，就得不停地向服务器发送请求，这种方式叫轮询。轮询的方式开销是很大的，因为不管有没有消息，客户端总是要去问服务器，不但低效还浪费资源，显然这不是一个很好的解决方案。还有一种长轮询，客户端发送请求之后一直等，直到服务器有返回再建立新的连接。同样也占用着不必要的资源。这一切的根源就是没有客户端的请求服务器是没办法和客户端通信的，这就是单向通信的缺陷，我们需要一种能够实现客户端服务端双向通信的技术。 websocket就是为了解决这一问题产生的，现在已经写入标准，主流浏览器基本支持。websocket同样是建立在TCP之上的，请求协议为ws或wss（加密）后面地址书写和http基本没区别，像下面这样 ws://server.example.com/chat 这就是一次websocket请求，请求头大概是这样的： 12345678GET /chat HTTP/1.1Host: server.example.comUpgrade: websocketConnection: UpgradeSec-WebSocket-Key: x3JJHMbDL1EzLkh9GBhXDw==Sec-WebSocket-Protocol: chat, superchatSec-WebSocket-Version: 13Origin: http://example.com 看起来和http很像，因为它握手阶段是要借助http协议的，不过在请求中加入了Upgrade相关内容，而相应信息是这样的： 12345HTTP/1.1 101 Switching ProtocolsUpgrade: websocketConnection: UpgradeSec-WebSocket-Accept: HSmrc0sMlYUkAGmm5OPpG2HaGWk=Sec-WebSocket-Protocol: chat 服务端也响应了Upgrade，此时，已经和http没什么关系了，协议升级后双方建立的就是websocket连接了。只建立了一次连接，现在客户端和服务端可以实现应用层全双工通信了,整个过程如图所示： socket.io的实现socket.io想实现双向通信，当然websocket是必不可少的技术了，不过socket.io不仅仅是websocket的封装，在不支持websocket的环境中，socket.io还有多种轮询解决方案，确保它能够正常运行。 socket.io把看起来很复杂，很难实现的工作变得很容易，它的api很简洁，在很多实时场景下都很有用。 关于socket.io的小例子，可以参看我这篇内容]]></content>
       <tags>
+        <tag>socket.io</tag>
         <tag>node.js</tag>
         <tag>javascript</tag>
-        <tag>socket.io</tag>
       </tags>
   </entry>
   <entry>
