@@ -216,9 +216,9 @@
     
       <category term="前端开发" scheme="fengxu.ink/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
     
-      <category term="socket.io" scheme="fengxu.ink/tags/socket-io/"/>
-    
       <category term="node.js" scheme="fengxu.ink/tags/node-js/"/>
+    
+      <category term="socket.io" scheme="fengxu.ink/tags/socket-io/"/>
     
       <category term="移动开发" scheme="fengxu.ink/tags/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/"/>
     
@@ -244,11 +244,11 @@
     </summary>
     
     
-      <category term="socket.io" scheme="fengxu.ink/tags/socket-io/"/>
-    
       <category term="node.js" scheme="fengxu.ink/tags/node-js/"/>
     
       <category term="javascript" scheme="fengxu.ink/tags/javascript/"/>
+    
+      <category term="socket.io" scheme="fengxu.ink/tags/socket-io/"/>
     
   </entry>
   
