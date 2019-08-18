@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="fengxu.ink/"/>
-  <updated>2018-12-06T12:48:38.202Z</updated>
+  <updated>2019-08-18T11:36:00.241Z</updated>
   <id>fengxu.ink/</id>
   
   <author>
@@ -15,6 +15,54 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>失踪人口回归--写一些要做的事</title>
+    <link href="fengxu.ink/2019/08/18/%E5%A4%B1%E8%B8%AA%E4%BA%BA%E5%8F%A3%E5%9B%9E%E5%BD%92-%E5%86%99%E4%B8%80%E4%BA%9B%E8%A6%81%E5%81%9A%E7%9A%84%E4%BA%8B/"/>
+    <id>fengxu.ink/2019/08/18/失踪人口回归-写一些要做的事/</id>
+    <published>2019-08-18T07:38:27.000Z</published>
+    <updated>2019-08-18T11:36:00.241Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="初心"><a href="#初心" class="headerlink" title="初心"></a>初心</h1><p>最近确实很久一段时间没有更新文章了，上次什么时候写的，写的什么，我已经不记得了，只知道那时候我还是一个学生，现在已经是社会工作者了。不知什么时候开始，有一些懈怠，这种感觉真的不好，却越来越严重，没办法静下心来去做好该做的事，或许我应该有些规划了。</p><h1 id="技术成长"><a href="#技术成长" class="headerlink" title="技术成长"></a>技术成长</h1><p>现在已经开始工作了，目前部门所用的技术栈又与我学习的和想要学习的东西相符，这是一种很好的体验，而我之前的学习清单也可以更深入的落地了，下面是我整理的最新的需要深耕的技术领域和目标，希望自己能够定期check。</p><p>质量检测分为S、A、B、C四种</p><ul><li>S 掌握原理</li><li>A 熟练使用</li><li>B 使用过</li><li>C 听说过</li></ul><table><thead><tr><th>技术内容</th><th>目标质量</th><th>目前状态</th></tr></thead><tbody><tr><td>React</td><td>S</td><td>A-</td></tr><tr><td>React Native</td><td>S</td><td>B+</td></tr><tr><td>Typescript</td><td>S</td><td>B+</td></tr><tr><td>Egg</td><td>S</td><td>A-</td></tr><tr><td>Electron</td><td>A+</td><td>B-</td></tr><tr><td>Rx.js</td><td>C</td><td>A</td></tr><tr><td>GraphQL</td><td>B-</td><td>A+</td></tr><tr><td>Docker</td><td>C</td><td>A+</td></tr></tbody></table><p>先写这么多，随时会补充，这些应该是要作为长期目标的，针对以上问题会有一个针对性的check。</p><h1 id="其他事情"><a href="#其他事情" class="headerlink" title="其他事情"></a>其他事情</h1><p>叫做其他事情因为这里既包括技术相关的东西也包括非技术的东西。</p><p>这里的技术主要指的是通用能力：算法、网络、操作系统、软件工程，具体要如何去量化成长将会是后续规划的问题。</p><p>非技术上主要是个人成长的东西，我觉得比较重要的首先是英语水平、然后身体素质、产品意识等，这些会决定未来的很多事情。</p><h1 id="想做的事"><a href="#想做的事" class="headerlink" title="想做的事"></a>想做的事</h1><p>短期来看，一个不成熟的计划就是做一个给非本行业的人获取信息的一个平台，包括产品本身的构建和知识库的构建。目前这里仅仅是一个雏形。</p><p>另外就是qsls项目，第一阶段的数据清洗已经完成，后面还要有人工清洗等流程，管理后台也要搭建好，同时产品本身的开发也应该同步进行。</p><h1 id="第一阶段目标"><a href="#第一阶段目标" class="headerlink" title="第一阶段目标"></a>第一阶段目标</h1><p>暂且也叫它OKR，我想以此来衡量我一个阶段的成长，每次check间隔为10到20天，更新TODO信息状态，补充下一阶段目标，因此本文长期更新，同时上面的内容有也会不断细化。</p><p>2019.08.18</p><ul><li style="list-style: none"><input type="checkbox"> 完成知识项目基础工程</li><li style="list-style: none"><input type="checkbox"> qsls项目概要设计</li><li style="list-style: none"><input type="checkbox"> qsls知识库后台手动标签功能完成</li><li style="list-style: none"><input type="checkbox"> 每天看小册文章</li></ul><p>暂且如此，明天可能会更新一下，之后等待下次check。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;初心&quot;&gt;&lt;a href=&quot;#初心&quot; class=&quot;headerlink&quot; title=&quot;初心&quot;&gt;&lt;/a&gt;初心&lt;/h1&gt;&lt;p&gt;最近确实很久一段时间没有更新文章了，上次什么时候写的，写的什么，我已经不记得了，只知道那时候我还是一个学生，现在已经是社会工作者了。不知什么
+      
+    
+    </summary>
+    
+    
+      <category term="-- 个人规划 -- 学习成长" scheme="fengxu.ink/tags/%E4%B8%AA%E4%BA%BA%E8%A7%84%E5%88%92-%E5%AD%A6%E4%B9%A0%E6%88%90%E9%95%BF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>非技术，个人总结和展望吧</title>
+    <link href="fengxu.ink/2019/05/09/%E9%9D%9E%E6%8A%80%E6%9C%AF%EF%BC%8C%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%BB%93%E5%92%8C%E5%B1%95%E6%9C%9B%E5%90%A7/"/>
+    <id>fengxu.ink/2019/05/09/非技术，个人总结和展望吧/</id>
+    <published>2019-05-09T09:53:59.000Z</published>
+    <updated>2019-05-10T14:14:00.362Z</updated>
+    
+    <content type="html"><![CDATA[<p>很久没有更新博客了，前端时间无意中发现我使用的图床不知道什么时候挂了，看来图片还是自己管理比较放心，后面打算直接扔GitHub了。</p><p>差不多一年过去了，一年左右想来也没做什么，无非就是学习、面试、工作等等。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;很久没有更新博客了，前端时间无意中发现我使用的图床不知道什么时候挂了，看来图片还是自己管理比较放心，后面打算直接扔GitHub了。&lt;/p&gt;
+&lt;p&gt;差不多一年过去了，一年左右想来也没做什么，无非就是学习、面试、工作等等。&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term=" 前端开发" scheme="fengxu.ink/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
   
   <entry>
     <title>我的react之路--个人感受</title>
@@ -115,9 +163,9 @@
     </summary>
     
     
-      <category term="JavaScript" scheme="fengxu.ink/tags/JavaScript/"/>
-    
       <category term="前端开发" scheme="fengxu.ink/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+    
+      <category term="JavaScript" scheme="fengxu.ink/tags/JavaScript/"/>
     
   </entry>
   
@@ -271,11 +319,11 @@
     </summary>
     
     
-      <category term="JavaScript" scheme="fengxu.ink/tags/JavaScript/"/>
-    
       <category term="前端开发" scheme="fengxu.ink/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
     
       <category term="node.js" scheme="fengxu.ink/tags/node-js/"/>
+    
+      <category term="JavaScript" scheme="fengxu.ink/tags/JavaScript/"/>
     
   </entry>
   
@@ -349,9 +397,9 @@
     </summary>
     
     
-      <category term="JavaScript" scheme="fengxu.ink/tags/JavaScript/"/>
-    
       <category term="前端开发" scheme="fengxu.ink/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+    
+      <category term="JavaScript" scheme="fengxu.ink/tags/JavaScript/"/>
     
   </entry>
   
@@ -472,54 +520,6 @@
     
     
       <category term="css" scheme="fengxu.ink/tags/css/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript闭包及相关</title>
-    <link href="fengxu.ink/2017/10/26/JavaScript%E9%97%AD%E5%8C%85%E5%8F%8A%E7%9B%B8%E5%85%B3/"/>
-    <id>fengxu.ink/2017/10/26/JavaScript闭包及相关/</id>
-    <published>2017-10-26T10:40:53.000Z</published>
-    <updated>2017-11-14T17:20:52.511Z</updated>
-    
-    <content type="html"><![CDATA[<p>这是在前端领域的第一篇文章，按照常理我应该写点html和css的相关内容，但是我想放在后面来写，第一篇文章还是说一说曾经觉得很魔幻的JavaScript，就从js中最神秘的闭包开始说起吧。</p><h3 id="什么是闭包"><a href="#什么是闭包" class="headerlink" title="什么是闭包"></a>什么是闭包</h3><p>对于初接触js的人，闭包是一个很难懂的概念，甚至是有很长时间开发经验的人，往往也不一定能说的清楚透彻，首先来看网上随便就能搜索到的js中闭包的定义：</p><blockquote><p>所谓“闭包”，指的是一个拥有许多变量和绑定了这些变量的环境的表达式（通常是一个函数），因而这些变量也是该表达式的一部分。</p></blockquote><p>从这种书面化的定义中很难获取到直接明了的有效信息，所以这个概念先放在这里，要想了解闭包，我觉得可以先从js的作用域链说起。</p><h3 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h3><p>不考虑es6和with语句，我们大体上可以说js语言是不存在传统的块作用域的，但是存在函数作用域。所谓函数作用域就是指创建一个函数时候，函数的内部变量是只存在于函数内的，此时这个函数就形成了一个函数作用域。</p><p>我们都知道，不论是在浏览器还是node或其他js运行环境下，js所有代码都运行在一个全局作用域里面，而上面分析了函数可以创建作用域，如果在函数中再次声明函数，就会在里面再次形成作用域，考察下面一段程序</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">3</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="keyword">var</span> a = <span class="number">4</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">   <span class="keyword">var</span> a = <span class="number">5</span>;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>此时就存在了三个作用域，如图所示</p><p><img src="http://oux9g0njr.bkt.clouddn.com/17-11-14/21124347.jpg" alt=""></p><p>这三层作用域是嵌套关系，里面的可以访问外面的，外面的无法访问里面的。此时，如果内部作用域想要访问外部作用域中的元素，救需要一层层向外找，考察下面的代码</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">3</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="number">11</span>;</span><br><span class="line"><span class="keyword">var</span> c = <span class="number">25</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="keyword">var</span> a = <span class="number">4</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="number">13</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">   <span class="keyword">var</span> a = <span class="number">5</span>;</span><br><span class="line">   <span class="built_in">console</span>.log(a);</span><br><span class="line">   <span class="built_in">console</span>.log(b);</span><br><span class="line">   <span class="built_in">console</span>.log(c);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>在这种情况下，内层函数在寻找变量时候情况就有所不同了，直接看图<br><img src="http://oux9g0njr.bkt.clouddn.com/17-11-14/22565348.jpg" alt=""></p><p>从图中可以很清晰地看出，在寻找变量的时候是按照由内到外，按照层级来寻找的，这就形成了一个链条，可以称之为作用域链。</p><h3 id="词法作用域"><a href="#词法作用域" class="headerlink" title="词法作用域"></a>词法作用域</h3><p>理解了作用域链，应该就可以理解js的词法作用域了。与词法作用域相对的概念是动态作用域。先来看下面一段代码，它的输出结果是什么</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">5</span>;</span><br><span class="line">    f1();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> a = <span class="number">4</span>;</span><br><span class="line">f2();</span><br></pre></td></tr></table></figure><p>正确的输出结果是4，有疑虑可以看下面的一组定义</p><blockquote><p>词法作用域的函数中遇到既不是形参也不是函数内部定义的局部变量的变量时，去函数定义时的环境中查询。</p></blockquote><blockquote><p>动态域的函数中遇到既不是形参也不是函数内部定义的局部变量的变量时，到函数调用时的环境中查。</p></blockquote><p>这就是这个问题的全部，js中采用的是词法作用域，所以变量要在函数定义时候的环境中去找，如果没有，那就沿着作用域链向上查询。</p><h3 id="理解闭包"><a href="#理解闭包" class="headerlink" title="理解闭包"></a>理解闭包</h3><p>有了上面的知识铺垫，其实就不需要纠结闭包的概念了，因为闭包的本质就是上面的变量解析过程，在实际应用中，我们使用闭包的主要用途主要有两方面，下面来看一下具体的实现来理解一下闭包。</p><h4 id="封装变量"><a href="#封装变量" class="headerlink" title="封装变量"></a>封装变量</h4><p>看一下下面的例子</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">          <span class="keyword">var</span> a = <span class="number">4</span>;</span><br><span class="line">          <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">              <span class="built_in">console</span>.log(a);</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      f = f1();</span><br><span class="line">      f();</span><br></pre></td></tr></table></figure><p>这段程序中，外界环境是无法直接读取a的，因为a处于函数作用域。但是我们通过创建一个闭包f2，就可以实现访问a的目的，其实本质就是应用了f2会去寻找声明时环境的特点，从而打开了读取函数内部变量的外部接口，采用这种方式可以实现封装，很多模块化编程解决方案都是通过这种方式来实现的。</p><h4 id="保存运行状态"><a href="#保存运行状态" class="headerlink" title="保存运行状态"></a>保存运行状态</h4><p>考虑下面的代码，它的输出结果是什么</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">          setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">              <span class="built_in">console</span>.log(i);</span><br><span class="line">          &#125;, <span class="number">1000</span>);</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure><p>如果是同步的程序，显然是0 1 2，然而很不幸，这段程序中插入了一个定时器，它是异步执行的，带来的影响就是它的的输出结果是3 3 3。关于异步编程的更多内容我想我以后会补充，在此只简单解释一下为什么会这样。js是单线程模型，所以同一时刻只能执行一件任务，而异步操作会被丢到一个队列中，等到主线程执行完毕，再去队列中依次取出并执行。所以，当执行打印操作时候，其实主线程早已执行完毕，i=3，所以只能输出3。</p><p>那么如何解决这一问题呢，想想我们的需求，我们是想要在每次执行时候打印对应时刻的i值，每次都不一样，需要把每个状态下的i保存下来。想想闭包的概念，是不是很清楚了？没错，我们只要创建一个闭包，就可以实现需求，代码如下</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">          (<span class="function"><span class="keyword">function</span> (<span class="params">i</span>) </span>&#123;</span><br><span class="line">              setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                  <span class="built_in">console</span>.log(i);</span><br><span class="line">              &#125;, <span class="number">1000</span>);</span><br><span class="line">          &#125;)(i)</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure><p>现在回来看闭包的概念，是不是清晰多了,理解了本质，闭包实际上并不难，不过也有一些需要注意的地方。</p><h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><p>使用闭包，一个最需要注意的问题就是，闭包会产生大量无法释放的内存，不能滥用，在实际应用中，要在需要的时候使用闭包，不要刻意使用闭包。</p><h3 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h3><p>关于回调函数和异步编程的相关内容，后面我应该会有文章详细分析，这里只想说一些和本文相关的内容，回调函数其实也是闭包。我们将一个回调函数作为变量传递给另一个函数时，这个回调函数在包含它的函数内的某一点执行，就好像这个回调函数是在包含它的函数中定义的一样。所以回调函数可以拿到执行的某个点，某个状态的信息。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;这是在前端领域的第一篇文章，按照常理我应该写点html和css的相关内容，但是我想放在后面来写，第一篇文章还是说一说曾经觉得很魔幻的JavaScript，就从js中最神秘的闭包开始说起吧。&lt;/p&gt;
-&lt;h3 id=&quot;什么是闭包&quot;&gt;&lt;a href=&quot;#什么是闭包&quot; class=
-      
-    
-    </summary>
-    
-    
-      <category term="JavaScript" scheme="fengxu.ink/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>设计模式之解释器模式</title>
-    <link href="fengxu.ink/2017/09/24/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/"/>
-    <id>fengxu.ink/2017/09/24/设计模式之解释器模式/</id>
-    <published>2017-09-24T07:20:13.000Z</published>
-    <updated>2017-09-24T08:15:48.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="解释器模式的概念"><a href="#解释器模式的概念" class="headerlink" title="解释器模式的概念"></a>解释器模式的概念</h2><blockquote><p>给定一个语言，定义它的文法的一种表示，并定义一个解释器，这个解释器使用该表示来解释语言中的句子。</p></blockquote><p>这是23种设计模式中最后一种了，它是一种不太常用的设计模式，不过还是要学习的。</p><h2 id="举个栗子"><a href="#举个栗子" class="headerlink" title="举个栗子"></a>举个栗子</h2><p>解释器模式的模型图<br><img src="http://oux9g0njr.bkt.clouddn.com/17-9-24/234057.jpg" alt=""></p><p>解释器模式里面有四种角色：抽象解释器，终结符表达式，非终结符表达式，环境角色。</p><ul><li>抽象表达式</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Expression</span> </span>&#123;</span><br><span class="line">    <span class="comment">//解析任务</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> Object <span class="title">interpret</span><span class="params">(Context context)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ul><li>终结符表达式</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TerminalExpression</span> <span class="keyword">extends</span> <span class="title">Expression</span> </span>&#123;</span><br><span class="line">    <span class="comment">//终结符表达式通常只有一个</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">interpret</span><span class="params">(Context context)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ul><li>非终结符表达式</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NonterminalExpression</span> <span class="keyword">extends</span> <span class="title">Expression</span> </span>&#123;</span><br><span class="line">    <span class="comment">//非终结符表达式会依赖其他表达式</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">NonterminalExpression</span><span class="params">(Exception... exceptions)</span></span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">interpret</span><span class="params">(Context context)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//进行文法处理</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ul><li>调用场景</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Context context = <span class="keyword">new</span> Context();</span><br><span class="line">        <span class="comment">//容器</span></span><br><span class="line">        Stack&lt;Expression&gt; stack;</span><br><span class="line">        <span class="keyword">for</span> (; ; ) &#123;</span><br><span class="line">            <span class="comment">//语法判断，递归调用</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//分析语法</span></span><br><span class="line">        Expression expression=stack.pop();</span><br><span class="line">        <span class="comment">//进入场景</span></span><br><span class="line">        expression.interpret(context);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>环境未列出，因为实际开发中可以采用HashMap代替，解释器模式封装了一个语法规范文件，避免了调用者和语法解析器之间产生耦合，在解释器模式中可以通过一种称之为抽象语法树的图形方式来直观地表示语言的构成，每一棵抽象语法树对应一个语言实例。</p><h2 id="适用范围"><a href="#适用范围" class="headerlink" title="适用范围"></a>适用范围</h2><p>解释器模式适用与解决重复发生的解释语法的问题问，面对系统化的语法结构，恰当使用可以使工作大量简化。</p><h2 id="优点缺点"><a href="#优点缺点" class="headerlink" title="优点缺点"></a>优点缺点</h2><p>优点是扩展方便，调整表达式结构就可以实现语法的修改。</p><p>缺点一方面是类太多会造成类膨胀，另一方面就是内部的大量递归会严重影响性能。</p><h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>尽量不要使用解释器模式处理重要的业务，解释器模式会带来很多维护性的问题，在实际应用中可以使用脚本语言来代替解释器模式。</p><hr><h2 id="写在后面的话"><a href="#写在后面的话" class="headerlink" title="写在后面的话"></a>写在后面的话</h2><p>到此为止，设计模式的系列文章就要结束了，这里面说的设计模式是狭义上的，由GoF提出的23种设计模式，现在可能还有新的设计模式产生，在此不做讨论。这些设计模式在实际项目中当然不能独立存在，具体的组合应用要依场景而定，在这里只是系统的看了一遍这些基本概念，开发的路还很长，随着接触工程量的增加，对设计模式会有更深刻的了解。至此，本系列全部文章结束。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;解释器模式的概念&quot;&gt;&lt;a href=&quot;#解释器模式的概念&quot; class=&quot;headerlink&quot; title=&quot;解释器模式的概念&quot;&gt;&lt;/a&gt;解释器模式的概念&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;给定一个语言，定义它的文法的一种表示，并定义一个解释器，这个解释器
-      
-    
-    </summary>
-    
-    
-      <category term="设计模式" scheme="fengxu.ink/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
