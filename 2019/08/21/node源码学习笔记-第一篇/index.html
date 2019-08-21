@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="设计模式," />
+  <meta name="keywords" content="-- node.js -- 源码分析," />
 
 
 
@@ -96,21 +96,18 @@
 
 
 
-<meta name="description" content="抽象工厂模式的定义 为创建一组相关或相互依赖的对象提供一个接口，而且无需指定他们的具体类。  这个定义和它的名字一样抽象，至少我从这个定义里面无法获取到任何有价值的信息，所以直接来看实例。 举个栗子抽象工厂模式的模型图 这个图仍然看不出任何问题，甚至看不出来抽象工厂抽象在哪，所以再看一个具体一点的业务模型 在这里就可以看出来问题了，抽象工厂其实是对工厂模式维度的扩展，在抽象工厂中可以有不同的产品族">
-<meta name="keywords" content="设计模式">
+<meta name="description" content="从这一篇起要开始阅读node.js的源码了，node的源码在github上，直接clone即可，主要由JavaScript和C++编写。 为什么要写这个系列不论是学习哪些开源的东西，源码学习永远是其中不可缺少的一部分，所有人都会告诉你一定要看源码。不过为什么要看源码，怎样去看源码，这些问题大家的答案就不同了，当然这些并不重要，我个人主要是出于一下几个原因吧。  不同于大多数前端开发者，我接触Jav">
+<meta name="keywords" content="-- node.js -- 源码分析">
 <meta property="og:type" content="article">
-<meta property="og:title" content="设计模式之抽象工厂模式">
-<meta property="og:url" content="fengxu.ink/2017/09/16/设计模式之抽象工厂模式/index.html">
+<meta property="og:title" content="node源码学习笔记--第一篇（初心）">
+<meta property="og:url" content="fengxu.ink/2019/08/21/node源码学习笔记-第一篇/index.html">
 <meta property="og:site_name" content="隋堤倦客">
-<meta property="og:description" content="抽象工厂模式的定义 为创建一组相关或相互依赖的对象提供一个接口，而且无需指定他们的具体类。  这个定义和它的名字一样抽象，至少我从这个定义里面无法获取到任何有价值的信息，所以直接来看实例。 举个栗子抽象工厂模式的模型图 这个图仍然看不出任何问题，甚至看不出来抽象工厂抽象在哪，所以再看一个具体一点的业务模型 在这里就可以看出来问题了，抽象工厂其实是对工厂模式维度的扩展，在抽象工厂中可以有不同的产品族">
+<meta property="og:description" content="从这一篇起要开始阅读node.js的源码了，node的源码在github上，直接clone即可，主要由JavaScript和C++编写。 为什么要写这个系列不论是学习哪些开源的东西，源码学习永远是其中不可缺少的一部分，所有人都会告诉你一定要看源码。不过为什么要看源码，怎样去看源码，这些问题大家的答案就不同了，当然这些并不重要，我个人主要是出于一下几个原因吧。  不同于大多数前端开发者，我接触Jav">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://oux9g0njr.bkt.clouddn.com/17-9-16/21220091.jpg">
-<meta property="og:image" content="http://oux9g0njr.bkt.clouddn.com/17-9-17/44103290.jpg">
-<meta property="og:updated_time" content="2017-09-17T02:55:38.000Z">
+<meta property="og:updated_time" content="2019-08-21T17:25:59.798Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="设计模式之抽象工厂模式">
-<meta name="twitter:description" content="抽象工厂模式的定义 为创建一组相关或相互依赖的对象提供一个接口，而且无需指定他们的具体类。  这个定义和它的名字一样抽象，至少我从这个定义里面无法获取到任何有价值的信息，所以直接来看实例。 举个栗子抽象工厂模式的模型图 这个图仍然看不出任何问题，甚至看不出来抽象工厂抽象在哪，所以再看一个具体一点的业务模型 在这里就可以看出来问题了，抽象工厂其实是对工厂模式维度的扩展，在抽象工厂中可以有不同的产品族">
-<meta name="twitter:image" content="http://oux9g0njr.bkt.clouddn.com/17-9-16/21220091.jpg">
+<meta name="twitter:title" content="node源码学习笔记--第一篇（初心）">
+<meta name="twitter:description" content="从这一篇起要开始阅读node.js的源码了，node的源码在github上，直接clone即可，主要由JavaScript和C++编写。 为什么要写这个系列不论是学习哪些开源的东西，源码学习永远是其中不可缺少的一部分，所有人都会告诉你一定要看源码。不过为什么要看源码，怎样去看源码，这些问题大家的答案就不同了，当然这些并不重要，我个人主要是出于一下几个原因吧。  不同于大多数前端开发者，我接触Jav">
 
 
 
@@ -139,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="fengxu.ink/2017/09/16/设计模式之抽象工厂模式/"/>
+  <link rel="canonical" href="fengxu.ink/2019/08/21/node源码学习笔记-第一篇/"/>
 
 
 
 
 
-  <title>设计模式之抽象工厂模式 | 隋堤倦客</title>
+  <title>node源码学习笔记--第一篇（初心） | 隋堤倦客</title>
   
 
 
@@ -332,7 +329,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="fengxu.ink/2017/09/16/设计模式之抽象工厂模式/">
+    <link itemprop="mainEntityOfPage" href="fengxu.ink/2019/08/21/node源码学习笔记-第一篇/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="隋堤倦客">
@@ -349,7 +346,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">设计模式之抽象工厂模式</h2>
+          <h2 class="post-title" itemprop="name headline">node源码学习笔记--第一篇（初心）</h2>
         
 
         <div class="post-meta">
@@ -361,8 +358,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-16T23:00:42+08:00">
-                2017-09-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-21T00:15:49+08:00">
+                2019-08-21
               </time>
             
 
@@ -393,7 +390,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  941
+                  751
                 </span>
               
 
@@ -409,7 +406,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  4
+                  3
                 </span>
               
             </div>
@@ -430,31 +427,16 @@
       
 
       
-        <h2 id="抽象工厂模式的定义"><a href="#抽象工厂模式的定义" class="headerlink" title="抽象工厂模式的定义"></a>抽象工厂模式的定义</h2><blockquote>
-<p>为创建一组相关或相互依赖的对象提供一个接口，而且无需指定他们的具体类。</p>
-</blockquote>
-<p>这个定义和它的名字一样抽象，至少我从这个定义里面无法获取到任何有价值的信息，所以直接来看实例。</p>
-<h2 id="举个栗子"><a href="#举个栗子" class="headerlink" title="举个栗子"></a>举个栗子</h2><p>抽象工厂模式的模型图<br><img src="http://oux9g0njr.bkt.clouddn.com/17-9-16/21220091.jpg" alt=""></p>
-<p>这个图仍然看不出任何问题，甚至看不出来抽象工厂抽象在哪，所以再看一个具体一点的业务模型<br><img src="http://oux9g0njr.bkt.clouddn.com/17-9-17/44103290.jpg" alt=""></p>
-<p>在这里就可以看出来问题了，抽象工厂其实是对工厂模式维度的扩展，在抽象工厂中可以有不同的产品族，每个产品族的产品又可以划分成多个具体的等级，而每一种工厂专门负责生产某一等级的产品，下面是编码实现</p>
+        <p>从这一篇起要开始阅读node.js的源码了，node的源码在<a href="https://github.com/nodejs/node" target="_blank" rel="noopener">github</a>上，直接clone即可，主要由JavaScript和C++编写。</p>
+<h1 id="为什么要写这个系列"><a href="#为什么要写这个系列" class="headerlink" title="为什么要写这个系列"></a>为什么要写这个系列</h1><p>不论是学习哪些开源的东西，源码学习永远是其中不可缺少的一部分，所有人都会告诉你一定要看源码。不过为什么要看源码，怎样去看源码，这些问题大家的答案就不同了，当然这些并不重要，我个人主要是出于一下几个原因吧。</p>
 <ul>
-<li>产品族A及1、2两个产品等级</li>
+<li>不同于大多数前端开发者，我接触JavaScript这门编程语言就是从node开始的，也就是说我学习node的时候还不会写前端，因此我对它很熟悉，这会让我对看不懂的地方也不会很排斥。</li>
+<li>node是一个非常优秀的开源作品，源码里面能够学习到很多东西，有助于我获取更加有价值的东西。</li>
+<li>阅读node源码，能够把技术的使用和理解融汇贯通，我从来不希望把自己限制为某个领域的开发者，我希望的我的title是软件开发工程师，至少是web开发工程师，而不是前端开发工程师，Java、Golang、Node这些东西有精力都是值得去了解的，如果没有太多精力，我希望我能在node领域有相对深入的研究。</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">AbstractProductA</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method1</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">//A产品共有逻辑</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">method2</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConcreteProductA1</span> <span class="keyword">extends</span> <span class="title">AbstractProductA</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method2</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">//A1的实现</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConcreteProductA2</span> <span class="keyword">extends</span> <span class="title">AbstractProductA</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method2</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">//A2的实现</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>产品族B及1、2两个产品等级</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">AbstractProductB</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method1</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">//B产品共有逻辑</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">method2</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConcreteProductB1</span> <span class="keyword">extends</span> <span class="title">AbstractProductB</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method2</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">//B1的实现</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConcreteProductB2</span> <span class="keyword">extends</span> <span class="title">AbstractProductB</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method2</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">//B2的实现</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>抽象工厂及1、2两个产品等级的工厂</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">AbstractFactory</span> </span>&#123;</span><br><span class="line">    <span class="comment">//产品族A创建方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> AbstractProductA <span class="title">createProductA</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="comment">//产品族B创建方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> AbstractProductB <span class="title">createProductB</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConcreteFactory1</span> <span class="keyword">extends</span> <span class="title">AbstractFactory</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> AbstractProductA <span class="title">createProductA</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> ConcreteProductA1();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> AbstractProductB <span class="title">createProductB</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> ConcreteProductB1();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConcreteFactory2</span> <span class="keyword">extends</span> <span class="title">AbstractFactory</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> AbstractProductA <span class="title">createProductA</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> ConcreteProductA2();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> AbstractProductB <span class="title">createProductB</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> ConcreteProductB2();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>在抽象工厂中，有X个产品族，抽象工厂内就要有X个创建方法，有Y个产品等级就要有Y个实现工厂类，每个具体工厂中实现不同产品族的生产。在调用时候，完全不用关心具体实现，只需要确定产品族和等级，就能创建出自己想要的产品。</p>
-<h2 id="适用范围"><a href="#适用范围" class="headerlink" title="适用范围"></a>适用范围</h2><p>抽象工厂是对工厂方法模式的升级，它的解决的是一个继承体系中，如果存在着多个等级结构（即存在着多个抽象类），并且分属各个等级结构中的实现类之间存在着一定的关联或者约束，这样的情况下可以使用抽象工厂模式。</p>
-<h2 id="优点缺点"><a href="#优点缺点" class="headerlink" title="优点缺点"></a>优点缺点</h2><p>抽象工厂的优点是封装性非常好，产品组的内部约束是完全隐藏状态，调用者无需关心除了工厂之外的东西。</p>
-<p>抽象工厂的缺点就是产品族无法扩展，一旦需要增加内容，就要进行大幅度调整和修改，一方面违反开闭原则，另一方面随着结构复杂修改将会越来越多。</p>
-<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>上面在缺点中提到了产品族扩展困难，但是从另一个角度来看，抽象工厂扩展产品等级还是很容易的，也是符合开闭原则的，实际使用中还是要在详细考量业务需求后再做出选择。</p>
-<p>简单工厂模式，工厂方法模式和抽象工厂模式都是为了降低程序之间的耦合而设计的，使用的时候往往不需要纠结具体用的是哪一种，在具体的业务场景下我们只要关心能否解耦就可以了。</p>
+<h1 id="阅读方法"><a href="#阅读方法" class="headerlink" title="阅读方法"></a>阅读方法</h1><p>阅读源码要带着目的去读，而我的目的是要从源码中学习优秀的编码方式，因此至少在第一次阅读的时候，我不回去从node的启动流程整体去分析源码，更不会去自己编译一版node。这次阅读的重点是node源码中js编写的部分，首先从API相关源码入手，会涉及到一些架构相关源码，逐层深入零散的理解源码，最终输出的产物就是每一部分API源码实现技巧以及get到的相关知识，包括不限于网络、操作系统等。首次阅读结束后，整理一下node启动流程，阅读一下C++相关源码，本地编译出node环境进行更深入的学习。过程其实不会很短，希望有所收获。</p>
+<h1 id="一些其他事情"><a href="#一些其他事情" class="headerlink" title="一些其他事情"></a>一些其他事情</h1><p>其实写这篇的时候我已经阅读了几个file了，和自己想象的还是有很大不同的，有些模块的操作基本不依赖C++端，但大部分都或多或少的有依赖，这会涉及到C++模块与JavaScript之间的链接和交互，这些部分我目前还不是很了解，需要随着阅读同时学习，这可能会使得进度变慢，但是对后续学习还是会有促进作用。开头会很难，希望能坚持下去。</p>
+<p>下一篇是正式阅读的第一篇，就从最简单的模块path开始。</p>
 
       
     </div>
@@ -511,7 +493,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/设计模式/" rel="tag"><i class="fa fa-tag"></i> 设计模式</a>
+            <a href="/tags/node-js-源码分析/" rel="tag"><i class="fa fa-tag"></i> -- node.js -- 源码分析</a>
           
         </div>
       
@@ -524,8 +506,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/16/设计模式之工厂方法模式/" rel="next" title="设计模式之工厂方法模式">
-                <i class="fa fa-chevron-left"></i> 设计模式之工厂方法模式
+              <a href="/2019/08/18/失踪人口回归-写一些要做的事/" rel="next" title="失踪人口回归--写一些要做的事">
+                <i class="fa fa-chevron-left"></i> 失踪人口回归--写一些要做的事
               </a>
             
           </div>
@@ -533,10 +515,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/09/17/设计模式之建造者模式/" rel="prev" title="设计模式之建造者模式">
-                设计模式之建造者模式 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -717,7 +695,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#抽象工厂模式的定义"><span class="nav-number">1.</span> <span class="nav-text">抽象工厂模式的定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#举个栗子"><span class="nav-number">2.</span> <span class="nav-text">举个栗子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#适用范围"><span class="nav-number">3.</span> <span class="nav-text">适用范围</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优点缺点"><span class="nav-number">4.</span> <span class="nav-text">优点缺点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意事项"><span class="nav-number">5.</span> <span class="nav-text">注意事项</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#为什么要写这个系列"><span class="nav-number">1.</span> <span class="nav-text">为什么要写这个系列</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#阅读方法"><span class="nav-number">2.</span> <span class="nav-text">阅读方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一些其他事情"><span class="nav-number">3.</span> <span class="nav-text">一些其他事情</span></a></li></ol></div>
             
 
           </div>
